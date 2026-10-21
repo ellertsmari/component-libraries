@@ -1,0 +1,209 @@
+<title>Component Libraries</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Follows io.vefskoli.is: Source Sans 3 at regular weight, black and grey neutrals, violet #6563eb, 8/12px corners, pill-shaped secondary buttons.
+   Layout: a short intro, the two pages as two cards side by side, then how to use them and what they practise. */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --ink: #000000;
+  --muted: #666666;
+  --rule: #e6e6e6;
+  --tint: #f0f0fd;
+  --violet: #6563eb;
+  --violet-hover: #2c2b76;
+  --on-violet: #ffffff;
+  --hanna: #0367e1;
+  --isl: #00b39e;
+  --carbon: #0f62fe;
+  --mui: #6750a4;
+  --bg-art: url("data:image/svg+xml,%3Csvg width=%224530%22 height=%222543%22 viewBox=%220 0 4530 2543%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E %3Cg opacity=%220.08%22%3E %3Cpath d=%22M0 54.772C669.641 72.2302 651.56 469.401 1050.6 700.097C1449.64 930.793 1139.45 1256.57 1692.81 1491.95C2233.97 1722.13 2389.37 1859.94 2389.57 1860.12C2744.97 1886.31 2673.27 1860.12 3112.84 1860.12C3529.15 1860.12 3850.13 1736.67 4060.56 1756.93C4209.34 1771.26 4409.54 1933.63 4521.79 2062.8V2531.42H4529.76C4529.75 2531.49 4529.75 2531.56 4529.75 2531.64H0V54.772Z%22 fill=%22url(%23paint0_linear_1555_6915)%22/%3E %3Cpath d=%22M3966.52 207.53C4202.09 152.194 4291.85 -101.567 4524.39 44.9643V651.189L4499.61 2523.84H24.4248C17.6425 2510.49 10.8315 2496.71 4 2482.54V764.405C547.45 751.46 668.982 1141.6 1170.11 1253.46C1693.85 1370.36 3170 753.095 3316.52 587.867C3463.04 422.639 3502.01 316.643 3966.52 207.53Z%22 fill=%22url(%23paint1_linear_1555_6915)%22/%3E %3Cpath d=%22M3523.31 1085.11C3972.1 1085.11 4433.07 359.735 4525.44 540.184V2526.96L4.63379 2543L3 2531.42H5.04199V1361.38C459.994 1209.27 773.08 1540.27 1076.07 1568.32C1412.76 1599.5 1613.84 1827.32 2145.37 1619.11C2676.91 1410.89 3118.04 1085.11 3523.31 1085.11Z%22 fill=%22url(%23paint2_linear_1555_6915)%22/%3E %3C/g%3E %3Cdefs%3E %3ClinearGradient id=%22paint0_linear_1555_6915%22 x1=%22255.391%22 y1=%22883.687%22 x2=%221071.54%22 y2=%22-159.019%22 gradientUnits=%22userSpaceOnUse%22%3E %3Cstop stop-color=%22%23D9D9D9%22 stop-opacity=%220%22/%3E %3Cstop offset=%221%22/%3E %3C/linearGradient%3E %3ClinearGradient id=%22paint1_linear_1555_6915%22 x1=%222048.67%22 y1=%221598.65%22 x2=%221786.3%22 y2=%22417.98%22 gradientUnits=%22userSpaceOnUse%22%3E %3Cstop stop-color=%22%23D9D9D9%22 stop-opacity=%220%22/%3E %3Cstop offset=%221%22/%3E %3C/linearGradient%3E %3ClinearGradient id=%22paint2_linear_1555_6915%22 x1=%221829.52%22 y1=%222471.33%22 x2=%221839.82%22 y2=%22-447.843%22 gradientUnits=%22userSpaceOnUse%22%3E %3Cstop stop-color=%22white%22/%3E %3Cstop offset=%221%22/%3E %3C/linearGradient%3E %3C/defs%3E %3C/svg%3E");
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121212; --surface: #1a1a1a; --ink: #ffffff; --muted: #b3b3b3; --rule: #333333; --tint: #1d1c3a;
+    --violet: #a3a1f3; --violet-hover: #d1d1f9; --on-violet: #121212;
+    --hanna: #6aa8f5; --isl: #3fe0cc; --carbon: #78a9ff; --mui: #cfbcff; --bg-art: none;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121212; --surface: #1a1a1a; --ink: #ffffff; --muted: #b3b3b3; --rule: #333333; --tint: #1d1c3a;
+  --violet: #a3a1f3; --violet-hover: #d1d1f9; --on-violet: #121212;
+  --hanna: #6aa8f5; --isl: #3fe0cc; --carbon: #78a9ff; --mui: #cfbcff; --bg-art: none;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  background: var(--bg) var(--bg-art) no-repeat fixed center top / 100% auto;
+  color: var(--ink);
+  font: 17px/1.6 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 64px;
+}
+.wrap { max-width: 1120px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-body); font-weight: 400; line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+h3 { font-size: 1.2rem; font-weight: 600; }
+p { margin: 0; }
+a { color: var(--violet); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+.eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+
+.hero { padding-block: 64px 40px; display: grid; gap: 18px; }
+.hero .lede { max-width: 62ch; font-size: 1.15rem; color: var(--muted); }
+.hero .lede strong { color: var(--ink); font-weight: 600; }
+
+.pages { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.page-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.page-card h2 { font-size: clamp(1.6rem, 2.6vw, 2rem); }
+.systems { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; font-size: 0.9rem; }
+.dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.page-card .about { color: var(--muted); }
+.why { display: grid; gap: 8px; }
+.why ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.meta { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 0.9rem; color: var(--muted); padding-top: 10px; border-top: 1px solid var(--rule); }
+.cta { align-self: flex-start; display: inline-block; background: var(--violet); color: var(--on-violet); text-decoration: none; border-radius: 8px; padding: 12px 22px; font-size: 1.05rem; }
+.cta:hover { background: var(--violet-hover); }
+
+section { padding-top: 72px; display: grid; gap: 20px; }
+.how { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.how > div { background: var(--tint); border-radius: 8px; padding: 18px 20px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.how p { font-size: 0.95rem; }
+.ideas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 40px; }
+.ideas > div { display: grid; gap: 10px; align-content: start; }
+.ideas ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.ideas li { padding-block: 8px; border-top: 1px solid var(--rule); }
+.ideas li:last-child { border-bottom: 1px solid var(--rule); }
+.ideas li b { font-weight: 600; }
+.note { max-width: 70ch; color: var(--muted); }
+
+footer { padding-top: 72px; font-size: 0.85rem; color: var(--muted); display: grid; gap: 6px; max-width: 80ch; }
+
+@media (max-width: 900px) {
+  .how { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .pages, .ideas, .how { grid-template-columns: minmax(0, 1fr); }
+  .page-card { padding: 22px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cta { transition: background-color .15s; }
+}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">Vefskólinn · 4 – Connecting to the world</span>
+    <h1>Component libraries</h1>
+    <p class="lede">How do you eat an elephant? One piece at a time. These two pages show how real teams split big products into small components, and the programming ideas that make it work: <strong>abstraction, modularity, dependencies and decoupling</strong>. Each page puts two design systems side by side, so you see every idea answered in two different ways.</p>
+  </header>
+
+  <div class="pages">
+    <article class="page-card" aria-labelledby="p-iceland">
+      <span class="eyebrow">Start here · Iceland</span>
+      <h2 id="p-iceland">Hanna and Ísland.is</h2>
+      <div class="systems">
+        <span class="chip"><span class="dot" style="background: var(--hanna)"></span>Hanna · Reykjavík City</span>
+        <span class="chip"><span class="dot" style="background: var(--isl)"></span>Ísland.is · Digital Iceland</span>
+      </div>
+      <p class="about">The design systems behind Reykjavík's websites and island.is. Both publish their components in Storybook, but Storybook hides the interesting part. This page follows one button all the way down: where the CSS comes from, where the imports point and how the colours are stored.</p>
+      <div class="why">
+        <h3>Why play with it</h3>
+        <ul>
+          <li>See one problem solved in opposite ways. Hanna's contract is CSS class names, Ísland.is's is React components.</li>
+          <li>Change a colour token live, and feel the difference between a CSS variable and a value baked in when the app is built.</li>
+          <li>Do a five-minute exercise with nothing but a browser, then rebuild the Ísland.is setup in Vite and see every hidden layer from the inside.</li>
+          <li>Get to know the code behind Icelandic public websites, the kind you meet working for the city, the state or the agencies that build for them.</li>
+        </ul>
+      </div>
+      <div class="meta"><span>About an hour with the exercises</span><span>Light only, like Hanna and Ísland.is themselves</span></div>
+      <a class="cta" href="https://claude.ai/artifact/RtgWNjPbuZ2s5EMfsuiGgu">Open Hanna and Ísland.is</a>
+    </article>
+
+    <article class="page-card" aria-labelledby="p-world">
+      <span class="eyebrow">Then · The world</span>
+      <h2 id="p-world">Carbon and Material UI</h2>
+      <div class="systems">
+        <span class="chip"><span class="dot" style="background: var(--carbon)"></span>Carbon · IBM</span>
+        <span class="chip"><span class="dot" style="background: var(--mui)"></span>Material UI · Google's Material Design</span>
+      </div>
+      <p class="about">IBM's design system, and the most used React library built on Google's Material Design, downloaded millions of times a week. The same ideas at a much bigger scale, with libraries you can install in your own project today.</p>
+      <div class="why">
+        <h3>Why play with it</h3>
+        <ul>
+          <li>Run the real Material UI library inside the page and watch it write CSS in your browser as you change the theme.</li>
+          <li>Switch Carbon between its four themes by changing one class, and see why tokens make dark mode easy.</li>
+          <li>Measure modularity yourself. The same page builds to 1.2 MB of CSS or 130 KB, depending on what you import.</li>
+          <li>Learn from real dependency problems: a Sass update that broke Carbon's build on the day we tested it, and a well-known library that was retired.</li>
+        </ul>
+      </div>
+      <div class="meta"><span>About an hour with the exercises</span><span>Follows your device's dark mode</span></div>
+      <a class="cta" href="https://claude.ai/artifact/F4yvWjkK6TrBRzygYGq7LM">Open Carbon and Material UI</a>
+    </article>
+  </div>
+
+  <section aria-labelledby="how-h">
+    <span class="eyebrow">How to use the pages</span>
+    <h2 id="how-h">Don't just read them. Play with them.</h2>
+    <div class="how">
+      <div>
+        <h3>Re-skin the page</h3>
+        <p>The bar at the top of each page shows the whole page in another design system. Each button only changes CSS variables. Open “See the CSS” to read the exact rule.</p>
+      </div>
+      <div>
+        <h3>Try the live demos</h3>
+        <p>Under “Change it in one place”, change a colour in both systems at once and compare what happens in the browser.</p>
+      </div>
+      <div>
+        <h3>Do the exercises</h3>
+        <p>Every step was tested and has a copy button. Run them on your own computer, then open DevTools and look.</p>
+      </div>
+      <div>
+        <h3>Discuss in your group</h3>
+        <p>Exercise 3 on the Carbon and Material UI page compares all four systems. Do it together and write down your answers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ideas-h">
+    <span class="eyebrow">What you'll practise</span>
+    <h2 id="ideas-h">The same ideas, on both pages</h2>
+    <div class="ideas">
+      <div>
+        <h3>The problems a component library solves</h3>
+        <ul>
+          <li><b>Dividing the work</b> between the people in a group</li>
+          <li><b>Knowing where to start</b> on a big project</li>
+          <li><b>One piece at a time</b> instead of one huge project</li>
+          <li><b>Consistency</b>, and changing something in one place</li>
+        </ul>
+      </div>
+      <div>
+        <h3>The programming ideas underneath</h3>
+        <ul>
+          <li><b>Abstraction:</b> hiding the details behind a simple surface</li>
+          <li><b>Modularity:</b> separate parts you take only when you need them</li>
+          <li><b>Dependencies:</b> what each part needs, and what breaks</li>
+          <li><b>Decoupling:</b> changing one part without breaking the rest</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Both pages end with why this matters more now that AI writes so much code: an AI assistant gives you generic components, and knowing your own product is what turns them into the right ones.</p>
+  </section>
+
+  <footer>
+    <p>Made for Vefskólinn. Code, versions and download figures checked on 20–21 October 2026, so some details may have changed since.</p>
+  </footer>
+</div>

@@ -1,0 +1,1166 @@
+<title>Hanna and Ísland.is</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+/* Default skin follows io.vefskoli.is: Source Sans 3 at regular weight, black and grey neutrals, violet #6563eb, 8/12px corners. Light only, like the site.
+   Layout: three parts, one block per idea. Each block states the idea, then shows it side by side in Hanna (left) and Ísland.is (right), then says what it means for a student project. */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --ink: #000000;
+  --muted: #666666;
+  --rule: #e6e6e6;
+  --code-bg: #f2f2f2;
+  --hanna: #0367e1;          /* Hanna: faxaflói-100 */
+  --hanna-soft: #e3eefc;
+  --isl: #00003c;            /* Ísland.is: dark400 */
+  --isl-mark: #00b8a3;       /* Ísland.is: mint, darkened for text contrast */
+  --isl-soft: #dcf7f3;
+  --hl: #d1d1f9;
+  --hl-ink: #000000;
+  --warn: #c07c22;
+  --font-display: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Menlo, monospace;
+  --accent: #6563eb;
+  --focus: #6563eb;
+  --body-size: 17px;
+  --bg-art: url("data:image/svg+xml,%3Csvg width=%224530%22 height=%222543%22 viewBox=%220 0 4530 2543%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E %3Cg opacity=%220.08%22%3E %3Cpath d=%22M0 54.772C669.641 72.2302 651.56 469.401 1050.6 700.097C1449.64 930.793 1139.45 1256.57 1692.81 1491.95C2233.97 1722.13 2389.37 1859.94 2389.57 1860.12C2744.97 1886.31 2673.27 1860.12 3112.84 1860.12C3529.15 1860.12 3850.13 1736.67 4060.56 1756.93C4209.34 1771.26 4409.54 1933.63 4521.79 2062.8V2531.42H4529.76C4529.75 2531.49 4529.75 2531.56 4529.75 2531.64H0V54.772Z%22 fill=%22url(%23paint0_linear_1555_6915)%22/%3E %3Cpath d=%22M3966.52 207.53C4202.09 152.194 4291.85 -101.567 4524.39 44.9643V651.189L4499.61 2523.84H24.4248C17.6425 2510.49 10.8315 2496.71 4 2482.54V764.405C547.45 751.46 668.982 1141.6 1170.11 1253.46C1693.85 1370.36 3170 753.095 3316.52 587.867C3463.04 422.639 3502.01 316.643 3966.52 207.53Z%22 fill=%22url(%23paint1_linear_1555_6915)%22/%3E %3Cpath d=%22M3523.31 1085.11C3972.1 1085.11 4433.07 359.735 4525.44 540.184V2526.96L4.63379 2543L3 2531.42H5.04199V1361.38C459.994 1209.27 773.08 1540.27 1076.07 1568.32C1412.76 1599.5 1613.84 1827.32 2145.37 1619.11C2676.91 1410.89 3118.04 1085.11 3523.31 1085.11Z%22 fill=%22url(%23paint2_linear_1555_6915)%22/%3E %3C/g%3E %3Cdefs%3E %3ClinearGradient id=%22paint0_linear_1555_6915%22 x1=%22255.391%22 y1=%22883.687%22 x2=%221071.54%22 y2=%22-159.019%22 gradientUnits=%22userSpaceOnUse%22%3E %3Cstop stop-color=%22%23D9D9D9%22 stop-opacity=%220%22/%3E %3Cstop offset=%221%22/%3E %3C/linearGradient%3E %3ClinearGradient id=%22paint1_linear_1555_6915%22 x1=%222048.67%22 y1=%221598.65%22 x2=%221786.3%22 y2=%22417.98%22 gradientUnits=%22userSpaceOnUse%22%3E %3Cstop stop-color=%22%23D9D9D9%22 stop-opacity=%220%22/%3E %3Cstop offset=%221%22/%3E %3C/linearGradient%3E %3ClinearGradient id=%22paint2_linear_1555_6915%22 x1=%221829.52%22 y1=%222471.33%22 x2=%221839.82%22 y2=%22-447.843%22 gradientUnits=%22userSpaceOnUse%22%3E %3Cstop stop-color=%22white%22/%3E %3Cstop offset=%221%22/%3E %3C/linearGradient%3E %3C/defs%3E %3C/svg%3E");
+  --heading-weight: 400;
+  --h1-tracking: 0;
+  --h2-tracking: 0;
+  --r-s: 4px;
+  --r-m: 8px;
+  --r-l: 12px;
+  --r-pill: 999px;
+  --panel-border: var(--rule);
+  --panel-shadow: none;
+  --btn-bg: #6563eb;
+  --btn-ink: #ffffff;
+  --btn-radius: 8px;
+  --btn-weight: 400;
+  --btn-transform: none;
+  --btn-tracking: normal;
+  --btn-shadow: none;
+  --tab-ink: var(--ink);
+  --tab-transform: none;
+  color-scheme: light;
+}
+
+/* Vefskólinn-only details from io.vefskoli.is: pill-shaped secondary buttons, violet notices, quiet eyebrows */
+:root:not([data-ds]) {
+  --chip-radius: 999px; --chip-border: #e6e6e6; --chip-ink: #000000;
+  --callout-bg: #f0f0fd;
+  --eyebrow-weight: 400; --eyebrow-size: 0.85rem;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg) var(--bg-art) no-repeat fixed center top / 100% auto;
+  color: var(--ink);
+  font: var(--body-size)/1.6 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 64px;
+}
+.wrap { max-width: 1120px; margin: 0 auto; }
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: var(--heading-weight); letter-spacing: var(--h1-tracking); }
+h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: var(--heading-weight); letter-spacing: var(--h2-tracking); }
+h3 { font-size: clamp(1.3rem, 2.2vw, 1.6rem); font-weight: var(--heading-weight); }
+h4 { font-size: 1.15rem; font-weight: var(--heading-weight); }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+code, pre { font-family: var(--font-mono); font-size: 0.84em; }
+:not(pre) > code { background: var(--code-bg); padding: 0.1em 0.35em; border-radius: var(--r-s); }
+.eyebrow { font-size: var(--eyebrow-size, 0.78rem); text-transform: uppercase; letter-spacing: 0.12em; font-weight: var(--eyebrow-weight, 600); color: var(--muted); }
+
+/* Hero */
+.hero { padding-block: 56px 32px; display: grid; gap: 18px; }
+.hero .lede { max-width: 64ch; font-size: 1.15rem; color: var(--muted); }
+.hero .lede strong { color: var(--ink); }
+
+/* The two systems */
+.verdict { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+.verdict > div { padding: 20px 22px; border-radius: var(--r-l); display: grid; gap: 6px; align-content: start; min-width: 0; }
+.verdict .h { background: var(--hanna-soft); }
+.verdict .i { background: var(--isl-soft); }
+.verdict strong { font-family: var(--font-display); font-size: 1.25rem; }
+.verdict p { font-size: 0.95rem; }
+.verdict .src { font-size: 0.85rem; }
+
+/* Index */
+.index { margin-top: 36px; padding-block: 22px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 20px 32px; }
+.index > div { display: grid; gap: 6px; align-content: start; }
+.index ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.index a { color: var(--ink); font-weight: 600; text-decoration-color: var(--rule); }
+.index a:hover { text-decoration-color: currentColor; }
+
+/* Parts and ideas */
+section { padding-top: 72px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.section-intro { max-width: 64ch; color: var(--muted); }
+.part-head { display: grid; gap: 10px; padding-bottom: 8px; }
+.concept { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 28px; padding-block: 32px; border-top: 1px solid var(--rule); scroll-margin-top: 16px; }
+.concept-head { grid-column: 1 / -1; display: grid; gap: 8px; }
+.concept-head .def { max-width: 66ch; font-size: 1.05rem; color: var(--muted); }
+.cell { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.cell p, .cell li { font-size: 0.95rem; }
+.cell .src { font-size: 0.82rem; color: var(--muted); }
+.cell pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.cell.h pre { border-left: 3px solid var(--hanna); }
+.cell.i pre { border-left: 3px solid var(--isl-mark); }
+.lane-mini { display: flex; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; align-items: center; gap: 8px; color: var(--muted); }
+.dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.dot.h { background: var(--hanna); }
+.dot.i { background: var(--isl-mark); box-shadow: 0 0 0 2px var(--isl); }
+.sub { font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-top: 4px; }
+.span { grid-column: 1 / -1; min-width: 0; }
+.takeaway { grid-column: 1 / -1; font-size: 0.98rem; padding-top: 14px; border-top: 1px dashed var(--rule); max-width: 80ch; }
+.takeaway b { font-family: var(--font-display); font-weight: 700; }
+.pc { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.pc li { display: grid; grid-template-columns: 1.4em minmax(0, 1fr); }
+.pc li::before { font-weight: 700; }
+.pc.for li::before { content: "+"; color: var(--isl-mark); }
+.pc.against li::before { content: "–"; color: var(--warn); }
+
+pre {
+  margin: 0; background: var(--code-bg); color: var(--ink); padding: 14px 16px; border-radius: var(--r-m);
+  overflow-x: auto; line-height: 1.55; white-space: pre; tab-size: 2;
+}
+pre .c { color: var(--muted); font-style: italic; }
+pre .err { color: var(--warn); }
+pre mark, .hl { background: var(--hl); color: var(--hl-ink); border-radius: 3px; padding: 0 2px; }
+.files { list-style: none; margin: 0; padding: 0; font-family: var(--font-mono); font-size: 0.84rem; display: grid; gap: 2px; }
+.files li { display: flex; gap: 4px 12px; flex-wrap: wrap; }
+.files li span:first-child { min-width: 19ch; overflow-wrap: anywhere; }
+.files li span:last-child { color: var(--muted); font-family: var(--font-body); }
+
+/* Playground */
+.play-head { display: grid; gap: 6px; margin-top: 8px; }
+.play { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+.panel { background: var(--surface); border: 1px solid var(--panel-border); border-radius: var(--r-l); box-shadow: var(--panel-shadow); padding: 20px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.panel-head { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; }
+.control { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.control label { font-family: var(--font-mono); font-size: 0.85rem; }
+input[type="color"] { width: 48px; height: 36px; border: 1px solid var(--rule); border-radius: var(--r-m); background: var(--surface); padding: 2px; cursor: pointer; }
+.browser { border: 1px solid var(--rule); border-radius: var(--r-m); overflow: hidden; background: #ffffff; }
+.browser .bar { background: var(--code-bg); font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); padding: 6px 10px; border-bottom: 1px solid var(--rule); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.browser iframe { display: block; width: 100%; height: 150px; border: 0; background: #ffffff; }
+.status { font-size: 0.9rem; display: flex; align-items: center; gap: 8px; min-height: 1.6em; }
+.status .pill { font-size: 0.75rem; font-weight: 600; padding: 2px 10px; border-radius: var(--r-pill); background: var(--code-bg); color: var(--muted); }
+.status .pill.live { background: var(--hanna-soft); color: var(--hanna); }
+.status .pill.stale { background: var(--hl); color: var(--hl-ink); }
+.status .pill.built { background: var(--isl-soft); color: var(--ink); }
+.btn-run { font-family: var(--font-mono); font-size: 0.88rem; font-weight: 600; background: var(--btn-bg); color: var(--btn-ink); border: 0; border-radius: var(--btn-radius); box-shadow: var(--btn-shadow); padding: 9px 14px; cursor: pointer; }
+.btn-run:disabled { opacity: 0.4; cursor: default; }
+.note { font-size: 0.85rem; color: var(--muted); }
+
+/* Tutorial */
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; border-bottom: 1px solid var(--rule); }
+.tab { font: 600 1rem var(--font-display); text-transform: var(--tab-transform); background: none; border: 0; border-bottom: 3px solid transparent; color: var(--muted); padding: 10px 6px; margin-bottom: -1px; cursor: pointer; }
+.tab[aria-selected="true"] { color: var(--tab-ink); border-bottom-color: var(--tab-ink); }
+.ex { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+.ex-meta { display: flex; gap: 10px 24px; flex-wrap: wrap; font-size: 0.92rem; color: var(--muted); }
+.ex-meta b { color: var(--ink); font-weight: 600; }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; max-width: 820px; }
+.steps > li { counter-increment: step; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 6px 16px; }
+.steps > li::before { content: counter(step); font: 700 1rem var(--font-display); width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; grid-row: span 2; }
+.step-body { display: grid; gap: 10px; min-width: 0; }
+.step-body h3 { font-size: 1.1rem; }
+.code-wrap { position: relative; min-width: 0; }
+.code-wrap .file { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); padding: 0 0 4px 2px; }
+.copy { position: absolute; top: 30px; right: 8px; font: 600 0.75rem var(--font-body); background: var(--surface); color: var(--ink); border: 1px solid var(--rule); border-radius: var(--r-s); padding: 3px 9px; cursor: pointer; }
+.code-wrap.nofile .copy { top: 8px; }
+.code-wrap pre { padding-right: 76px; }
+.callout { border-left: 3px solid var(--isl-mark); background: var(--callout-bg, var(--surface)); padding: 12px 16px; border-radius: 0 var(--r-m) var(--r-m) 0; font-size: 0.95rem; }
+.callout.warn { border-left-color: var(--warn); }
+.check { font-size: 0.93rem; padding: 10px 14px; background: var(--hanna-soft); border-radius: var(--r-m); }
+.check b { font-weight: 600; }
+
+footer { padding-top: 72px; font-size: 0.85rem; color: var(--muted); display: grid; gap: 8px; max-width: 80ch; }
+
+/* Design-system switcher: each option sets data-ds on <html>, and one CSS rule redefines the page's tokens */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+.ds-bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--rule);
+  margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))) calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+  padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.ds-inner { max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.ds-label { font-size: 0.9rem; color: var(--muted); }
+.ds-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.ds-btn { font: var(--btn-weight) 0.9rem var(--font-body); text-transform: var(--btn-transform); letter-spacing: var(--btn-tracking); padding: 7px 14px; border-radius: var(--chip-radius, var(--btn-radius)); border: 1px solid var(--chip-border, var(--accent)); color: var(--chip-ink, var(--accent)); background: transparent; cursor: pointer; transition: background-color .15s, box-shadow .15s; }
+.ds-btn:hover { background: var(--code-bg); }
+.ds-btn[aria-pressed="true"] { background: var(--btn-bg); border-color: var(--btn-bg); color: var(--btn-ink); box-shadow: var(--btn-shadow); }
+.ds-note { margin-block: 0 28px; padding: 14px 18px; border: 1px dashed var(--accent); border-radius: var(--r-m); display: grid; gap: 8px; font-size: 0.92rem; max-width: 80ch; }
+.ds-note summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.ds-note pre { margin-top: 8px; max-height: 300px; overflow: auto; }
+
+/* ---- The page in Hanna (Reykjavík City). Light only, like Reykjavík's own sites. ---- */
+:root[data-ds="hanna"] {
+  --bg: #ffffff; --surface: #ffffff; --ink: #2a2b2c; --muted: #707275; --rule: #e3e5e7; --code-bg: #f1f2f3;
+  --hanna: #0367e1; --hanna-soft: #e0eefb; --isl: #00003c; --isl-mark: #00b39e; --isl-soft: #ccfaf4;
+  --hl: #fff5d5; --hl-ink: #2a2b2c; --warn: #d8222f;
+  --accent: #0367e1; --focus: #0367e1;
+  --font-display: Esja, Helvetica, Arial, sans-serif; --font-body: Esja, Helvetica, Arial, sans-serif;
+  --body-size: 16px; --heading-weight: 700; --h1-tracking: 0; --h2-tracking: 0;
+  --r-s: 3px; --r-m: 3px; --r-l: 3px;
+  --panel-shadow: 0 4px 8px 0 rgba(0, 0, 0, .08);
+  --btn-bg: #0367e1; --btn-ink: #ffffff; --btn-radius: .1875rem; --btn-weight: 700;
+  --btn-shadow: 0 12px 16px 0 rgba(0, 0, 0, .08); --tab-ink: #0367e1;
+  --bg-art: none;
+  color-scheme: light;
+}
+/* ---- The page in Ísland.is UI (Digital Iceland). Light only, like the Ísland.is website. ---- */
+:root[data-ds="island"] {
+  --bg: #ffffff; --surface: #ffffff; --ink: #00003c; --muted: #33335a; --rule: #ccccd8; --code-bg: #f2f7ff;
+  --hanna: #0367e1; --hanna-soft: #e3eefc; --isl: #00003c; --isl-mark: #00b39e; --isl-soft: #ccfaf4;
+  --hl: #fff9c2; --hl-ink: #00003c; --warn: #b30038;
+  --accent: #0061ff; --focus: #00e4ca;
+  --font-display: "IBM Plex Sans", "San Francisco", "Segoe UI", sans-serif; --font-body: "IBM Plex Sans", "San Francisco", "Segoe UI", sans-serif;
+  --body-size: 18px; --heading-weight: 600; --h1-tracking: 0; --h2-tracking: 0;
+  --r-s: 4px; --r-m: 8px; --r-l: 8px;
+  --btn-bg: #0061ff; --btn-ink: #ffffff; --btn-radius: 8px; --btn-weight: 600; --tab-ink: #0061ff;
+  --bg-art: none;
+  color-scheme: light;
+}
+
+@media (max-width: 860px) {
+  .concept, .verdict, .play { grid-template-columns: minmax(0, 1fr); }
+  .index { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .browser iframe { transition: opacity .2s; }
+  html { scroll-behavior: smooth; }
+}
+</style>
+
+<div class="ds-bar" role="group" aria-labelledby="ds-label">
+  <div class="ds-inner">
+    <span class="ds-label" id="ds-label">Practise what we preach. View this page in:</span>
+    <div class="ds-options">
+      <button type="button" class="ds-btn" data-ds="" aria-pressed="true">Vefskólinn</button>
+      <button type="button" class="ds-btn" data-ds="hanna" aria-pressed="false">Hanna</button>
+      <button type="button" class="ds-btn" data-ds="island" aria-pressed="false">Ísland.is</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">Vefskólinn · Component libraries</span>
+    <h1>One piece at a time</h1>
+    <p class="lede">How do you eat an elephant? One piece at a time. Component libraries are how web teams do that with big products. This page goes through the ideas behind them one by one, and shows each idea in two Icelandic design systems: <strong>Hanna</strong> from Reykjavík City and <strong>Ísland.is</strong> from Digital Iceland. They solve the same problems in opposite ways, which makes each idea easier to see.</p>
+  </header>
+
+  <div class="ds-note" id="ds-note" aria-live="polite" hidden>
+    <p id="ds-text"></p>
+    <p>Nothing in the HTML changed. The button sets one attribute on <code>&lt;html&gt;</code>, and one CSS rule redefines <b id="ds-count">0</b> of the page's variables.</p>
+    <details>
+      <summary>See the CSS</summary>
+<pre id="ds-css"></pre>
+    </details>
+  </div>
+
+  <div class="verdict">
+    <div class="h">
+      <span class="lane-mini"><span class="dot h"></span>Hanna · Reykjavík City</span>
+      <strong>The CSS is the product.</strong>
+      <p>You write HTML with Hanna's class names and link one stylesheet. Any website can use it.</p>
+      <a class="src" href="https://hanna-docs.reykjavik.is/html/latest" target="_blank" rel="noopener">Storybook: hanna-docs.reykjavik.is ↗</a>
+    </div>
+    <div class="i">
+      <span class="lane-mini"><span class="dot i"></span>Ísland.is UI · Digital Iceland</span>
+      <strong>The React component is the product.</strong>
+      <p>You use <code>&lt;Button&gt;</code>, and the CSS is an internal detail. It's built for apps inside the Ísland.is codebase.</p>
+      <a class="src" href="https://ui.devland.is" target="_blank" rel="noopener">Storybook: ui.devland.is ↗</a>
+    </div>
+  </div>
+
+  <nav class="index" aria-label="Ideas on this page">
+    <div>
+      <span class="eyebrow">Part 1 · The problems</span>
+      <ul>
+        <li><a href="#dividing">Dividing the work</a></li>
+        <li><a href="#start">Where to start</a></li>
+        <li><a href="#one-place">Change it in one place</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="eyebrow">Part 2 · The ideas underneath</span>
+      <ul>
+        <li><a href="#abstraction">Abstraction</a></li>
+        <li><a href="#modularity">Modularity</a></li>
+        <li><a href="#dependencies">Dependencies</a></li>
+        <li><a href="#decoupling">Decoupling</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="eyebrow">Part 3 · The arguments</span>
+      <ul>
+        <li><a href="#debate">Runtime or build time</a></li>
+        <li><a href="#specific">Specific to your product</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="eyebrow">Then</span>
+      <ul>
+        <li><a href="#exercises">Try it yourself</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================= PART 1 ================= -->
+  <section aria-labelledby="p1-h">
+    <div class="part-head">
+      <span class="eyebrow">Part 1</span>
+      <h2 id="p1-h">The problems it solves</h2>
+      <p class="section-intro">You probably know these from earlier group projects. Here is how a component library deals with each one.</p>
+    </div>
+
+    <!-- Dividing the work -->
+    <article class="concept" id="dividing" aria-labelledby="c-dividing">
+      <div class="concept-head">
+        <h3 id="c-dividing">Dividing the work</h3>
+        <p class="def">Split a big product into small parts with clear borders. Then several people can work at the same time without getting in each other's way.</p>
+      </div>
+      <div class="cell h">
+        <span class="lane-mini"><span class="dot h"></span>Hanna</span>
+<pre>modules/hanna-css/src/css/
+  -basics.css.ts
+  Alert.css.ts
+  ButtonPrimary.css.ts
+  ButtonSecondary.css.ts
+  <span class="c">… over 100 more</span>
+
+modules/hanna-react/src/
+  ButtonPrimary.tsx
+  ButtonSecondary.tsx
+  <span class="c">…</span></pre>
+        <p>Every component has its own CSS source file, and the React package has a matching component file. Changing the Alert means opening one file.</p>
+        <a class="src" href="https://github.com/rvk-utd/hanna/tree/main/modules/hanna-css/src/css" target="_blank" rel="noopener">github.com/rvk-utd/hanna ↗</a>
+      </div>
+      <div class="cell i">
+        <span class="lane-mini"><span class="dot i"></span>Ísland.is UI</span>
+        <p>Every component is a folder with four files:</p>
+        <ul class="files">
+          <li><span>Button/Button.tsx</span><span>the React component</span></li>
+          <li><span>Button/Button.css.ts</span><span>the styles</span></li>
+          <li><span>Button/Button.stories.tsx</span><span>what Storybook shows</span></li>
+          <li><span>Button/Button.spec.tsx</span><span>tests</span></li>
+        </ul>
+        <p>One person can own the <code>Button</code> folder, write its story and its tests, and never touch anyone else's code.</p>
+        <a class="src" href="https://github.com/island-is/island.is/tree/main/libs/island-ui/core/src/lib/Button" target="_blank" rel="noopener">github.com/island-is/island.is ↗</a>
+      </div>
+      <p class="takeaway"><b>In your project:</b> split the work by component, not by page. “You make Button and Card, I make Header” works. “You make the front page, I make the about page” ends with two different buttons.</p>
+    </article>
+
+    <!-- Where to start -->
+    <article class="concept" id="start" aria-labelledby="c-start">
+      <div class="concept-head">
+        <h3 id="c-start">Where to start, one piece at a time</h3>
+        <p class="def">Build from the bottom up. First the tokens (colours, spacing, type), then the smallest components, then bigger components made from the small ones. Storybook lets you work on one piece at a time, with the rest of the product out of the way.</p>
+      </div>
+      <div class="cell h">
+        <span class="lane-mini"><span class="dot h"></span>Hanna</span>
+<pre>@import "/css/v0.8/-basics.css";       <span class="c">/* 1. tokens */</span>
+@import "/css/v0.8/ButtonBar.css";     <span class="c">/* 2. small pieces */</span>
+@import "/css/v0.8/Icon.css";
+@import "/css/v0.8/ButtonPrimary.css"; <span class="c">/* 3. the button */</span></pre>
+        <p>This is what styles.reykjavik.is sends back when you ask for one button. The tokens come first, then the smaller pieces the button is built from, then the button itself.</p>
+      </div>
+      <div class="cell i">
+        <span class="lane-mini"><span class="dot i"></span>Ísland.is UI</span>
+<pre><span class="c">// libs/island-ui/core/src/lib/Button/Button.tsx</span>
+import { Box } from '../Box/Box'
+import * as styles from './Button.css'
+import { Icon } from '../IconRC/Icon'</pre>
+        <p>The Button is built from smaller components: <code>Box</code> for layout and <code>Icon</code> for icons. Its styles read from a separate <code>theme</code> library that holds the tokens. <code>Button.stories.tsx</code> shows the Button on its own in Storybook, with no page around it.</p>
+      </div>
+      <p class="takeaway"><b>In your project:</b> start with the tokens and the smallest component. You can't build a Card before you have a colour palette and a Button.</p>
+    </article>
+
+    <!-- Change it in one place -->
+    <article class="concept" id="one-place" aria-labelledby="c-one-place">
+      <div class="concept-head">
+        <h3 id="c-one-place">Consistency: change it in one place</h3>
+        <p class="def">When every component takes its colours, spacing and fonts from the same set of tokens, the product looks consistent. One change to a token updates every component that uses it.</p>
+      </div>
+      <div class="cell h">
+        <span class="lane-mini"><span class="dot h"></span>Hanna</span>
+<pre><span class="c">/* -basics.css */</span>
+:root {
+  --color-esja-100:     #a5bbfd;
+  --color-faxafloi-100: #0367e1;
+  --color-heidmork-100: #d8222f;
+  --font-family: Esja, Helvetica, Arial, sans-serif;
+}
+
+<span class="c">/* ButtonPrimary.css */</span>
+--Button--color: <mark>var(--color-faxafloi-100)</mark>;</pre>
+        <p>CSS variables. The primary button, the secondary button, links and the main menu all read <code>--color-faxafloi-100</code>.</p>
+      </div>
+      <div class="cell i">
+        <span class="lane-mini"><span class="dot i"></span>Ísland.is UI</span>
+<pre><span class="c">// libs/island-ui/theme/src/lib/colors/colors.ts</span>
+export const blue400 = '#0061ff'
+export const dark400 = '#00003c'
+export const mint400 = '#00e4ca'
+
+<span class="c">// Button.css.ts</span>
+backgroundColor: <mark>theme.color.blue400</mark>,</pre>
+        <p>TypeScript constants in the <code>theme</code> library. Each component's <code>.css.ts</code> file imports them from there.</p>
+      </div>
+
+      <div class="span play-head" id="try-it">
+        <h4 id="play-h">Try it: change the main colour</h4>
+        <p class="note">Both systems change in one place. The difference is <em>when</em> the change reaches the browser. On the left is Hanna's real CSS from styles.reykjavik.is. On the right is a simulation of the Ísland.is setup.</p>
+      </div>
+      <div class="span play">
+        <div class="panel">
+          <div class="panel-head"><span class="dot h"></span>Hanna: a CSS variable</div>
+          <div class="control">
+            <input type="color" id="hanna-color" value="#0367e1" aria-describedby="hanna-status">
+            <label for="hanna-color">--color-faxafloi-100</label>
+          </div>
+          <div class="browser">
+            <div class="bar">styles.reykjavik.is/bundle/v0.8?m=-basics,ButtonPrimary,ButtonSecondary</div>
+            <iframe id="hanna-frame" title="Hanna buttons" loading="lazy"></iframe>
+          </div>
+          <div class="status" id="hanna-status"><span class="pill live">Live</span><span>The browser updates immediately. No build step.</span></div>
+<pre id="hanna-code">:root {
+  --color-faxafloi-100: #0367e1;
+}</pre>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><span class="dot i"></span>Ísland.is setup: a TS constant</div>
+          <div class="control">
+            <input type="color" id="isl-color" value="#0061ff" aria-describedby="isl-status">
+            <label for="isl-color">theme.color.blue400</label>
+            <button class="btn-run" id="isl-build" type="button" disabled>npm run build</button>
+          </div>
+          <div class="browser">
+            <div class="bar">localhost:4173 · dist/assets/index.css</div>
+            <iframe id="isl-frame" title="Buttons in the Ísland.is setup" loading="lazy"></iframe>
+          </div>
+          <div class="status" id="isl-status"><span class="pill built">Built</span><span>The CSS matches theme.ts.</span></div>
+<pre id="isl-code">._7sc4nl1 { background-color: #0061ff }</pre>
+          <p class="note">Simulation: the hash here is computed in your browser, not by vanilla-extract. The buttons come from the replica in Exercise 2.</p>
+        </div>
+      </div>
+      <p class="takeaway"><b>In your project:</b> never type a colour value straight into a component. Give it a name once, and use the name everywhere.</p>
+    </article>
+  </section>
+
+  <!-- ================= PART 2 ================= -->
+  <section aria-labelledby="p2-h">
+    <div class="part-head">
+      <span class="eyebrow">Part 2</span>
+      <h2 id="p2-h">The programming ideas underneath</h2>
+      <p class="section-intro">These are general programming ideas, not just CSS ideas. Design systems make them easy to see, because the result shows up on screen.</p>
+    </div>
+
+    <!-- Abstraction -->
+    <article class="concept" id="abstraction" aria-labelledby="c-abstraction">
+      <div class="concept-head">
+        <h3 id="c-abstraction">Abstraction</h3>
+        <p class="def">Hiding the details behind a simple surface, so you can use something without knowing how it works inside.</p>
+      </div>
+      <div class="cell h">
+        <span class="lane-mini"><span class="dot h"></span>Hanna</span>
+        <span class="sub">What you write (and all Storybook shows)</span>
+<pre>&lt;button class="ButtonPrimary"&gt;
+  Submit application
+&lt;/button&gt;</pre>
+        <span class="sub">What's hidden underneath</span>
+<pre>&lt;link rel="stylesheet" href=
+"<mark>https://styles.reykjavik.is/bundle/v0.8?m=-basics,ButtonPrimary</mark>"&gt;
+
+<span class="c">// modules/hanna-css/src/css/ButtonPrimary.css.ts</span>
+import { css } from 'es-in-css';
+
+export default css`
+  ${DEPS('Icon', 'ButtonBar')}
+  .ButtonPrimary {
+    ${ButtonStyle()};
+  }
+`;</pre>
+        <p>The stylesheet link isn't in Storybook. Behind it is TypeScript that returns a string of CSS. A build step turns it into plain <code>.css</code> files and puts them on the city's style server.</p>
+      </div>
+      <div class="cell i">
+        <span class="lane-mini"><span class="dot i"></span>Ísland.is UI</span>
+        <span class="sub">What you write (and all Storybook shows)</span>
+<pre>&lt;Button variant="primary"&gt;
+  Submit application
+&lt;/Button&gt;</pre>
+        <span class="sub">What's hidden underneath</span>
+<pre>import { Button } from '<mark>@island.is/island-ui/core</mark>'
+
+<span class="c">// tsconfig.base.json (at the repo root)</span>
+"paths": {
+  "@island.is/island-ui/core":
+    ["<mark>libs/island-ui/core/src/index.ts</mark>"]
+}
+
+<span class="c">// libs/island-ui/core/src/lib/Button/Button.css.ts</span>
+const buttonBase = {
+  fontWeight: theme.typography.semiBold,
+  borderRadius: 8,
+}</pre>
+        <p><code>@island.is/island-ui/core</code> looks like an npm package, but it's a <strong>path alias</strong> that points to a folder in the same repo. The styles are JavaScript objects that <strong>vanilla-extract</strong> turns into CSS when the app is built.</p>
+      </div>
+      <div class="span callout">When you first open these Storybooks, the CSS and the import statements seem to be missing. That's abstraction doing its job. The cost shows up when something breaks, because then you have to dig down through the layers. The exercises below practise exactly that.</div>
+      <p class="takeaway"><b>In your project:</b> a good component hides its insides. Someone using your Card should only need to know its props, not how you built it.</p>
+    </article>
+
+    <!-- Modularity -->
+    <article class="concept" id="modularity" aria-labelledby="c-modularity">
+      <div class="concept-head">
+        <h3 id="c-modularity">Modularity</h3>
+        <p class="def">The system is made of separate modules with clear borders, and you take only the ones you need.</p>
+      </div>
+      <div class="cell h">
+        <span class="lane-mini"><span class="dot h"></span>Hanna</span>
+<pre>&lt;link rel="stylesheet" href=
+"https://styles.reykjavik.is/bundle/v0.8?<mark>m=-basics,ButtonPrimary,Alert</mark>"&gt;</pre>
+        <p>You name the modules you want in <code>m=</code>. Each name is one CSS file on the server. A page that only needs a button and an alert loads only those.</p>
+      </div>
+      <div class="cell i">
+        <span class="lane-mini"><span class="dot i"></span>Ísland.is UI</span>
+<pre>import { Button, Box, Stack } from '@island.is/island-ui/core'
+
+<span class="c">// libs/island-ui/core/src/index.ts</span>
+export * from './lib/Box/Box'
+export * from './lib/Stack/Stack'
+<span class="c">// … one line per component</span></pre>
+        <p>One entry file re-exports every component. You pick modules with named imports, and the build tool follows those imports to decide what ends up in your app.</p>
+      </div>
+      <p class="takeaway"><b>In your project:</b> each component should work on its own. If you can't use the Card without also bringing in the whole front page, it isn't a module yet.</p>
+    </article>
+
+    <!-- Dependencies -->
+    <article class="concept" id="dependencies" aria-labelledby="c-dependencies">
+      <div class="concept-head">
+        <h3 id="c-dependencies">Dependencies</h3>
+        <p class="def">A dependency is something a module needs in order to work. You can't avoid them. What matters is whether they are written down and handled for you, or hidden until something breaks.</p>
+      </div>
+      <div class="cell h">
+        <span class="lane-mini"><span class="dot h"></span>Hanna</span>
+        <span class="sub">Inside the system: declared and automatic</span>
+<pre><span class="c">// in the source</span>
+${DEPS('Icon', 'ButtonBar')}
+
+<span class="c">/* in the compiled CSS on the server */</span>
+/*!@deps Icon, ButtonBar */.ButtonPrimary{…}</pre>
+        <p>The button says what it needs, and the style server adds those files for you. You asked for <code>ButtonPrimary</code> and got <code>Icon</code> and <code>ButtonBar</code> too.</p>
+        <span class="sub">Outside the system: a version limit</span>
+<pre>$ npm install @reykjavik/hanna-react
+<span class="err">npm error ERESOLVE unable to resolve dependency tree</span>
+npm error Found: react@19.3.1
+npm error Could not resolve dependency:
+npm error peer react@"<mark>&gt;=16.8 &lt;19</mark>" from @reykjavik/hanna-react@0.10.174</pre>
+        <p>The React package only accepts React 16.8 to 18. A new Vite project comes with React 19, so npm refuses to install it (tested 21 October 2026). You would have to move the project to React 18, or force the install with <code>--legacy-peer-deps</code> and hope nothing breaks.</p>
+      </div>
+      <div class="cell i">
+        <span class="lane-mini"><span class="dot i"></span>Ísland.is UI</span>
+        <span class="sub">Inside the repo: one hidden dependency</span>
+<pre><span class="c">// libs/island-ui/core/src/index.ts (the first lines)</span>
+<span class="c">// Note: We use build-time styles and need to override</span>
+<span class="c">// global/box styles with component styles on the same DOM</span>
+<span class="c">// element. This means that the order of styles matters. […]</span>
+<span class="c">// in practice, <mark>the order of imports in this file can</mark></span>
+<span class="c"><mark>// affect style ordering.</mark></span></pre>
+        <p>Inside the Ísland.is repo every app shares the same setup, so most dependencies are handled for you. But this comment describes one you can't see in the code: moving an import line up or down can change which styles win.</p>
+        <span class="sub">Outside the repo: too much to carry</span>
+        <p>In 2021 Digital Iceland published an alpha of the library on npm as <code>@island.is/ui</code>. Their own setup guide asked you to install all of this first:</p>
+<pre>yarn add @rehooks/component-size animejs classnames date-fns downshift hypher lodash markdown-to-jsx react react-animate-height react-datepicker react-dropzone react-keyed-flatten-children react-select react-toastify react-use reakit <mark>treat@1.6.0</mark> -E</pre>
+        <p>You also needed exact versions of Next.js 10 and webpack 4. With Create React App, you had to eject it and turn off TypeScript's strict mode. The library never left alpha. The last version is <code>0.0.0-alpha.5</code>.</p>
+        <a class="src" href="https://github.com/island-is/island-ui-next-example" target="_blank" rel="noopener">github.com/island-is/island-ui-next-example ↗</a>
+      </div>
+      <p class="takeaway"><b>In your project:</b> every dependency is a promise you have to keep. Before you make a component depend on something, ask whether it could live without it.</p>
+    </article>
+
+    <!-- Decoupling -->
+    <article class="concept" id="decoupling" aria-labelledby="c-decoupling">
+      <div class="concept-head">
+        <h3 id="c-decoupling">Decoupling</h3>
+        <p class="def">Keeping parts independent of each other, so you can change or replace one without breaking the others.</p>
+      </div>
+      <div class="cell h">
+        <span class="lane-mini"><span class="dot h"></span>Hanna</span>
+<pre><span class="c">&lt;!-- plain HTML --&gt;</span>
+&lt;button class="ButtonPrimary"&gt;Submit application&lt;/button&gt;
+
+<span class="c">// React, with @reykjavik/hanna-react</span>
+&lt;ButtonPrimary&gt;Submit application&lt;/ButtonPrimary&gt;
+
+<span class="c">// … and inside hanna-react/src/ButtonPrimary.tsx</span>
+export const ButtonPrimary = (props) =&gt; (
+  &lt;Button bem="<mark>ButtonPrimary</mark>" {...props} /&gt;
+);</pre>
+        <p>The CSS doesn't know React exists. The React component's main job is to put the right class name on a button. The same CSS also serves plain HTML and Twig templates. If the city replaced React tomorrow, the styles would still work.</p>
+      </div>
+      <div class="cell i">
+        <span class="lane-mini"><span class="dot i"></span>Ísland.is UI</span>
+        <p>The React components, the vanilla-extract styles, the theme and the repo's build setup all depend on each other. That gives the team type checking and one consistent setup. It's also why the library is so hard to use outside the repo, as you saw under Dependencies.</p>
+        <p>The design itself is decoupled from the code in one way: the <a href="https://www.figma.com/community/file/900739909110806042" target="_blank" rel="noopener">Figma file</a> is open to everyone, so designers can use the system even though outside developers can't install it.</p>
+      </div>
+      <p class="takeaway"><b>In your project:</b> tight coupling isn't always wrong. Ísland.is chose it on purpose. But know what each part depends on, so you know what will break when you change it.</p>
+    </article>
+  </section>
+
+  <!-- ================= PART 3 ================= -->
+  <section aria-labelledby="p3-h">
+    <div class="part-head">
+      <span class="eyebrow">Part 3</span>
+      <h2 id="p3-h">Why people argue about it</h2>
+      <p class="section-intro">Component libraries are full of choices that good teams make differently. Hanna and Ísland.is land on opposite sides of the biggest one.</p>
+    </div>
+
+    <!-- Runtime or build time -->
+    <article class="concept" id="debate" aria-labelledby="c-debate">
+      <div class="concept-head">
+        <h3 id="c-debate">Runtime or build time</h3>
+        <p class="def">Should styles be plain CSS that the browser can still change while the page runs? Or should JavaScript generate them when the app is built? This is the long-running argument about CSS-in-JS. Tailwind, BEM and CSS Modules are other positions in the same debate.</p>
+      </div>
+      <div class="cell h">
+        <span class="lane-mini"><span class="dot h"></span>Hanna · runtime CSS variables</span>
+        <span class="sub">What the browser receives</span>
+<pre>.ButtonPrimary {
+  --Button--color: <mark>var(--color-faxafloi-100)</mark>;
+  --Button--textColor: var(--color-suld-0);
+  background-color: var(--Button--backgroundColor);
+  border-radius: .1875rem;
+  …
+}</pre>
+        <ul class="pc for">
+          <li>You can change a token in the browser. You did it in the colour demo above.</li>
+          <li>Class names are readable in DevTools.</li>
+          <li>Works with any framework, or none.</li>
+        </ul>
+        <ul class="pc against">
+          <li>Class names are global, so two components can clash.</li>
+          <li>A typo in a class name fails silently. The button just isn't styled.</li>
+        </ul>
+      </div>
+      <div class="cell i">
+        <span class="lane-mini"><span class="dot i"></span>Ísland.is · build-time CSS-in-JS</span>
+        <span class="sub">What the browser receives</span>
+<pre><span class="c">/* npm run build */</span>
+._7sc4nl0 { border-radius: 8px; font-weight: 600; … }
+._7sc4nl1 { color: #fff; background-color: <mark>#0061ff</mark> }
+
+<span class="c">&lt;!-- npm run dev --&gt;</span>
+&lt;button class="Button_variants_primary__7sc4nl1
+               Button_base__7sc4nl0"&gt;</pre>
+        <ul class="pc for">
+          <li>TypeScript catches a misspelled token. <code>theme.color.blu400</code> is an error before you even run the code.</li>
+          <li>Hashed class names never clash.</li>
+        </ul>
+        <ul class="pc against">
+          <li>Changing a colour means building the app again.</li>
+          <li>DevTools shows <code>._7sc4nl1</code>, not a name you recognise.</li>
+          <li>Tied to one build setup.</li>
+        </ul>
+        <p class="note">This output comes from the replica in Exercise 2. Ísland.is produces the same kind of CSS.</p>
+      </div>
+      <p class="takeaway"><b>In your project:</b> neither side is simply right. Each team picked what fits its product. Hanna has to serve many city websites built with different tools. Ísland.is serves apps inside one repo, built by one organisation.</p>
+    </article>
+
+    <!-- Specific to your product -->
+    <article class="concept" id="specific" aria-labelledby="c-specific">
+      <div class="concept-head">
+        <h3 id="c-specific">Specific to your product</h3>
+        <p class="def">Generic component libraries and AI tools give you generic components. A design system holds the things that are only true for your product.</p>
+      </div>
+      <div class="cell h">
+        <span class="lane-mini"><span class="dot h"></span>Hanna</span>
+        <p>The colours are named after places and weather around Reykjavík: Esja (the mountain), Faxaflói (the bay), Heiðmörk (the forest), Elliðaárdalur (the valley), Bláfjöll (the ski area), Rökkur (twilight) and Súld (drizzle). The typeface is called Esja too.</p>
+        <p>Hanna also has named colour themes: <em>trustworthy</em>, <em>dependable</em>, <em>friendly</em>, <em>lively</em> and <em>colorful</em>.</p>
+<pre>[data-color-theme="friendly"] {
+  --theme-color-primary:   var(--color-ellidaardalur-100);
+  --theme-color-secondary: var(--color-rokkur-100);
+}</pre>
+      </div>
+      <div class="cell i">
+        <span class="lane-mini"><span class="dot i"></span>Ísland.is UI</span>
+        <p>The Application System section of the Storybook has components that no generic library would include, built for Icelandic government forms:</p>
+        <ul class="files">
+          <li><span>NationalIdWithNameFormField</span><span>a kennitala field paired with the person's name</span></li>
+          <li><span>PaymentChargeOverview</span><span>what an application will cost</span></li>
+          <li><span>FileUploadFormField</span><span>attachments for an application</span></li>
+        </ul>
+      </div>
+      <div class="span callout">An AI assistant can write a button in seconds. It can't know that your button should be Faxaflói blue, or that a government form needs a kennitala field. Knowing the product, and turning generic code into code for that product, stays your job. One popular library, shadcn/ui, takes this idea furthest: you don't install it as a dependency. You copy its components into your own project and change them to fit.</div>
+      <p class="takeaway"><b>In your project:</b> before you ask an AI for a component, write down your tokens and the rules your product follows. Then the generated code has something specific to follow.</p>
+    </article>
+  </section>
+
+  <!-- Tutorial -->
+  <section id="exercises" aria-labelledby="tut-h">
+    <span class="eyebrow">Try it yourself</span>
+    <h2 id="tut-h">Exercises</h2>
+    <p class="section-intro">Exercise 1 takes five minutes and only needs a browser. It covers modularity, dependencies and changing a token in one place. Exercise 2 rebuilds the Ísland.is setup in a small Vite project, so you can see the hidden layers from the inside. Exercise 3 is optional and runs the real Ísland.is Storybook.</p>
+
+    <div class="tabs" role="tablist" aria-label="Exercises">
+      <button class="tab" role="tab" id="tab-1" aria-controls="ex-1" aria-selected="true" type="button">1 · Hanna</button>
+      <button class="tab" role="tab" id="tab-2" aria-controls="ex-2" aria-selected="false" type="button" tabindex="-1">2 · The Ísland.is setup</button>
+      <button class="tab" role="tab" id="tab-3" aria-controls="ex-3" aria-selected="false" type="button" tabindex="-1">3 · The real Storybook</button>
+    </div>
+
+    <!-- Exercise 1 -->
+    <div class="ex" role="tabpanel" id="ex-1" aria-labelledby="tab-1">
+      <div class="ex-meta"><span><b>Time:</b> 5–15 min</span><span><b>You need:</b> a browser and a text editor</span><span><b>Goal:</b> find the CSS that Storybook hides</span></div>
+      <ol class="steps">
+        <li><div class="step-body">
+          <h3>Create <code>index.html</code></h3>
+          <p>A new folder with one file. Notice the <code>&lt;link&gt;</code> tag. That's all it takes.</p>
+          <div class="code-wrap"><div class="file">index.html</div><button class="copy" type="button">Copy</button>
+<pre>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Hanna test&lt;/title&gt;
+  &lt;link rel="stylesheet"
+        href="https://styles.reykjavik.is/bundle/v0.8?m=-basics,ButtonPrimary,ButtonSecondary,Alert"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main style="padding: 2rem; display: grid; gap: 1.5rem; max-width: 40rem"&gt;
+    &lt;p&gt;This page only uses HTML and classes. All the CSS comes from styles.reykjavik.is.&lt;/p&gt;
+
+    &lt;div class="Alert Alert--success"&gt;
+      &lt;p&gt;Your application has been submitted.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div style="display: flex; gap: 1rem; flex-wrap: wrap"&gt;
+      &lt;button class="ButtonPrimary"&gt;Submit application&lt;/button&gt;
+      &lt;button class="ButtonSecondary"&gt;Cancel&lt;/button&gt;
+      &lt;button class="ButtonPrimary ButtonPrimary--destructive"&gt;Delete&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Open the file in a browser</h3>
+          <p>Double-click it or drag it into a browser window. No server, no <code>npm install</code>.</p>
+          <p class="check"><b>You should see:</b> a green notification box with a check mark, and three buttons: blue, white with a blue outline, and red.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Find the CSS in the Network tab</h3>
+          <p>Open DevTools (<code>F12</code>), go to <b>Network</b> and reload. You'll see <code>bundle/v0.8?m=…</code> followed by one <code>.css</code> file per component. Click <code>ButtonPrimary.css</code> and look at the <b>Response</b>.</p>
+          <p>Notice that the URL also loaded <code>Icon.css</code> and <code>ButtonBar.css</code>, which you didn't ask for. The system knows what each component depends on. That's the dependency handling from <a href="#dependencies">Dependencies</a> at work.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Trace the colour back to its token</h3>
+          <p>Right-click the blue button, choose <b>Inspect</b> and look at <b>Styles</b>. You'll find <code>--Button--color: var(--color-faxafloi-100)</code>. Click the variable to jump to its definition in <code>-basics.css</code>. Change the value right there in DevTools.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Override the token in your own CSS</h3>
+          <p>Add this after the <code>&lt;link&gt;</code> tag and reload:</p>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>&lt;style&gt;
+  :root {
+    --color-faxafloi-100: #7c3aed;
+    --color-faxafloi-150: #5b21b6;
+  }
+&lt;/style&gt;</pre></div>
+          <p class="check"><b>You should see:</b> the primary button turns purple, and so does the outline button. One change, and every component that uses the token follows. <code>-150</code> is the darker shade used on hover.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Add a new component from Storybook</h3>
+          <p>Open <a href="https://hanna-docs.reykjavik.is/html/latest" target="_blank" rel="noopener">Hanna's Storybook</a>, pick a component and open the <b>HTML</b> tab in the panel at the bottom. Copy the HTML into your page.</p>
+          <p>Then add the component's name to <code>m=</code> in the URL, for example <code>…,Alert,TextInput</code>. The names match the file names in <a href="https://github.com/rvk-utd/hanna/tree/main/modules/hanna-css/src/css" target="_blank" rel="noopener">hanna-css/src/css</a>.</p>
+          <div class="callout">If a component looks unstyled, its name is missing from <code>m=</code>. Interactive components like Carousel and Modal also need JavaScript to work, and that doesn't come with the CSS.</div>
+        </div></li>
+      </ol>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="ex" role="tabpanel" id="ex-2" aria-labelledby="tab-2" hidden>
+      <div class="ex-meta"><span><b>Time:</b> 30–45 min</span><span><b>You need:</b> Node 22 or newer, npm</span><span><b>Goal:</b> understand path aliases and vanilla-extract</span></div>
+      <div class="callout">The Ísland.is component library can't be installed in a usable form (see <a href="#dependencies">Dependencies</a>). Instead we build a small replica with <strong>the same folder structure, the same tools and the same colours</strong>. Once you're done, you can read the real code on GitHub and recognise every file.</div>
+      <ol class="steps">
+        <li><div class="step-body">
+          <h3>Create a Vite project and install vanilla-extract</h3>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>npm create vite@latest mini-island -- --template react-ts --no-interactive
+cd mini-island
+npm install
+npm install -D @vanilla-extract/css @vanilla-extract/vite-plugin</pre></div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Create the folders</h3>
+          <p>The same split as <code>libs/island-ui</code> in Ísland.is: <code>theme</code> holds the tokens and <code>core</code> holds the components.</p>
+<pre>src/
+├── App.tsx
+├── main.tsx
+└── ui/
+    ├── theme/
+    │   └── index.ts
+    └── core/
+        ├── index.ts
+        └── lib/
+            └── Button/
+                ├── Button.tsx
+                └── Button.css.ts</pre>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Write the tokens</h3>
+          <p>A plain TypeScript object. The values come from the Ísland.is theme.</p>
+          <div class="code-wrap"><div class="file">src/ui/theme/index.ts</div><button class="copy" type="button">Copy</button>
+<pre>// Design tokens. Values taken from the Ísland.is theme.
+export const theme = {
+  color: {
+    blue400: '#0061ff',
+    blue600: '#0044b3',
+    dark400: '#00003c',
+    mint400: '#00e4ca',
+    red600: '#b30038',
+    white: '#ffffff',
+  },
+  typography: {
+    semiBold: 600,
+  },
+  spacing: {
+    1: 8,
+    2: 16,
+    3: 24,
+  },
+}</pre></div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Write the styles with vanilla-extract</h3>
+          <p>The file <strong>must</strong> end in <code>.css.ts</code>. That's how vanilla-extract knows it should become CSS. <code>style()</code> creates one class, and <code>styleVariants()</code> creates one class per variant.</p>
+          <div class="code-wrap"><div class="file">src/ui/core/lib/Button/Button.css.ts</div><button class="copy" type="button">Copy</button>
+<pre>import { style, styleVariants } from '@vanilla-extract/css'
+import { theme } from '@mini/ui/theme'
+
+const base = style({
+  fontFamily: 'inherit',
+  fontSize: 16,
+  fontWeight: theme.typography.semiBold,
+  border: 0,
+  borderRadius: 8,
+  padding: `${theme.spacing[2]}px ${theme.spacing[3]}px`,
+  cursor: 'pointer',
+  transition: 'box-shadow .25s, background-color .25s',
+  ':focus-visible': {
+    outline: 'none',
+    color: theme.color.dark400,
+    backgroundColor: theme.color.mint400,
+  },
+})
+
+export const variants = styleVariants({
+  primary: [
+    base,
+    {
+      backgroundColor: theme.color.blue400,
+      color: theme.color.white,
+      ':hover': { backgroundColor: theme.color.blue600 },
+    },
+  ],
+  ghost: [
+    base,
+    {
+      backgroundColor: 'transparent',
+      color: theme.color.blue400,
+      boxShadow: `inset 0 0 0 1px ${theme.color.blue400}`,
+    },
+  ],
+  destructive: [
+    base,
+    {
+      backgroundColor: theme.color.red600,
+      color: theme.color.white,
+    },
+  ],
+})</pre></div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Write the component and the export file</h3>
+          <p>Notice <code>import * as styles from './Button.css'</code>. It's the same line as in the real Ísland.is <code>Button.tsx</code>. The component picks a class based on <code>variant</code>.</p>
+          <div class="code-wrap"><div class="file">src/ui/core/lib/Button/Button.tsx</div><button class="copy" type="button">Copy</button>
+<pre>import type { ButtonHTMLAttributes } from 'react'
+import * as styles from './Button.css'
+
+type ButtonProps = ButtonHTMLAttributes&lt;HTMLButtonElement&gt; &amp; {
+  variant?: keyof typeof styles.variants
+}
+
+export function Button({ variant = 'primary', className, ...props }: ButtonProps) {
+  const classes = [styles.variants[variant], className].filter(Boolean).join(' ')
+  return &lt;button className={classes} {...props} /&gt;
+}</pre></div>
+          <div class="code-wrap"><div class="file">src/ui/core/index.ts</div><button class="copy" type="button">Copy</button>
+<pre>export { Button } from './lib/Button/Button'</pre></div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Create the path aliases, in two places</h3>
+          <p>This is the hidden import from <a href="#abstraction">Abstraction</a>. TypeScript needs to know where <code>@mini/ui/core</code> points (for type checking and autocomplete), and so does Vite (to build the app). Ísland.is does the same thing in <code>tsconfig.base.json</code>.</p>
+          <p>Add <code>paths</code> inside <code>compilerOptions</code>:</p>
+          <div class="code-wrap"><div class="file">tsconfig.app.json</div><button class="copy" type="button">Copy</button>
+<pre>"paths": {
+  "@mini/ui/core": ["./src/ui/core/index.ts"],
+  "@mini/ui/theme": ["./src/ui/theme/index.ts"]
+},</pre></div>
+          <p>Replace all of <code>vite.config.ts</code>:</p>
+          <div class="code-wrap"><div class="file">vite.config.ts</div><button class="copy" type="button">Copy</button>
+<pre>import react from '@vitejs/plugin-react'
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
+import { defineConfig } from 'vite'
+import { fileURLToPath } from 'node:url'
+
+export default defineConfig({
+  plugins: [react(), vanillaExtractPlugin()],
+  resolve: {
+    alias: {
+      '@mini/ui/core': fileURLToPath(new URL('./src/ui/core/index.ts', import.meta.url)),
+      '@mini/ui/theme': fileURLToPath(new URL('./src/ui/theme/index.ts', import.meta.url)),
+    },
+  },
+})</pre></div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Use the component</h3>
+          <p>Replace all of <code>App.tsx</code>. Delete <code>src/App.css</code> and the <code>import './index.css'</code> line in <code>main.tsx</code> so the default Vite styles don't get in the way.</p>
+          <div class="code-wrap"><div class="file">src/App.tsx</div><button class="copy" type="button">Copy</button>
+<pre>import { Button } from '@mini/ui/core'
+
+export default function App() {
+  return (
+    &lt;main style={{ fontFamily: 'system-ui', padding: 32, display: 'flex', gap: 16 }}&gt;
+      &lt;Button&gt;Submit application&lt;/Button&gt;
+      &lt;Button variant="ghost"&gt;Cancel&lt;/Button&gt;
+      &lt;Button variant="destructive"&gt;Delete&lt;/Button&gt;
+    &lt;/main&gt;
+  )
+}</pre></div>
+          <p>Now <code>App.tsx</code> looks exactly like the confusing code in Storybook. The difference is that you know where <code>Button</code> comes from.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Run it and inspect the class names</h3>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>npm run dev</pre></div>
+          <p>Open the URL Vite prints (usually <code>localhost:5173</code>) and inspect a button in DevTools.</p>
+          <p class="check"><b>You should see</b> something like <code>class="Button_variants_primary__7sc4nl1 Button_base__7sc4nl0"</code>. In development mode, vanilla-extract puts the file name and variable name into the class name to make debugging easier.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Build it and look at the generated CSS</h3>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>npm run build
+cat dist/assets/*.css</pre></div>
+          <p class="check"><b>You should see</b> a single line of CSS with short hashed classes, such as <code>._7sc4nl1{color:#fff;background-color:#0061ff}</code>. No TypeScript, no <code>theme</code> variable. Just the values.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Change a token and build again</h3>
+          <p>Set <code>blue400: '#7c3aed'</code> in <code>theme/index.ts</code>. With <code>npm run dev</code> running, the page updates straight away. Then run <code>npm run build</code> again and compare the new CSS with the old one.</p>
+          <div class="callout">Compare this with step 5 of Exercise 1. In Hanna you changed the token in the browser. Here you had to change the source code and rebuild. That's the <a href="#debate">runtime or build time</a> difference from Part 3.</div>
+          <p>Finally, open <a href="https://github.com/island-is/island.is/tree/main/libs/island-ui/core/src/lib/Button" target="_blank" rel="noopener">the real Button folder</a> in Ísland.is and compare it with yours.</p>
+        </div></li>
+      </ol>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div class="ex" role="tabpanel" id="ex-3" aria-labelledby="tab-3" hidden>
+      <div class="ex-meta"><span><b>Time:</b> can take an hour</span><span><b>You need:</b> Node 22, git, lots of disk space</span><span><b>Goal:</b> see Storybook run from the source code</span></div>
+      <div class="callout warn"><strong>Heavy download.</strong> The Ísland.is repo is several hundred MB and <code>yarn install</code> downloads a lot more. Do this at home, not on a shared network during class. These steps come from the project's README.</div>
+      <ol class="steps">
+        <li><div class="step-body">
+          <h3>Clone the repo</h3>
+          <p><code>--depth 1</code> only fetches the latest version, not the whole history.</p>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>git clone --depth 1 https://github.com/island-is/island.is.git
+cd island.is</pre></div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Install packages with Yarn 4</h3>
+          <p>The project requires Yarn 4 and Node 22. <code>corepack</code> ships with Node and fetches the right Yarn version.</p>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>corepack enable
+yarn install</pre></div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Start Storybook</h3>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>yarn start island-ui-storybook</pre></div>
+          <p>Storybook opens on <code>localhost:4400</code>. Now open <code>libs/island-ui/core/src/lib/Button/Button.css.ts</code> in your editor, change a colour or a border radius, and watch Storybook update.</p>
+        </div></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <p>Hanna is published by Reykjavík City under the MIT licence (<a href="https://github.com/rvk-utd/hanna" target="_blank" rel="noopener">github.com/rvk-utd/hanna</a>). The CSS in the interactive demo is copied from styles.reykjavik.is, version v0.8. The Esja typeface isn't included, so the demo falls back to Helvetica or Arial.</p>
+    <p>Ísland.is UI is published by Digital Iceland (Stafrænt Ísland) under the MIT licence (<a href="https://github.com/island-is/island.is" target="_blank" rel="noopener">github.com/island-is/island.is</a>). Code excerpts are shortened. The build output under Runtime or build time, and the right-hand colour demo, come from the replica in Exercise 2. The <code>@island.is/ui</code> alpha and its setup steps come from Digital Iceland's island-ui-next-example and island-ui-cra-example repos on GitHub.</p>
+    <p>Code checked on 20 October 2026. npm packages and the React 19 install test checked on 21 October 2026. Versions and URLs may change.</p>
+  </footer>
+</div>
+
+<script type="text/plain" id="hanna-css">
+  /*! Reykjavík Design System basic CSS styles */:root{--cssVersion:"0.8.103";--browser-scrollbar-width:16px;--bp-w-phone:320px;--bp-w-phablet:480px;--bp-w-tablet:760px;--bp-w-netbook:980px;--bp-w-wide:1368px;--bp-w-Hamburger:var(--bp-w-netbook);--color-esja-25:#f4f7ff;--color-esja-50:#e8eeff;--color-esja-75:#d2ddfe;--color-esja-100:#a5bbfd;--color-esja-150:#525e7f;--color-faxafloi-25:#e0eefb;--color-faxafloi-50:#c0ddf7;--color-faxafloi-75:#81bbf0;--color-faxafloi-100:#0367e1;--color-faxafloi-150:#013b70;--color-nautholsvik-25:#fffaea;--color-nautholsvik-50:#fff5d5;--color-nautholsvik-75:#ffeaac;--color-nautholsvik-100:#ffd659;--color-nautholsvik-150:#806b2c;--color-heidmork-25:#fae4e5;--color-heidmork-50:#f5c8cb;--color-heidmork-75:#ec9197;--color-heidmork-100:#d8222f;--color-heidmork-150:#6c1118;--color-ellidaardalur-25:#e2f9ea;--color-ellidaardalur-50:#c4f2d5;--color-ellidaardalur-75:#89e6ab;--color-ellidaardalur-100:#64d68e;--color-ellidaardalur-150:#0a662b;--color-blafjoll-25:#ffede9;--color-blafjoll-50:#ffdbd3;--color-blafjoll-75:#fab7a9;--color-blafjoll-100:#f77257;--color-blafjoll-150:#805737;--color-sund-25:#eafbff;--color-sund-50:#d4f6ff;--color-sund-75:#a9edff;--color-sund-100:#53daff;--color-sund-150:#296d80;--color-rokkur-25:#fff1f6;--color-rokkur-50:#ffe3ec;--color-rokkur-75:#ffc6da;--color-rokkur-100:#ff8db5;--color-rokkur-150:#80475a;--color-suld-0:#fff;--color-suld-25:#f8f8f9;--color-suld-50:#f1f2f3;--color-suld-75:#e3e5e7;--color-suld-100:#c7cbd0;--color-suld-150:#707275;--color-suld-200:#2a2b2c;--color-white:#fff;--color-blackish:#2a2b2c;--color-ellidarardalur-25:var(--color-ellidaardalur-25);--color-ellidarardalur-50:var(--color-ellidaardalur-50);--color-ellidarardalur-75:var(--color-ellidaardalur-75);--color-ellidarardalur-100:var(--color-ellidaardalur-100);--color-ellidarardalur-150:var(--color-ellidaardalur-150);--link-color:var(--color-faxafloi-100);--link-color--hover:var(--color-faxafloi-100);--link-weight:var(--font-weight--bold);--link-underline--thickness:0.125rem;--link-underline--hairline:1px dotted currentColor;--link-underline:var(--link-underline--thickness) solid transparent;--link-underline--hover:var(--link-underline--thickness) solid currentColor;--link-underline-offset:0.15em;--link-transition:200ms ease-in;--link-focus-outlineColor:currentColor;--link-focus-outline:2px solid currentColor;--link-focus-outlineOffset:2px;--font-family:Esja,Helvetica,Arial,sans-serif;--font-weight--normal:400;--font-weight--bold:700;--font-base:var(--font-base-size) /var(--font-base-leading) var(--font-family);--font-heading-xl:var(--font-weight--bold) var(--font-heading-xl-size) /var(--font-heading-xl-leading) var(--font-family);--font-heading-l:var(--font-weight--bold) var(--font-heading-l-size) /var(--font-heading-l-leading) var(--font-family);--font-heading-m:var(--font-weight--bold) var(--font-heading-m-size) /var(--font-heading-m-leading) var(--font-family);--font-heading-s:var(--font-weight--bold) var(--font-heading-s-size) /var(--font-heading-s-leading) var(--font-family);--font-heading-xs:var(--font-weight--bold) var(--font-heading-xs-size) /var(--font-heading-xs-leading) var(--font-family);--font-body-l:var(--font-weight--normal) var(--font-body-l-size) /var(--font-body-l-leading) var(--font-family);--font-body-m:var(--font-weight--normal) var(--font-body-m-size) /var(--font-body-m-leading) var(--font-family);--font-body-s:var(--font-weight--normal) var(--font-body-s-size) /var(--font-body-s-leading) var(--font-family);--font-button:var(--font-weight--bold) var(--font-button-size) /var(--font-button-leading) var(--font-family);--font-input:var(--font-weight--normal) var(--font-input-size) /var(--font-input-leading) var(--font-family);--font-input-s:var(--font-weight--normal) var(--font-input-s-size) /var(--font-input-s-leading) var(--font-family);--font-label:var(--font-label-size) /var(--font-label-leading) var(--font-family);--font-base-size:16px;--font-base-leading:24px;--font-heading-xl-size:40px;--font-heading-xl-leading:48px;--font-heading-l-size:32px;--font-heading-l-leading:40px;--font-heading-m-size:24px;--font-heading-m-leading:28px;--font-heading-s-size:20px;--font-heading-s-leading:24px;--font-heading-xs-size:20px;--font-heading-xs-leading:24px;--font-body-l-size:16px;--font-body-l-leading:24px;--font-body-m-size:16px;--font-body-m-leading:24px;--font-body-s-size:12px;--font-body-s-leading:16px;--font-button-size:16px;--font-button-leading:20px;--font-input-size:20px;--font-input-leading:32px;--font-input-s-size:16px;--font-input-s-leading:24px;--font-label-size:12px;--font-label-leading:16px;--baseVerticalMargin:calc(0.76336vw + 13.55725px);--baseVerticalMargin-2:calc(1.52672vw + 27.1145px);--font-hd-xl:var(--font-heading-xl);--font-hd-l:var(--font-heading-xl);--font-hd-m:var(--font-heading-l);--font-hd-s:var(--font-heading-m);--font-sh-l:var(--font-heading-m);--font-sh-l-thin:var(--font-heading-m-size) /var(--font-heading-m-leading) var(--font-family);--font-sh-s:var(--font-heading-s);--font-bd-l:var(--font-body-l);--font-bd-s:var(--font-body-m);--font-hd-xl-size:var(--font-heading-xl-size);--font-hd-xl-leading:var(--font-heading-xl-leading);--font-hd-l-size:var(--font-heading-xl-size);--font-hd-l-leading:var(--font-heading-xl-leading);--font-hd-m-size:var(--font-heading-l-size);--font-hd-m-leading:var(--font-heading-l-leading);--font-hd-s-size:var(--font-heading-m-size);--font-hd-s-leading:var(--font-heading-m-leading);--font-sh-l-size:var(--font-heading-m-size);--font-sh-l-leading:var(--font-heading-m-leading);--font-sh-s-size:var(--font-heading-s-size);--font-sh-s-leading:var(--font-heading-s-leading);--font-bd-l-size:var(--font-body-l-size);--font-bd-l-leading:var(--font-body-l-leading);--font-bd-s-size:var(--font-body-m-size);--font-bd-s-leading:var(--font-body-m-leading)}:root:root,[data-color-theme][data-color-theme=trustworthy],[data-color-theme][data-color-theme]{--theme-color-primary:var(--color-faxafloi-100);--theme-color-primary-75:var(--color-faxafloi-75);--theme-color-primary-50:var(--color-faxafloi-50);--theme-color-primary-25:var(--color-faxafloi-25);--theme-color-secondary:var(--color-sund-100);--theme-color-secondary-75:var(--color-sund-75);--theme-color-secondary-50:var(--color-sund-50);--theme-color-secondary-25:var(--color-sund-25);--theme-color-tertiary:var(--color-ellidaardalur-100);--theme-color-tertiary-75:var(--color-ellidaardalur-75);--theme-color-tertiary-50:var(--color-ellidaardalur-50);--theme-color-tertiary-25:var(--color-ellidaardalur-25);--theme-color-primary--text:var(--color-white);--theme-color-primary--dark:var(--color-faxafloi-150);--theme-color-primary--safe:var(--theme-color-primary);--theme-color-primary--safeish:var(--theme-color-primary)}[data-color-theme][data-color-theme=dependable]{--theme-color-primary:var(--color-faxafloi-100);--theme-color-primary-75:var(--color-faxafloi-75);--theme-color-primary-50:var(--color-faxafloi-50);--theme-color-primary-25:var(--color-faxafloi-25);--theme-color-secondary:var(--color-nautholsvik-100);--theme-color-secondary-75:var(--color-nautholsvik-75);--theme-color-secondary-50:var(--color-nautholsvik-50);--theme-color-secondary-25:var(--color-nautholsvik-25);--theme-color-tertiary:var(--color-sund-100);--theme-color-tertiary-75:var(--color-sund-75);--theme-color-tertiary-50:var(--color-sund-50);--theme-color-tertiary-25:var(--color-sund-25);--theme-color-primary--dark:var(--color-faxafloi-150)}[data-color-theme][data-color-theme=friendly]{--theme-color-primary:var(--color-ellidaardalur-100);--theme-color-primary-75:var(--color-ellidaardalur-75);--theme-color-primary-50:var(--color-ellidaardalur-50);--theme-color-primary-25:var(--color-ellidaardalur-25);--theme-color-secondary:var(--color-rokkur-100);--theme-color-secondary-75:var(--color-rokkur-75);--theme-color-secondary-50:var(--color-rokkur-50);--theme-color-secondary-25:var(--color-rokkur-25);--theme-color-tertiary:var(--color-nautholsvik-100);--theme-color-tertiary-75:var(--color-nautholsvik-75);--theme-color-tertiary-50:var(--color-nautholsvik-50);--theme-color-tertiary-25:var(--color-nautholsvik-25);--theme-color-primary--text:var(--color-blackish);--theme-color-primary--dark:var(--color-ellidaardalur-150);--theme-color-primary--safe:#0e893b;--theme-color-primary--safeish:#20cb5f}[data-color-theme][data-color-theme=lively]{--theme-color-primary:var(--color-sund-100);--theme-color-primary-75:var(--color-sund-75);--theme-color-primary-50:var(--color-sund-50);--theme-color-primary-25:var(--color-sund-25);--theme-color-secondary:var(--color-blafjoll-100);--theme-color-secondary-75:var(--color-blafjoll-75);--theme-color-secondary-50:var(--color-blafjoll-50);--theme-color-secondary-25:var(--color-blafjoll-25);--theme-color-tertiary:var(--color-nautholsvik-100);--theme-color-tertiary-75:var(--color-nautholsvik-75);--theme-color-tertiary-50:var(--color-nautholsvik-50);--theme-color-tertiary-25:var(--color-nautholsvik-25);--theme-color-primary--text:var(--color-blackish);--theme-color-primary--dark:var(--color-sund-150);--theme-color-primary--safe:#007fa2;--theme-color-primary--safeish:#00c2f7}[data-color-theme][data-color-theme=colorful]{--theme-color-primary:var(--color-nautholsvik-100);--theme-color-primary-75:var(--color-nautholsvik-75);--theme-color-primary-50:var(--color-nautholsvik-50);--theme-color-primary-25:var(--color-nautholsvik-25);--theme-color-secondary:var(--color-heidmork-100);--theme-color-secondary-75:var(--color-heidmork-75);--theme-color-secondary-50:var(--color-heidmork-50);--theme-color-secondary-25:var(--color-heidmork-25);--theme-color-tertiary:var(--color-esja-100);--theme-color-tertiary-75:var(--color-esja-75);--theme-color-tertiary-50:var(--color-esja-50);--theme-color-tertiary-25:var(--color-esja-25);--theme-color-primary--text:var(--color-blackish);--theme-color-primary--dark:var(--color-nautholsvik-150);--theme-color-primary--safe:#957100;--theme-color-primary--safeish:#e7ae00}@media (min-width:480px) and (max-width:1367px){:root{--font-heading-xl-size:calc(2.7027vw + 27.02703px);--font-heading-xl-leading:calc(2.7027vw + 35.02703px);--font-heading-l-size:calc(0.9009vw + 27.67568px);--font-heading-l-leading:calc(0.9009vw + 35.67568px);--font-heading-m-size:calc(0.9009vw + 19.67568px);--font-heading-m-leading:calc(1.35135vw + 21.51351px);--font-heading-s-size:calc(0.45045vw + 17.83784px);--font-heading-s-leading:calc(0.45045vw + 21.83784px);--font-body-l-size:calc(0.45045vw + 13.83784px);--font-body-l-leading:calc(0.9009vw + 19.67568px)}}@media (min-width:1368px){:root{--font-heading-xl-size:64px;--font-heading-xl-leading:72px;--font-heading-l-size:40px;--font-heading-l-leading:48px;--font-heading-m-size:32px;--font-heading-m-leading:40px;--font-heading-s-size:24px;--font-heading-s-leading:28px;--font-body-l-size:20px;--font-body-l-leading:32px;--baseVerticalMargin:24px;--baseVerticalMargin-2:48px}}:root{--zindex--sr-only:99999;--zindex--modal:1000;--zindex--header:100;--zindex--overlay:10;--zindex--Bling--overlay:2;--zindex--Bling:-10;--grid-margin:calc(5.72519vw + 1.67939px);--grid-margin--neg:calc(var(--grid-margin)*-1);--grid-margin--right:calc(var(--grid-margin) - var(--browser-scrollbar-width));--grid-margin--right--neg:calc(var(--grid-margin)*-1 + var(--browser-scrollbar-width));--grid-0-1:calc(2.93068vw - 0.10664px);--grid-1:calc(4.68994vw - 0.17337px);--grid-1-1:calc(7.62205vw - 0.28459px);--grid-2:calc(12.31342vw - 0.46253px);--grid-2-2:calc(15.24552vw - 0.57375px);--grid-3:calc(19.93689vw - 0.7517px);--grid-3-3:calc(22.869vw - 0.86292px);--grid-4:calc(27.56037vw - 1.04087px);--grid-4-4:calc(30.49248vw - 1.15209px);--grid-5:calc(35.18385vw - 1.33003px);--grid-5-5:calc(38.11595vw - 1.44125px);--grid-6:calc(42.80732vw - 1.6192px);--grid-6-6:calc(45.73943vw - 1.73042px);--grid-7:calc(50.4308vw - 1.90837px);--grid-7-7:calc(53.36291vw - 2.01958px);--grid-8:calc(58.05428vw - 2.19753px);--grid-8-8:calc(60.98639vw - 2.30875px);--grid-9:calc(65.67776vw - 2.4867px);--grid-9-9:calc(68.60986vw - 2.59792px);--grid-10:calc(73.30123vw - 2.77587px);--grid-10-10:calc(76.23334vw - 2.88708px);--grid-11:calc(80.92471vw - 3.06503px);--grid-11-11:calc(83.85682vw - 3.17625px);--grid-12:calc(88.54819vw - 3.3542px);--grid-gutter:var(--grid-0-1);--grid-column:var(--grid-1);--grid-0-1--neg:calc(-2.93354vw + 0.1158px);--grid-1--neg:calc(-4.6928vw + 0.18253px);--grid-gutter--neg:var(--grid-0-1--neg);--grid-column--neg:var(--grid-1--neg);--grid-edge:var(--grid-margin);--grid-edge--neg:var(--grid-margin--neg);--grid-edge--right:var(--grid-margin--right);--grid-edge--right--neg:var(--grid-margin--right--neg)}@media (min-width:1368px){:root{--grid-margin:80px;--grid-margin--neg:-80px;--grid-0-1:40px;--grid-1:64px;--grid-1-1:104px;--grid-2:168px;--grid-2-2:208px;--grid-3:272px;--grid-3-3:312px;--grid-4:376px;--grid-4-4:416px;--grid-5:480px;--grid-5-5:520px;--grid-6:584px;--grid-6-6:624px;--grid-7:688px;--grid-7-7:728px;--grid-8:792px;--grid-8-8:832px;--grid-9:896px;--grid-9-9:936px;--grid-10:1000px;--grid-10-10:1040px;--grid-11:1104px;--grid-11-11:1144px;--grid-12:1208px;--grid-0-1--neg:-40px;--grid-1--neg:-64px}}:root{--space-1:0.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2rem;--space-5:2.5rem;--space-6:3rem;--space-7:3.5rem;--space-8:4rem;--space-9:4.5rem;--space-10:5rem;--space-0_5:0.25rem;--space-1_5:0.75rem;--space-1--neg:-0.5rem;--space-2--neg:-1rem;--space-3--neg:-1.5rem;--space-4--neg:-2rem;--space-5--neg:-2.5rem;--space-6--neg:-3rem;--space-7--neg:-3.5rem;--space-8--neg:-4rem;--space-9--neg:-4.5rem;--space-10--neg:-5rem;--space-0_5--neg:-0.25rem;--space-1_5--neg:-0.75rem;--component-vspace--small:calc(4.31034% + 17.93103px);--component-vspace--medium:calc(6.46552% + 21.89655px);--component-vspace--large:calc(8.62069% + 25.86207px);--component-vspace--xlarge:calc(14.00862% + 30.77586px);--Layout__header-height:80px;--Layout__header-backgroundColor:transparent;--Layout__header-logo-color:initial;--Layout__header-homelink-width:14rem;--Layout__header-homelink-space:calc(var(--Layout__header-homelink-width) + var(--space-1));--Layout__header-homelink-divColor:var(--color-suld-100);--Layout__header-color:initial;--Layout__main-paddingTop:var(--space-4)}@media (min-width:980px){:root{--Layout__header-height:120px;--Layout__header-homelink-width:clamp(365px,calc(66.75258vw - 289.17526px),624px);--Layout__header-homelink-space:calc(var(--Layout__header-homelink-width) + var(--grid-0-1))}}:root{--MainMenu-accentcolor:var(--color-faxafloi-100);--MainMenu-background:var(--color-faxafloi-100);--border-default:1px solid var(--color-suld-75);--border-dark:1px solid var(--color-suld-150);--boxShadow-subtle:0 4px 8px 0 rgba(0,0,0,.08);--boxShadow-hover:0 12px 16px 0 rgba(0,0,0,.08);--boxShadow-elevated:0 30px 60px 0 rgba(0,0,0,.08),0 60px 120px 0 rgba(0,0,0,.08);--Button--gapH:calc(1.52672vw + 11.1145px);--Button--gapV:var(--space-2)}@media (min-width:1368px){:root{--Button--gapH:32px}}:root{--icon-size--small:20px;--icon-size--medium:24px;--icon-size--large:40px;--icon--alert:"";--icon--arrow-left-long:"";--icon--arrow-left:"";--icon--arrow-right:"";--icon--arrow-up-long:"";--icon--calendar:"";--icon--chat:"";--icon--checkmark:"";--icon--chek--do-not-use:"";--icon--chevron-down:"";--icon--chevron-left:"";--icon--chevron-right:"";--icon--chevron-soft-right:"";--icon--chevron-up:"";--icon--close-thin:"";--icon--close:"";--icon--dash:"";--icon--data:"";--icon--document:"";--icon--edit:"";--icon--error:"";--icon--external:"";--icon--facebook:"";--icon--fatchevron-up:"";--icon--file-pdf:"";--icon--home:"";--icon--info:"";--icon--link:"";--icon--location:"";--icon--menu:"";--icon--pen:"";--icon--radioball:"";--icon--search:"";--icon--text:"";--icon--time:"";--icon--twitter:"";--icon--user:"";--icon--warning:"";--ButtonTertiary--height:calc(var(--font-button-leading) + 4px);--ButtonTertiary--color:_inherit;--ButtonTertiary--dashColor:var(--color-faxafloi-100);--ButtonTertiary--dashWidth:var(--space-2);--ButtonTertiary--hover--dashWidth:var(--space-4);--ButtonTertiary--dashSpace:var(--space-2);--ButtonTertiary--dashHeight:2px;--ButtonTertiary--gapH:calc(0.76336vw + 13.55725px)}@media (min-width:1368px){:root{--ButtonTertiary--gapH:24px}}
+
+  
+  /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}
+
+  /*! Normalization tweaks by Hugsmiðjan */html{cursor:default;font-family:sans-serif}[tabindex="-1"]{outline:none}[tabindex],a,area,button,input,label,select,summary,textarea{touch-action:manipulation}input[type=date],input[type=email],input[type=number],input[type=password],input[type=tel],input[type=text],input[type=url],textarea{-webkit-appearance:none}input[type=number]{-moz-appearance:textfield}input[type=search],input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration,input[type=search]::-webkit-search-results-button,input[type=search]::-webkit-search-results-decoration{-webkit-appearance:none}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}::-webkit-input-placeholder{color:inherit;opacity:.54}textarea{resize:vertical}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}abbr{border-bottom:1px dotted;text-decoration:none}sub,sup{bottom:auto;display:inline-block;line-height:inherit;position:static;top:auto;vertical-align:middle}sup{margin-top:-1.1em}sub{margin-bottom:-.85em}table{border-spacing:0}*,:after,:before{box-sizing:border-box;flex-shrink:0}[hidden][hidden]{display:none}:focus:focus{outline:var(--link-focus-outline);outline-color:var(--link-focus-outlineColor);outline-offset:var(--link-focus-outlineOffset)}:focus-visible:focus-visible{outline:var(--link-focus-outline);outline-color:var(--link-focus-outlineColor);outline-offset:var(--link-focus-outlineOffset)}:focus[tabindex="-1"]{outline:none;outline-offset:0}:focus:not(:focus-visible){outline:none;outline-offset:0}html{box-sizing:border-box;min-height:100vh;min-width:calc(320px - var(--browser-scrollbar-width));overflow-x:hidden;overflow-y:scroll;position:relative;scroll-behavior:smooth}body,html{overflow-x:clip}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:var(--color-suld-0);color:var(--color-suld-200);font:var(--font-base);font-weight:400;quotes:"“" "”" "‘" "’"}:lang(is){quotes:"„" "“" "‚" "‘"}:lang(pl){quotes:"„" "”" "‘" "’"}:first-child{margin-top:0}h1,h2,h3,h4,h5{font-size:inherit;font-weight:inherit;margin:0}blockquote,dl,figure,ol,p,table,ul{margin:0}address{font-style:normal}img{-o-object-position:var(--focalPoint);object-position:var(--focalPoint)}iframe{display:block;width:100%}iframe:not([frameborder=yes]){border:0}table{border-collapse:separate}td,th{padding:0}abbr{cursor:help}a[href^="tel:"]:not([class]){--link-color:_inherit}a{border-bottom:var(--link-underline);color:var(--link-color);font-weight:var(--link-weight);padding-bottom:var(--link-underline-offset);text-decoration:none;transition:var(--link-transition);transition-property:border-color,background-color,color,text-shadow,box-shadow}a:active,a:hover{border-bottom:var(--link-underline--hover);color:var(--link-color--hover)}button{background:transparent;border:0;border-radius:0;color:inherit;cursor:pointer;font:inherit;padding:0;text-align:inherit}button:disabled{cursor:auto}ul{list-style:none;margin:0;padding:0}input,select,textarea{font-size:inherit;line-height:inherit;padding:0}input:invalid{box-shadow:none}:disabled,[aria-disabled=true]{cursor:default}optgroup{font-style:normal}ol{padding-left:1.5em}li ol{margin-bottom:0}ol{counter-reset:ol;list-style:none}ol>li:before{content:counter(ol) ". ";counter-increment:ol;float:left;margin:0 .5em -.5em -2.8em;min-width:2.5em;text-align:right}ol[data-oltype=a]>li:before,ol[type=a]{content:counter(ol,lower-alpha) ". "}ol[data-oltype=A]>li:before{content:counter(ol,upper-alpha) ". "}ol[data-oltype=i]>li:before,ol[type=i]{content:counter(ol,lower-roman) ". "}ol[data-oltype=I]>li:before{content:counter(ol,upper-roman) ". "}hr{border:0;border-top:1px solid var(--color-suld-100);display:block;height:1px;margin:var(--baseVerticalMargin) 0;padding:0}fieldset{border:0;margin:0;padding:0}legend{float:left}legend+*{clear:both}summary{cursor:pointer;display:block}summary>*{display:inline}table{border-collapse:collapse;font:var(--font-body-m);margin-bottom:var(--baseVerticalMargin)}caption,td,th{text-align:left}td,th{font-weight:var(--font-weight--normal);padding:var(--space-1) var(--space-2);vertical-align:top}td:first-child,th:first-child{padding-left:0}td:last-child,th:last-child{padding-right:0}thead>*>th{font-weight:var(--font-weight--bold);vertical-align:bottom}tbody>*>td,tbody>*>th{border:var(--border-default);border-width:1px 0}.BlockBreak{display:block;height:0;margin:0;width:100%}.before-sprinkling [data-seen-effect=""][data-seen-effect],.before-sprinkling [data-seen-effect=fadeup][data-seen-effect],.before-sprinkling [data-seen-effect] [data-seen-effect=""],.before-sprinkling [data-seen-effect] [data-seen-effect=fadeup],[data-seen-effect=""][data-seen-effect][data-is-seen=false],[data-seen-effect=fadeup][data-seen-effect][data-is-seen=false],[data-seen-effect][data-is-seen=false] [data-seen-effect=""],[data-seen-effect][data-is-seen=false] [data-seen-effect=fadeup]{opacity:0;transform:translateY(200px)}[data-seen-effect=""][data-seen-effect][data-is-seen=""],[data-seen-effect=""][data-seen-effect][data-is-seen=true],[data-seen-effect=fadeup][data-seen-effect][data-is-seen=""],[data-seen-effect=fadeup][data-seen-effect][data-is-seen=true],[data-seen-effect][data-is-seen=""] [data-seen-effect=""],[data-seen-effect][data-is-seen=""] [data-seen-effect=fadeup],[data-seen-effect][data-is-seen=true] [data-seen-effect=""],[data-seen-effect][data-is-seen=true] [data-seen-effect=fadeup]{opacity:1;transform:none}[data-seen-effect=""][data-seen-effect][data-is-seen=true],[data-seen-effect=fadeup][data-seen-effect][data-is-seen=true],[data-seen-effect][data-is-seen=true] [data-seen-effect=""],[data-seen-effect][data-is-seen=true] [data-seen-effect=fadeup]{transition:all .4s ease-in-out;transition-property:opacity,transform}.before-sprinkling [data-seen-effect=fadein][data-seen-effect],.before-sprinkling [data-seen-effect] [data-seen-effect=fadein],[data-seen-effect=fadein][data-seen-effect][data-is-seen=false],[data-seen-effect][data-is-seen=false] [data-seen-effect=fadein]{opacity:0}[data-seen-effect=fadein][data-seen-effect][data-is-seen=""],[data-seen-effect=fadein][data-seen-effect][data-is-seen=true],[data-seen-effect][data-is-seen=""] [data-seen-effect=fadein],[data-seen-effect][data-is-seen=true] [data-seen-effect=fadein]{opacity:1}[data-seen-effect=fadein][data-seen-effect][data-is-seen=true],[data-seen-effect][data-is-seen=true] [data-seen-effect=fadein]{transition:all .4s ease-in-out;transition-property:opacity,transform}.before-sprinkling [data-seen-effect=fadeleft][data-seen-effect],.before-sprinkling [data-seen-effect] [data-seen-effect=fadeleft],[data-seen-effect=fadeleft][data-seen-effect][data-is-seen=false],[data-seen-effect][data-is-seen=false] [data-seen-effect=fadeleft]{opacity:0;transform:translateX(-200px)}[data-seen-effect=fadeleft][data-seen-effect][data-is-seen=""],[data-seen-effect=fadeleft][data-seen-effect][data-is-seen=true],[data-seen-effect][data-is-seen=""] [data-seen-effect=fadeleft],[data-seen-effect][data-is-seen=true] [data-seen-effect=fadeleft]{opacity:1;transform:none}[data-seen-effect=fadeleft][data-seen-effect][data-is-seen=true],[data-seen-effect][data-is-seen=true] [data-seen-effect=fadeleft]{transition:all .4s ease-in-out;transition-property:opacity,transform}@media screen{[class].visually-hidden{height:1px;overflow:hidden;position:absolute;width:1px;clip:rect(0,0,0,0);margin:-1px;opacity:.00001;pointer-events:none}.local-tasks{background:var(--color-ellidaardalur-50);bottom:0;box-shadow:2px 1px 2px 0 rgba(0,0,0,.1),0 0 3px 0 rgba(57,103,76,.4);left:0;padding:.75rem;position:fixed;z-index:99999}.local-tasks ul{border-bottom:1px solid var(--color-suld-100);display:flex}.local-tasks li{margin-bottom:-1px}.local-tasks li a{border:1px solid transparent;border-top-left-radius:.25rem;border-top-right-radius:.25rem;color:var(--color-suld-150);display:block;font-weight:400;padding:.5rem 1rem}.local-tasks li a.is-active{background-color:var(--color-suld-0);border-color:var(--color-suld-100) var(--color-suld-100) var(--color-suld-0);color:var(--color-suld-200)}}@media (max-width:479px){#mediaformat:after{content:"phone"}}@media (min-width:480px) and (max-width:759px){#mediaformat:after{content:"phablet"}}@media (min-width:760px) and (max-width:979px){#mediaformat:after{content:"tablet"}}@media (min-width:980px) and (max-width:1367px){#mediaformat:after{content:"netbook"}}@media (min-width:1368px){#mediaformat:after{content:"wide"}}#mediaformat:after{display:none!important}@media screen{[data-icon]{--Icon:initial;--Icon--size:var(--icon-size--medium);--Icon--enabled:none}[data-icon=check_box_filled]{--Icon:"check_box"}[data-icon=error_filled]{--Icon:"error"}[data-icon=favorite_filled]{--Icon:"favorite"}[data-icon=info_filled]{--Icon:"info"}[data-icon=warning_filled]{--Icon:"warning"}[data-icon]:before{content:var(--Icon--enabled,var(--Icon,attr(data-icon)));display:inline-block;font-family:icons,iconfont,Esja,Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;text-align:center;text-indent:0;vertical-align:top;white-space:nowrap;width:1em;word-wrap:normal;direction:ltr;-moz-font-feature-settings:"liga";font-size:var(--icon-size--medium);letter-spacing:normal;-moz-osx-font-smoothing:grayscale;font-size:var(--Icon--size);margin-right:var(--space-1)}[data-icon$=_filled]:before{font-variation-settings:"FILL" 1}[data-icon-size=small]{--Icon--size:var(--icon-size--small);--Icon-after--size:var(--icon-size--small)}[data-icon-size=large]{--Icon--size:var(--icon-size--large);--Icon-after--size:var(--icon-size--large)}[data-icon-after]{--Icon-after:initial;--Icon-after--size:var(--icon-size--medium);--Icon-after--enabled:none}[data-icon-after=check_box_filled]{--Icon-after:"check_box"}[data-icon-after=error_filled]{--Icon-after:"error"}[data-icon-after=favorite_filled]{--Icon-after:"favorite"}[data-icon-after=info_filled]{--Icon-after:"info"}[data-icon-after=warning_filled]{--Icon-after:"warning"}[data-icon-after]:after{content:var(--Icon-after--enabled,var(--Icon-after,attr(data-icon-after)));display:inline-block;font-family:icons,iconfont,Esja,Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;text-align:center;text-indent:0;vertical-align:top;white-space:nowrap;width:1em;word-wrap:normal;direction:ltr;-moz-font-feature-settings:"liga";font-size:var(--icon-size--medium);letter-spacing:normal;-moz-osx-font-smoothing:grayscale;font-size:var(--Icon-after--size);margin-left:var(--space-1_5)}[data-icon-after$=_filled]:after{font-variation-settings:"FILL" 1}.Icon{--Icon--enabled:initial}.Icon:where(:empty):before{margin-right:0}[data-icon=calendar]{--Icon:"calendar_month"}[data-icon-after=calendar]{--Icon-after:"calendar_month"}[data-icon=chat]{--Icon:"forum"}[data-icon-after=chat]{--Icon-after:"forum"}[data-icon=checkmark]{--Icon:"check"}[data-icon-after=checkmark]{--Icon-after:"check"}[data-icon=data]{--Icon:"pie_chart"}[data-icon-after=data]{--Icon-after:"pie_chart"}[data-icon=document]{--Icon:"docs"}[data-icon-after=document]{--Icon-after:"docs"}[data-icon=external]{--Icon:"open_in_new"}[data-icon-after=external]{--Icon-after:"open_in_new"}[data-icon=file_pdf]{--Icon:"picture_as_pdf"}[data-icon-after=file_pdf]{--Icon-after:"picture_as_pdf"}[data-icon=location]{--Icon:"location_on"}[data-icon-after=location]{--Icon-after:"location_on"}[data-icon=pen]{--Icon:"edit"}[data-icon-after=pen]{--Icon-after:"edit"}[data-icon=text]{--Icon:"notes"}[data-icon-after=text]{--Icon-after:"notes"}[data-icon=time]{--Icon:"schedule"}[data-icon-after=time]{--Icon-after:"schedule"}[data-icon=user]{--Icon:"account_circle"}[data-icon-after=user]{--Icon-after:"account_circle"}[data-icon=globe]{--Icon:"language"}[data-icon-after=globe]{--Icon-after:"language"}}.ButtonBar{align-items:center;display:flex;flex-flow:row wrap;margin-right:calc(var(--Button--gapH)*-1)}.ButtonBar--align--right{justify-content:flex-end}.ButtonBar>*{margin-right:var(--Button--gapH)}.ButtonBar[class]>*{margin-bottom:var(--Button--gapV)}.ButtonBar>.ButtonBar{margin:0}.ButtonBar>.ButtonBar__split{flex-grow:1;margin:0 auto;width:0}
+  /*!@deps Icon, ButtonBar */.ButtonPrimary{--link-color:_inherit;--link-weight:_inherit;--link-underline:none;--link-color--hover:var(--link-color);--link-underline--hover:none;--link-underline-offset:0;--Button--color:var(--color-faxafloi-100);--Button--color--active:var(--color-faxafloi-150);--Button--textColor:var(--color-suld-0);--Button--textColor--active:var(--color-suld-0);--Button--backgroundColor:var(--Button--color);--Button--backgroundColor--active:var(--Button--color--active);--Button--border:0px;--Button--height:var(--space-7);--Button--iconOutdent:var(--space-1--neg);--Button--iconSpace:var(--space-0_5);background-color:var(--Button--backgroundColor);border:var(--Button--border) solid var(--Button--color);border-radius:.1875rem;color:var(--Button--textColor);display:inline-block;font:var(--font-button);line-height:calc(var(--Button--height) - var(--Button--border)*2);margin-bottom:var(--Button--gapV);margin-right:var(--Button--gapH);max-width:100%;min-width:calc(4.58015vw + 65.34351px);padding:0 calc(.76336vw + 21.55725px);position:relative;text-align:center;transition:all .2s ease-in;transition-property:border-color,background-color,color,text-shadow,box-shadow;vertical-align:middle;white-space:nowrap;width:-moz-max-content;width:max-content}@media (min-width:1368px){.ButtonPrimary{min-width:128px;padding-left:32px;padding-right:32px}}.ButtonPrimary:active,.ButtonPrimary:hover{border:var(--Button--border) solid var(--Button--color);box-shadow:var(--boxShadow-hover);color:var(--Button--textColor);outline:0;text-decoration:none}.ButtonPrimary:focus-visible{border:var(--Button--border) solid var(--Button--color);box-shadow:var(--boxShadow-hover);color:var(--Button--textColor);outline:0;text-decoration:none}.ButtonPrimary:active:not(:disabled):not([aria-disabled=true]),.ButtonPrimary[aria-pressed=true]{text-decoration:none;--Button--color:var(--Button--color--active);--Button--textColor:var(--Button--textColor--active);--Button--backgroundColor:var(--Button--backgroundColor--active)}.ButtonPrimary:focus-visible{outline:.125rem solid var(--Button--color);outline-offset:.125rem}.ButtonPrimary:disabled,.ButtonPrimary[aria-disabled=true]{box-shadow:none;opacity:.3}.ButtonPrimary--wide{min-width:calc(6.08553vw + 228.75px)}@media (max-width:759px){.ButtonPrimary--wide{width:100%}}@media (min-width:1368px){.ButtonPrimary--wide{min-width:312px}}.ButtonPrimary--small{--Button--height:2.5rem;min-width:calc(3.05344vw + 54.22901px);padding-left:calc(.76336vw + 13.55725px);padding-right:calc(.76336vw + 13.55725px)}@media (min-width:1368px){.ButtonPrimary--small{min-width:96px;padding-left:24px;padding-right:24px}}.ButtonPrimary--go--back{order:-10}.ButtonPrimary--go--back:before{content:"arrow_back";content:"arrow_back"/"";display:inline-block;font-family:icons,iconfont,Esja,Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;text-align:center;text-indent:0;vertical-align:top;white-space:nowrap;width:1em;word-wrap:normal;direction:ltr;-moz-font-feature-settings:"liga";font-size:var(--icon-size--medium);letter-spacing:normal;-moz-osx-font-smoothing:grayscale;margin-left:var(--Button--iconOutdent);margin-right:var(--Button--iconSpace)}.ButtonPrimary--go--forward{margin-left:auto;order:10}.ButtonPrimary--go--forward:after{content:"arrow_forward";content:"arrow_forward"/"";display:inline-block;font-family:icons,iconfont,Esja,Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;text-align:center;text-indent:0;vertical-align:top;white-space:nowrap;width:1em;word-wrap:normal;direction:ltr;-moz-font-feature-settings:"liga";font-size:var(--icon-size--medium);letter-spacing:normal;-moz-osx-font-smoothing:grayscale;margin-left:var(--Button--iconSpace);margin-right:var(--Button--iconOutdent)}.ButtonPrimary--small:after,.ButtonPrimary--small:before{font-size:var(--icon-size--small)}.ButtonPrimary[data-icon]:before{--Icon--enabled:initial;margin-left:var(--Button--iconOutdent);margin-right:var(--Button--iconSpace)}.ButtonPrimary--destructive{--Button--color:var(--color-heidmork-100);--Button--color--active:var(--color-heidmork-150)}
+  /*!@deps Icon, ButtonBar */.ButtonSecondary{--link-color:_inherit;--link-weight:_inherit;--link-underline:none;--link-color--hover:var(--link-color);--link-underline--hover:none;--link-underline-offset:0;--Button--color:var(--color-faxafloi-100);--Button--color--active:var(--color-faxafloi-100);--Button--textColor:var(--Button--color);--Button--textColor--active:var(--Button--color--active);--Button--backgroundColor:var(--color-suld-0);--Button--backgroundColor--active:var(--color-suld-50);--Button--border:1px;--Button--height:var(--space-7);--Button--iconOutdent:var(--space-1--neg);--Button--iconSpace:var(--space-0_5);background-color:var(--Button--backgroundColor);border:var(--Button--border) solid var(--Button--color);border-radius:.1875rem;color:var(--Button--textColor);display:inline-block;font:var(--font-button);line-height:calc(var(--Button--height) - var(--Button--border)*2);margin-bottom:var(--Button--gapV);margin-right:var(--Button--gapH);max-width:100%;min-width:calc(4.58015vw + 65.34351px);padding:0 calc(.76336vw + 21.55725px);position:relative;text-align:center;transition:all .2s ease-in;transition-property:border-color,background-color,color,text-shadow,box-shadow;vertical-align:middle;white-space:nowrap;width:-moz-max-content;width:max-content}@media (min-width:1368px){.ButtonSecondary{min-width:128px;padding-left:32px;padding-right:32px}}.ButtonSecondary:active,.ButtonSecondary:hover{border:var(--Button--border) solid var(--Button--color);box-shadow:var(--boxShadow-hover);color:var(--Button--textColor);outline:0;text-decoration:none}.ButtonSecondary:focus-visible{border:var(--Button--border) solid var(--Button--color);box-shadow:var(--boxShadow-hover);color:var(--Button--textColor);outline:0;text-decoration:none}.ButtonSecondary:active:not(:disabled):not([aria-disabled=true]),.ButtonSecondary[aria-pressed=true]{text-decoration:none;--Button--color:var(--Button--color--active);--Button--textColor:var(--Button--textColor--active);--Button--backgroundColor:var(--Button--backgroundColor--active)}.ButtonSecondary:focus-visible{outline:.125rem solid var(--Button--color);outline-offset:.125rem}.ButtonSecondary:disabled,.ButtonSecondary[aria-disabled=true]{box-shadow:none;opacity:.3}.ButtonSecondary--wide{min-width:calc(6.08553vw + 228.75px)}@media (max-width:759px){.ButtonSecondary--wide{width:100%}}@media (min-width:1368px){.ButtonSecondary--wide{min-width:312px}}.ButtonSecondary--small{--Button--height:2.5rem;min-width:calc(3.05344vw + 54.22901px);padding-left:calc(.76336vw + 13.55725px);padding-right:calc(.76336vw + 13.55725px)}@media (min-width:1368px){.ButtonSecondary--small{min-width:96px;padding-left:24px;padding-right:24px}}.ButtonSecondary--go--back{order:-10}.ButtonSecondary--go--back:before{content:"arrow_back";content:"arrow_back"/"";display:inline-block;font-family:icons,iconfont,Esja,Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;text-align:center;text-indent:0;vertical-align:top;white-space:nowrap;width:1em;word-wrap:normal;direction:ltr;-moz-font-feature-settings:"liga";font-size:var(--icon-size--medium);letter-spacing:normal;-moz-osx-font-smoothing:grayscale;margin-left:var(--Button--iconOutdent);margin-right:var(--Button--iconSpace)}.ButtonSecondary--go--forward{margin-left:auto;order:10}.ButtonSecondary--go--forward:after{content:"arrow_forward";content:"arrow_forward"/"";display:inline-block;font-family:icons,iconfont,Esja,Helvetica,Arial,sans-serif;font-style:normal;font-weight:400;text-align:center;text-indent:0;vertical-align:top;white-space:nowrap;width:1em;word-wrap:normal;direction:ltr;-moz-font-feature-settings:"liga";font-size:var(--icon-size--medium);letter-spacing:normal;-moz-osx-font-smoothing:grayscale;margin-left:var(--Button--iconSpace);margin-right:var(--Button--iconOutdent)}.ButtonSecondary--small:after,.ButtonSecondary--small:before{font-size:var(--icon-size--small)}.ButtonSecondary[data-icon]:before{--Icon--enabled:initial;margin-left:var(--Button--iconOutdent);margin-right:var(--Button--iconSpace)}.ButtonSecondary--destructive{--Button--color:var(--color-heidmork-100);--Button--color--active:var(--color-heidmork-100)}</script>
+<script>
+(() => {
+  // --- Design-system switcher: one attribute on <html>, one CSS rule per system ---
+  const notes = {
+    hanna: "This is the page in Hanna: Reykjavík's colours, bold headings, 3px corners, 16px text and blue buttons with a soft shadow. Hanna's typeface, Esja, is loaded from Reykjavík's own servers, which this page can't reach, so you see Hanna's fallback, Helvetica or Arial. Like Reykjavík's websites, this view is light only.",
+    island: 'This is the page in Ísland.is UI: dark-blue text, IBM Plex Sans at 18px, semibold headings, 8px corners and blue buttons. Press Tab to see the mint focus outline Ísland.is uses. Like the Ísland.is website, this view is light only.',
+  };
+  const root = document.documentElement;
+  const buttons = [...document.querySelectorAll('.ds-btn')];
+  const note = document.getElementById('ds-note');
+  const ruleFor = (name) => {
+    for (const sheet of document.styleSheets) {
+      let rules;
+      try { rules = sheet.cssRules; } catch (e) { continue; }
+      for (const r of rules) if (r.selectorText === `:root[data-ds="${name}"]`) return r;
+    }
+    return null;
+  };
+  const setDs = (name) => {
+    if (name) root.setAttribute('data-ds', name); else root.removeAttribute('data-ds');
+    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.ds === name)));
+    note.hidden = !name;
+    if (name) {
+      const rule = ruleFor(name);
+      const decls = rule ? [...rule.style].map((p) => `  ${p}: ${rule.style.getPropertyValue(p).trim()};`) : [];
+      document.getElementById('ds-text').textContent = notes[name];
+      document.getElementById('ds-count').textContent = decls.length;
+      document.getElementById('ds-css').textContent = `:root[data-ds="${name}"] {\n${decls.join('\n')}\n}`;
+    }
+    try { localStorage.setItem('ds-skin', name); } catch (e) {}
+  };
+  buttons.forEach((b) => b.addEventListener('click', () => setDs(b.dataset.ds)));
+  try {
+    const saved = localStorage.getItem('ds-skin');
+    if (saved && buttons.some((b) => b.dataset.ds === saved)) setDs(saved);
+  } catch (e) {}
+})();
+
+(() => {
+  // Shared shell for both preview iframes
+  const frameDoc = (css, body) =>
+    `<!doctype html><html lang="en"><head><meta charset="utf-8"><style>${css}</style></head>` +
+    `<body style="margin:0;padding:28px 24px;background:#fff;overflow:hidden">${body}</body></html>`;
+
+  // --- Hanna: real CSS, token changed at runtime ---
+  const hannaCss = document.getElementById('hanna-css').textContent;
+  const hannaFrame = document.getElementById('hanna-frame');
+  const hannaInput = document.getElementById('hanna-color');
+  const hannaCode = document.getElementById('hanna-code');
+  hannaFrame.srcdoc = frameDoc(
+    hannaCss + '\n:root{--color-faxafloi-100:#0367e1}',
+    '<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">' +
+      '<button class="ButtonPrimary">Submit application</button>' +
+      '<button class="ButtonSecondary">Cancel</button></div>'
+  );
+  hannaInput.addEventListener('input', () => {
+    const doc = hannaFrame.contentDocument;
+    if (doc && doc.documentElement) doc.documentElement.style.setProperty('--color-faxafloi-100', hannaInput.value);
+    hannaCode.textContent = `:root {\n  --color-faxafloi-100: ${hannaInput.value};\n}`;
+  });
+
+  // --- Ísland.is setup: value baked in at build time ---
+  const islFrame = document.getElementById('isl-frame');
+  const islInput = document.getElementById('isl-color');
+  const islBuild = document.getElementById('isl-build');
+  const islStatus = document.getElementById('isl-status');
+  const islCode = document.getElementById('isl-code');
+  const hash = (s) => {
+    let h = 5381;
+    for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0;
+    return '_' + h.toString(36).slice(0, 6);
+  };
+  const buildCss = (blue) => {
+    const p = blue === '#0061ff' ? '_7sc4nl' : hash(blue);
+    return {
+      prefix: p,
+      css:
+        `.${p}0{cursor:pointer;border:0;border-radius:8px;padding:16px 24px;font-family:system-ui,sans-serif;font-size:16px;font-weight:600;transition:box-shadow .25s,background-color .25s}` +
+        `.${p}1{color:#fff;background-color:${blue}}.${p}1:hover{background-color:#0044b3}` +
+        `.${p}2{color:${blue};background-color:#0000;box-shadow:inset 0 0 0 1px ${blue}}`,
+    };
+  };
+  const renderIsl = (blue) => {
+    const { prefix, css } = buildCss(blue);
+    islFrame.srcdoc = frameDoc(
+      css,
+      '<div style="display:flex;gap:16px;flex-wrap:wrap">' +
+        `<button class="${prefix}1 ${prefix}0">Submit application</button>` +
+        `<button class="${prefix}2 ${prefix}0">Cancel</button></div>`
+    );
+    islCode.textContent = `.${prefix}1 { background-color: ${blue} }`;
+  };
+  let builtBlue = '#0061ff';
+  renderIsl(builtBlue);
+  islInput.addEventListener('input', () => {
+    const stale = islInput.value.toLowerCase() !== builtBlue;
+    islBuild.disabled = !stale;
+    islStatus.innerHTML = stale
+      ? '<span class="pill stale">Not built</span><span>theme.ts changed, but the CSS is still the old version.</span>'
+      : '<span class="pill built">Built</span><span>The CSS matches theme.ts.</span>';
+  });
+  islBuild.addEventListener('click', () => {
+    builtBlue = islInput.value.toLowerCase();
+    renderIsl(builtBlue);
+    islBuild.disabled = true;
+    islStatus.innerHTML = '<span class="pill built">Built</span><span>New CSS, new hash. The old colour is gone from the output.</span>';
+  });
+
+  // --- Tabs ---
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  const select = (tab) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    try { localStorage.setItem('hi-tab', tab.id); } catch (e) {}
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', (e) => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      const next = tabs[(i + d + tabs.length) % tabs.length];
+      select(next);
+      next.focus();
+    });
+  });
+  try {
+    const saved = document.getElementById(localStorage.getItem('hi-tab') || '');
+    if (saved && tabs.includes(saved)) select(saved);
+  } catch (e) {}
+
+  // --- Copy buttons ---
+  document.querySelectorAll('.copy').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const pre = btn.parentElement.querySelector('pre');
+      const done = (label) => { btn.textContent = label; setTimeout(() => (btn.textContent = 'Copy'), 1600); };
+      navigator.clipboard.writeText(pre.textContent).then(
+        () => done('Copied'),
+        () => {
+          const r = document.createRange();
+          r.selectNodeContents(pre);
+          const s = getSelection();
+          s.removeAllRanges();
+          s.addRange(r);
+          done('Selected, press Ctrl+C');
+        }
+      );
+    });
+  });
+})();
+</script>

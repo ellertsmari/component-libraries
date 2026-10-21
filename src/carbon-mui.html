@@ -1,0 +1,1091 @@
+<title>Carbon and Material UI</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400&family=Roboto:wght@400;500;700&display=swap">
+<style>
+/* Default skin follows io.vefskoli.is: Source Sans 3 at regular weight, black and grey neutrals, violet #6563eb, 8/12px corners. Has a dark version here because Carbon and MUI both do.
+   Layout: companion to the Hanna and Ísland.is page. Three parts, one block per idea; Carbon on the left, Material UI on the right, then what it means for a student project. */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --ink: #000000;
+  --muted: #666666;
+  --rule: #e6e6e6;
+  --code-bg: #f2f2f2;
+  --a: #0f62fe;              /* Carbon: blue 60 */
+  --a-soft: #e5eeff;
+  --b: #6750a4;              /* Material: baseline primary */
+  --b-soft: #eee8fb;
+  --hl: #d1d1f9;
+  --hl-ink: #000000;
+  --warn: #c07c22;
+  --good: #4c9a52;
+  --font-display: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Menlo, monospace;
+  --accent: #6563eb;
+  --focus: #6563eb;
+  --body-size: 17px;
+  --bg-art: url("data:image/svg+xml,%3Csvg width=%224530%22 height=%222543%22 viewBox=%220 0 4530 2543%22 fill=%22none%22 xmlns=%22http://www.w3.org/2000/svg%22%3E %3Cg opacity=%220.08%22%3E %3Cpath d=%22M0 54.772C669.641 72.2302 651.56 469.401 1050.6 700.097C1449.64 930.793 1139.45 1256.57 1692.81 1491.95C2233.97 1722.13 2389.37 1859.94 2389.57 1860.12C2744.97 1886.31 2673.27 1860.12 3112.84 1860.12C3529.15 1860.12 3850.13 1736.67 4060.56 1756.93C4209.34 1771.26 4409.54 1933.63 4521.79 2062.8V2531.42H4529.76C4529.75 2531.49 4529.75 2531.56 4529.75 2531.64H0V54.772Z%22 fill=%22url(%23paint0_linear_1555_6915)%22/%3E %3Cpath d=%22M3966.52 207.53C4202.09 152.194 4291.85 -101.567 4524.39 44.9643V651.189L4499.61 2523.84H24.4248C17.6425 2510.49 10.8315 2496.71 4 2482.54V764.405C547.45 751.46 668.982 1141.6 1170.11 1253.46C1693.85 1370.36 3170 753.095 3316.52 587.867C3463.04 422.639 3502.01 316.643 3966.52 207.53Z%22 fill=%22url(%23paint1_linear_1555_6915)%22/%3E %3Cpath d=%22M3523.31 1085.11C3972.1 1085.11 4433.07 359.735 4525.44 540.184V2526.96L4.63379 2543L3 2531.42H5.04199V1361.38C459.994 1209.27 773.08 1540.27 1076.07 1568.32C1412.76 1599.5 1613.84 1827.32 2145.37 1619.11C2676.91 1410.89 3118.04 1085.11 3523.31 1085.11Z%22 fill=%22url(%23paint2_linear_1555_6915)%22/%3E %3C/g%3E %3Cdefs%3E %3ClinearGradient id=%22paint0_linear_1555_6915%22 x1=%22255.391%22 y1=%22883.687%22 x2=%221071.54%22 y2=%22-159.019%22 gradientUnits=%22userSpaceOnUse%22%3E %3Cstop stop-color=%22%23D9D9D9%22 stop-opacity=%220%22/%3E %3Cstop offset=%221%22/%3E %3C/linearGradient%3E %3ClinearGradient id=%22paint1_linear_1555_6915%22 x1=%222048.67%22 y1=%221598.65%22 x2=%221786.3%22 y2=%22417.98%22 gradientUnits=%22userSpaceOnUse%22%3E %3Cstop stop-color=%22%23D9D9D9%22 stop-opacity=%220%22/%3E %3Cstop offset=%221%22/%3E %3C/linearGradient%3E %3ClinearGradient id=%22paint2_linear_1555_6915%22 x1=%221829.52%22 y1=%222471.33%22 x2=%221839.82%22 y2=%22-447.843%22 gradientUnits=%22userSpaceOnUse%22%3E %3Cstop stop-color=%22white%22/%3E %3Cstop offset=%221%22/%3E %3C/linearGradient%3E %3C/defs%3E %3C/svg%3E");
+  --heading-weight: 400;
+  --h1-tracking: 0;
+  --h2-tracking: 0;
+  --r-s: 4px;
+  --r-m: 8px;
+  --r-l: 12px;
+  --r-pill: 999px;
+  --panel-border: var(--rule);
+  --panel-shadow: none;
+  --btn-bg: #6563eb;
+  --btn-ink: #ffffff;
+  --btn-radius: 8px;
+  --btn-weight: 400;
+  --btn-transform: none;
+  --btn-tracking: normal;
+  --btn-shadow: none;
+  --tab-ink: var(--ink);
+  --tab-transform: none;
+  color-scheme: light;
+}
+
+/* Vefskólinn-only details from io.vefskoli.is: pill-shaped secondary buttons, violet notices, quiet eyebrows */
+:root:not([data-ds]) {
+  --chip-radius: 999px; --chip-border: #e6e6e6; --chip-ink: #000000;
+  --callout-bg: #f0f0fd;
+  --eyebrow-weight: 400; --eyebrow-size: 0.85rem;
+}
+
+/* Dark Vefskólinn view, so all three options on this page follow the device's dark mode together.
+   io.vefskoli.is itself has no dark mode; this keeps its type, shapes and violet on a dark ground. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-ds]):not([data-theme="light"]) {
+    --bg: #121212; --surface: #1a1a1a; --ink: #ffffff; --muted: #b3b3b3; --rule: #333333; --code-bg: #1f1f1f;
+    --a: #78a9ff; --a-soft: #15233d; --b: #cfbcff; --b-soft: #262035;
+    --hl: #2c2b76; --hl-ink: #ffffff; --warn: #fea65b; --good: #84cf6e;
+    --accent: #a3a1f3; --focus: #a3a1f3; --bg-art: none;
+    --chip-border: #333333; --chip-ink: #ffffff; --callout-bg: #1d1c3a;
+    color-scheme: dark;
+  }
+}
+:root:not([data-ds])[data-theme="dark"] {
+    --bg: #121212; --surface: #1a1a1a; --ink: #ffffff; --muted: #b3b3b3; --rule: #333333; --code-bg: #1f1f1f;
+  --a: #78a9ff; --a-soft: #15233d; --b: #cfbcff; --b-soft: #262035;
+  --hl: #2c2b76; --hl-ink: #ffffff; --warn: #fea65b; --good: #84cf6e;
+  --accent: #a3a1f3; --focus: #a3a1f3; --bg-art: none;
+  --chip-border: #333333; --chip-ink: #ffffff; --callout-bg: #1d1c3a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg) var(--bg-art) no-repeat fixed center top / 100% auto;
+  color: var(--ink);
+  font: var(--body-size)/1.6 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 64px;
+}
+.wrap { max-width: 1120px; margin: 0 auto; }
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: var(--heading-weight); letter-spacing: var(--h1-tracking); }
+h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: var(--heading-weight); letter-spacing: var(--h2-tracking); }
+h3 { font-size: clamp(1.3rem, 2.2vw, 1.6rem); font-weight: var(--heading-weight); }
+h4 { font-size: 1.15rem; font-weight: var(--heading-weight); }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+code, pre { font-family: var(--font-mono); font-size: 0.84em; }
+:not(pre) > code { background: var(--code-bg); padding: 0.1em 0.35em; border-radius: var(--r-s); overflow-wrap: anywhere; }
+.eyebrow { font-size: var(--eyebrow-size, 0.78rem); text-transform: uppercase; letter-spacing: 0.12em; font-weight: var(--eyebrow-weight, 600); color: var(--muted); }
+
+/* Hero */
+.hero { padding-block: 56px 32px; display: grid; gap: 18px; }
+.hero .lede { max-width: 64ch; font-size: 1.15rem; color: var(--muted); }
+.hero .lede strong { color: var(--ink); }
+.figures { display: flex; flex-wrap: wrap; gap: 8px 28px; font-size: 0.92rem; color: var(--muted); }
+.figures b { font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* The two systems */
+.verdict { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+.verdict > div { padding: 20px 22px; border-radius: var(--r-l); display: grid; gap: 6px; align-content: start; min-width: 0; }
+.verdict .a { background: var(--a-soft); }
+.verdict .b { background: var(--b-soft); }
+.verdict strong { font-family: var(--font-display); font-size: 1.25rem; }
+.verdict p { font-size: 0.95rem; }
+.verdict .src { font-size: 0.85rem; }
+
+/* Index */
+.index { margin-top: 36px; padding-block: 22px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 20px 32px; }
+.index > div { display: grid; gap: 6px; align-content: start; }
+.index ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.index a { color: var(--ink); font-weight: 600; text-decoration-color: var(--rule); }
+.index a:hover { text-decoration-color: currentColor; }
+
+/* Parts and ideas */
+section { padding-top: 72px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.section-intro { max-width: 64ch; color: var(--muted); }
+.part-head { display: grid; gap: 10px; padding-bottom: 8px; }
+.concept { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 28px; padding-block: 32px; border-top: 1px solid var(--rule); scroll-margin-top: 16px; }
+.concept-head { grid-column: 1 / -1; display: grid; gap: 8px; }
+.concept-head .def { max-width: 66ch; font-size: 1.05rem; color: var(--muted); }
+.cell { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.cell p, .cell li { font-size: 0.95rem; }
+.cell .src { font-size: 0.82rem; color: var(--muted); }
+.cell pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.cell.a pre { border-left: 3px solid var(--a); }
+.cell.b pre { border-left: 3px solid var(--b); }
+.lane-mini { display: flex; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; align-items: center; gap: 8px; color: var(--muted); }
+.dot { width: 12px; height: 12px; flex: none; }
+.dot.a { background: var(--a); }
+.dot.b { background: var(--b); border-radius: 50%; }
+.sub { font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-top: 4px; }
+.span { grid-column: 1 / -1; min-width: 0; }
+.takeaway { grid-column: 1 / -1; font-size: 0.98rem; padding-top: 14px; border-top: 1px dashed var(--rule); max-width: 80ch; }
+.takeaway b { font-family: var(--font-display); font-weight: 700; }
+.pc { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.pc li { display: grid; grid-template-columns: 1.4em minmax(0, 1fr); }
+.pc li::before { font-weight: 700; }
+.pc.for li::before { content: "+"; color: var(--good); }
+.pc.against li::before { content: "–"; color: var(--warn); }
+.size { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; align-items: center; font-size: 0.9rem; }
+.size .bar { height: 10px; background: var(--a); border-radius: 2px; }
+.size .num { font-family: var(--font-mono); font-size: 0.82rem; font-variant-numeric: tabular-nums; }
+
+pre {
+  margin: 0; background: var(--code-bg); color: var(--ink); padding: 14px 16px; border-radius: var(--r-m);
+  overflow-x: auto; line-height: 1.55; white-space: pre; tab-size: 2;
+}
+pre .c { color: var(--muted); font-style: italic; }
+pre .err { color: var(--warn); }
+pre mark, .hl { background: var(--hl); color: var(--hl-ink); border-radius: 3px; padding: 0 2px; }
+.files { list-style: none; margin: 0; padding: 0; font-family: var(--font-mono); font-size: 0.84rem; display: grid; gap: 2px; }
+.files li { display: flex; gap: 4px 12px; flex-wrap: wrap; }
+.files li span:first-child { min-width: 19ch; overflow-wrap: anywhere; }
+.files li span:last-child { color: var(--muted); font-family: var(--font-body); }
+
+/* Playground */
+.play-head { display: grid; gap: 6px; margin-top: 8px; }
+.play { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+.panel { background: var(--surface); border: 1px solid var(--panel-border); border-radius: var(--r-l); box-shadow: var(--panel-shadow); padding: 20px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.panel-head { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; }
+.control { display: flex; align-items: center; gap: 10px 12px; flex-wrap: wrap; }
+.control label { font-family: var(--font-mono); font-size: 0.85rem; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: var(--r-m); overflow: hidden; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg label { font: 600 0.82rem var(--font-body); padding: 6px 11px; cursor: pointer; color: var(--muted); }
+.seg label:not(:first-of-type) { border-left: 1px solid var(--rule); }
+.seg input:checked + label { background: var(--btn-bg); color: var(--btn-ink); }
+.seg input:focus-visible + label { outline: 3px solid var(--b); outline-offset: -3px; }
+input[type="color"] { width: 48px; height: 36px; border: 1px solid var(--rule); border-radius: var(--r-m); background: var(--surface); padding: 2px; cursor: pointer; }
+.browser { border: 1px solid var(--rule); border-radius: var(--r-m); overflow: hidden; background: #ffffff; }
+.browser .bar { background: var(--code-bg); font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); padding: 6px 10px; border-bottom: 1px solid var(--rule); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.browser iframe { display: block; width: 100%; height: 132px; border: 0; background: #ffffff; }
+.status { font-size: 0.9rem; display: flex; align-items: center; gap: 8px; min-height: 1.6em; flex-wrap: wrap; }
+.status .pill { font-size: 0.75rem; font-weight: 600; padding: 2px 10px; border-radius: var(--r-pill); background: var(--code-bg); color: var(--muted); }
+.status .pill.live { background: var(--a-soft); color: var(--a); }
+.status .pill.run { background: var(--b-soft); color: var(--b); }
+.status .pill.stale { background: var(--hl); color: var(--hl-ink); }
+.note { font-size: 0.85rem; color: var(--muted); }
+
+/* Tutorial */
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; border-bottom: 1px solid var(--rule); }
+.tab { font: 600 1rem var(--font-display); text-transform: var(--tab-transform); background: none; border: 0; border-bottom: 3px solid transparent; color: var(--muted); padding: 10px 6px; margin-bottom: -1px; cursor: pointer; }
+.tab[aria-selected="true"] { color: var(--tab-ink); border-bottom-color: var(--tab-ink); }
+.ex { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+.ex-meta { display: flex; gap: 10px 24px; flex-wrap: wrap; font-size: 0.92rem; color: var(--muted); }
+.ex-meta b { color: var(--ink); font-weight: 600; }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; max-width: 820px; }
+.steps > li { counter-increment: step; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 6px 16px; }
+.steps > li::before { content: counter(step); font: 700 1rem var(--font-display); width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--ink); display: grid; place-items: center; grid-row: span 2; }
+.step-body { display: grid; gap: 10px; min-width: 0; }
+.step-body h3 { font-size: 1.1rem; }
+.code-wrap { position: relative; min-width: 0; }
+.code-wrap .file { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); padding: 0 0 4px 2px; }
+.copy { position: absolute; top: 30px; right: 8px; font: 600 0.75rem var(--font-body); background: var(--surface); color: var(--ink); border: 1px solid var(--rule); border-radius: var(--r-s); padding: 3px 9px; cursor: pointer; }
+.code-wrap.nofile .copy { top: 8px; }
+.code-wrap pre { padding-right: 76px; }
+.callout { border-left: 3px solid var(--b); background: var(--callout-bg, var(--surface)); padding: 12px 16px; border-radius: 0 var(--r-m) var(--r-m) 0; font-size: 0.95rem; }
+.callout.warn { border-left-color: var(--warn); }
+.check { font-size: 0.93rem; padding: 10px 14px; background: var(--a-soft); border-radius: var(--r-m); }
+.check b { font-weight: 600; }
+.questions { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; max-width: 70ch; }
+
+footer { padding-top: 72px; font-size: 0.85rem; color: var(--muted); display: grid; gap: 8px; max-width: 80ch; }
+
+/* Design-system switcher: each option sets data-ds on <html>, and one CSS rule redefines the page's tokens */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+.ds-bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--rule);
+  margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))) calc(-1 * max(16px, env(safe-area-inset-right, 0px)));
+  padding-block: 10px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.ds-inner { max-width: 1120px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.ds-label { font-size: 0.9rem; color: var(--muted); }
+.ds-options { display: flex; flex-wrap: wrap; gap: 8px; }
+.ds-btn { font: var(--btn-weight) 0.9rem var(--font-body); text-transform: var(--btn-transform); letter-spacing: var(--btn-tracking); padding: 7px 14px; border-radius: var(--chip-radius, var(--btn-radius)); border: 1px solid var(--chip-border, var(--accent)); color: var(--chip-ink, var(--accent)); background: transparent; cursor: pointer; transition: background-color .15s, box-shadow .15s; }
+.ds-btn:hover { background: var(--code-bg); }
+.ds-btn[aria-pressed="true"] { background: var(--btn-bg); border-color: var(--btn-bg); color: var(--btn-ink); box-shadow: var(--btn-shadow); }
+.ds-note { margin-block: 0 28px; padding: 14px 18px; border: 1px dashed var(--accent); border-radius: var(--r-m); display: grid; gap: 8px; font-size: 0.92rem; max-width: 80ch; }
+.ds-note summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.ds-note pre { margin-top: 8px; max-height: 300px; overflow: auto; }
+
+/* ---- The page in Carbon (IBM): the White theme, or Gray 100 in dark mode. ---- */
+:root[data-ds="carbon"] {
+  --bg: #ffffff; --surface: #ffffff; --ink: #161616; --muted: #525252; --rule: #e0e0e0; --code-bg: #f4f4f4;
+  --a: #0f62fe; --a-soft: #edf5ff; --b: #6750a4; --b-soft: #eee8fb;
+  --hl: #d0e2ff; --hl-ink: #161616; --warn: #da1e28; --good: #24a148;
+  --accent: #0f62fe; --focus: #0f62fe;
+  --font-display: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", Menlo, monospace;
+  --body-size: 16px; --heading-weight: 400; --h1-tracking: 0; --h2-tracking: 0;
+  --r-s: 0; --r-m: 0; --r-l: 0; --r-pill: 24px;
+  --btn-bg: #0f62fe; --btn-ink: #ffffff; --btn-radius: 0; --btn-weight: 400; --tab-ink: #0f62fe;
+  --bg-art: none;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-ds="carbon"]:not([data-theme="light"]) {
+    --bg: #161616; --surface: #161616; --ink: #f4f4f4; --muted: #c6c6c6; --rule: #393939; --code-bg: #262626;
+    --a: #78a9ff; --a-soft: #001d6c; --b: #cfbcff; --b-soft: #262035;
+    --hl: #001d6c; --hl-ink: #f4f4f4; --warn: #fa4d56; --good: #42be65;
+    --accent: #78a9ff; --focus: #ffffff; --tab-ink: #78a9ff;
+    color-scheme: dark;
+  }
+}
+:root[data-ds="carbon"][data-theme="dark"] {
+  --bg: #161616; --surface: #161616; --ink: #f4f4f4; --muted: #c6c6c6; --rule: #393939; --code-bg: #262626;
+  --a: #78a9ff; --a-soft: #001d6c; --b: #cfbcff; --b-soft: #262035;
+  --hl: #001d6c; --hl-ink: #f4f4f4; --warn: #fa4d56; --good: #42be65;
+  --accent: #78a9ff; --focus: #ffffff; --tab-ink: #78a9ff;
+  color-scheme: dark;
+}
+/* ---- The page in Material UI's default theme, light or dark. ---- */
+:root[data-ds="mui"] {
+  --bg: #ffffff; --surface: #ffffff; --ink: rgba(0, 0, 0, .87); --muted: rgba(0, 0, 0, .6); --rule: rgba(0, 0, 0, .12); --code-bg: #f5f5f5;
+  --a: #0f62fe; --a-soft: #e5eeff; --b: #6750a4; --b-soft: #eee8fb;
+  --hl: #fff59d; --hl-ink: rgba(0, 0, 0, .87); --warn: #ed6c02; --good: #2e7d32;
+  --accent: #1976d2; --focus: #1976d2;
+  --font-display: Roboto, Helvetica, Arial, sans-serif; --font-body: Roboto, Helvetica, Arial, sans-serif;
+  --body-size: 16px; --heading-weight: 400; --h1-tracking: 0; --h2-tracking: 0;
+  --r-s: 4px; --r-m: 4px; --r-l: 4px; --r-pill: 16px;
+  --panel-border: transparent;
+  --panel-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+  --btn-bg: #1976d2; --btn-ink: #ffffff; --btn-radius: 4px; --btn-weight: 500; --btn-transform: uppercase; --btn-tracking: .02857em;
+  --btn-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  --tab-ink: #1976d2; --tab-transform: uppercase;
+  --bg-art: none;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-ds="mui"]:not([data-theme="light"]) {
+    --bg: #121212; --surface: #1e1e1e; --ink: #ffffff; --muted: rgba(255, 255, 255, .7); --rule: rgba(255, 255, 255, .12); --code-bg: #2c2c2c;
+    --a: #78a9ff; --a-soft: #15233d; --b: #cfbcff; --b-soft: #262035;
+    --hl: #5c4f12; --hl-ink: #fff6c9; --warn: #ffa726; --good: #66bb6a;
+    --accent: #90caf9; --focus: #90caf9; --btn-bg: #90caf9; --btn-ink: rgba(0, 0, 0, .87); --tab-ink: #90caf9;
+    color-scheme: dark;
+  }
+}
+:root[data-ds="mui"][data-theme="dark"] {
+  --bg: #121212; --surface: #1e1e1e; --ink: #ffffff; --muted: rgba(255, 255, 255, .7); --rule: rgba(255, 255, 255, .12); --code-bg: #2c2c2c;
+  --a: #78a9ff; --a-soft: #15233d; --b: #cfbcff; --b-soft: #262035;
+  --hl: #5c4f12; --hl-ink: #fff6c9; --warn: #ffa726; --good: #66bb6a;
+  --accent: #90caf9; --focus: #90caf9; --btn-bg: #90caf9; --btn-ink: rgba(0, 0, 0, .87); --tab-ink: #90caf9;
+  color-scheme: dark;
+}
+
+@media (max-width: 860px) {
+  .concept, .verdict, .play { grid-template-columns: minmax(0, 1fr); }
+  .index { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+</style>
+
+<div class="ds-bar" role="group" aria-labelledby="ds-label">
+  <div class="ds-inner">
+    <span class="ds-label" id="ds-label">Practise what we preach. View this page in:</span>
+    <div class="ds-options">
+      <button type="button" class="ds-btn" data-ds="" aria-pressed="true">Vefskólinn</button>
+      <button type="button" class="ds-btn" data-ds="carbon" aria-pressed="false">Carbon</button>
+      <button type="button" class="ds-btn" data-ds="mui" aria-pressed="false">Material UI</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">Vefskólinn · Component libraries</span>
+    <h1>Carbon and Material UI</h1>
+    <p class="lede">The same ideas as on the <a href="https://claude.ai/artifact/RtgWNjPbuZ2s5EMfsuiGgu" target="_blank" rel="noopener">Hanna and Ísland.is page</a>, in two design systems that are used as examples all over the world. <strong>Carbon</strong> is IBM's design system. <strong>Material UI</strong> (MUI) is the most used React library built on Google's Material Design. Like the Icelandic pair, they make opposite choices: Carbon starts from CSS, MUI starts from React.</p>
+    <div class="figures" aria-label="npm downloads in one week, October 2026">
+      <span><b>5.5 million</b> weekly downloads of <code>@mui/material</code></span>
+      <span><b>83,000</b> weekly downloads of <code>@carbon/react</code></span>
+      <span>npm, week to 20 October 2026</span>
+    </div>
+  </header>
+
+  <div class="ds-note" id="ds-note" aria-live="polite" hidden>
+    <p id="ds-text"></p>
+    <p>Nothing in the HTML changed. The button sets one attribute on <code>&lt;html&gt;</code>, and one CSS rule redefines <b id="ds-count">0</b> of the page's variables.</p>
+    <details>
+      <summary>See the CSS</summary>
+<pre id="ds-css"></pre>
+    </details>
+  </div>
+
+  <div class="verdict">
+    <div class="a">
+      <span class="lane-mini"><span class="dot a"></span>Carbon · IBM</span>
+      <strong>The styles are the foundation.</strong>
+      <p>Carbon's CSS is written in Sass and shared by its React library and its Web Components library. The React components mostly choose class names.</p>
+      <a class="src" href="https://react.carbondesignsystem.com" target="_blank" rel="noopener">Storybook: react.carbondesignsystem.com ↗</a>
+    </div>
+    <div class="b">
+      <span class="lane-mini"><span class="dot b"></span>Material UI · built on Google's Material Design</span>
+      <strong>The React component is the product.</strong>
+      <p>Styles are written as JavaScript objects and turned into CSS in the browser while the page runs. MUI is its own company. Google designs Material, MUI builds it for React.</p>
+      <a class="src" href="https://mui.com/material-ui/" target="_blank" rel="noopener">Docs: mui.com/material-ui ↗</a>
+    </div>
+  </div>
+
+  <nav class="index" aria-label="Ideas on this page">
+    <div>
+      <span class="eyebrow">Part 1 · The problems</span>
+      <ul>
+        <li><a href="#dividing">Dividing the work</a></li>
+        <li><a href="#start">Where to start</a></li>
+        <li><a href="#one-place">Change it in one place</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="eyebrow">Part 2 · The ideas underneath</span>
+      <ul>
+        <li><a href="#abstraction">Abstraction</a></li>
+        <li><a href="#modularity">Modularity</a></li>
+        <li><a href="#dependencies">Dependencies</a></li>
+        <li><a href="#decoupling">Decoupling</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="eyebrow">Part 3 · The arguments</span>
+      <ul>
+        <li><a href="#debate">Runtime or build time</a></li>
+        <li><a href="#specific">Specific to your product</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="eyebrow">Then</span>
+      <ul>
+        <li><a href="#exercises">Try it yourself</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================= PART 1 ================= -->
+  <section aria-labelledby="p1-h">
+    <div class="part-head">
+      <span class="eyebrow">Part 1</span>
+      <h2 id="p1-h">The problems it solves</h2>
+      <p class="section-intro">The same problems you know from group projects, at the scale of companies with hundreds of developers.</p>
+    </div>
+
+    <article class="concept" id="dividing" aria-labelledby="c-dividing">
+      <div class="concept-head">
+        <h3 id="c-dividing">Dividing the work</h3>
+        <p class="def">Split a big product into small parts with clear borders. Then many people can work at the same time without getting in each other's way.</p>
+      </div>
+      <div class="cell a">
+        <span class="lane-mini"><span class="dot a"></span>Carbon</span>
+        <p>One repository, split into packages that each have one job:</p>
+<pre>packages/
+  colors/          <span class="c">the colour palette</span>
+  themes/          <span class="c">tokens built from the colours</span>
+  type/  grid/  layout/  motion/  icons/
+  styles/          <span class="c">the CSS for every component</span>
+  react/           <span class="c">React components</span>
+  web-components/  <span class="c">the same components as Web Components</span></pre>
+        <p>Even one Button is split by job. The CSS lives in <code>styles/scss/components/button/</code> and the React part in <code>react/src/components/Button/</code>, next to <code>Button.stories.js</code> (Storybook), <code>Button.mdx</code> (docs) and a <code>__tests__</code> folder.</p>
+        <a class="src" href="https://github.com/carbon-design-system/carbon/tree/main/packages" target="_blank" rel="noopener">github.com/carbon-design-system/carbon ↗</a>
+      </div>
+      <div class="cell b">
+        <span class="lane-mini"><span class="dot b"></span>Material UI</span>
+        <p>Every component is one folder in <code>packages/mui-material/src/</code>:</p>
+        <ul class="files">
+          <li><span>Button/Button.js</span><span>the component and its styles</span></li>
+          <li><span>Button/Button.d.ts</span><span>the TypeScript types</span></li>
+          <li><span>Button/buttonClasses.ts</span><span>the readable class names</span></li>
+          <li><span>Button/Button.test.js</span><span>tests</span></li>
+        </ul>
+        <p>Here the styles sit in the same file as the component. Splitting by component, with everything for one component in one place, is the same idea as Ísland.is.</p>
+        <a class="src" href="https://github.com/mui/material-ui/tree/master/packages/mui-material/src/Button" target="_blank" rel="noopener">github.com/mui/material-ui ↗</a>
+      </div>
+      <p class="takeaway"><b>In your project:</b> both systems give every component an owner and a home. The same rule works for a team of four: one owner per component, and everything for that component in one folder.</p>
+    </article>
+
+    <article class="concept" id="start" aria-labelledby="c-start">
+      <div class="concept-head">
+        <h3 id="c-start">Where to start, one piece at a time</h3>
+        <p class="def">Build from the bottom up. First the tokens, then the smallest components, then bigger components made from the small ones.</p>
+      </div>
+      <div class="cell a">
+        <span class="lane-mini"><span class="dot a"></span>Carbon</span>
+<pre>@carbon/colors   <span class="c">blue60 = #0f62fe</span>
+     ↓
+@carbon/themes   <span class="c">button-primary = blue60</span>
+     ↓
+@carbon/styles   <span class="c">.cds--btn--primary { … }</span>
+     ↓
+@carbon/react    <span class="c">&lt;Button kind="primary"&gt;</span></pre>
+        <p>The packages depend on each other in this order. You can see it in <code>@carbon/styles</code>' own list of dependencies: colors, themes, type, grid, layout and motion all come first.</p>
+      </div>
+      <div class="cell b">
+        <span class="lane-mini"><span class="dot b"></span>Material UI</span>
+<pre><span class="c">// packages/mui-material/src/Button/Button.js</span>
+import ButtonBase from '../ButtonBase'
+import CircularProgress from '../CircularProgress'</pre>
+        <p><code>ButtonBase</code> handles the behaviour every clickable thing needs: focus, keyboard and the ripple effect. <code>Button</code> adds the Material look on top. <code>CircularProgress</code> is the spinner a button shows while it's loading. Under it all is the default theme from <code>createTheme()</code>: colours, type, an 8px spacing unit and breakpoints.</p>
+      </div>
+      <p class="takeaway"><b>In your project:</b> notice that MUI separates behaviour (ButtonBase) from looks (Button). If your project has several kinds of buttons, build the shared behaviour once.</p>
+    </article>
+
+    <article class="concept" id="one-place" aria-labelledby="c-one-place">
+      <div class="concept-head">
+        <h3 id="c-one-place">Consistency: change it in one place</h3>
+        <p class="def">Every component takes its colours from the same tokens, so the product looks consistent and one change updates everything that uses a token. At this scale the same idea also gives you whole themes.</p>
+      </div>
+      <div class="cell a">
+        <span class="lane-mini"><span class="dot a"></span>Carbon</span>
+<pre><span class="c">/* compiled Carbon CSS */</span>
+.cds--white { --cds-background: #ffffff; --cds-button-primary: #0f62fe; … }
+.cds--g100  { --cds-background: #161616; --cds-button-primary: #0f62fe; … }
+
+.cds--btn--primary {
+  background-color: <mark>var(--cds-button-primary, #0f62fe)</mark>;
+}</pre>
+        <p>Carbon has four themes: White, Gray 10, Gray 90 and Gray 100. Each theme is one class that sets about 345 tokens. Wrap part of a page in <code>&lt;Theme theme="g100"&gt;</code> and everything inside it switches.</p>
+      </div>
+      <div class="cell b">
+        <span class="lane-mini"><span class="dot b"></span>Material UI</span>
+<pre>const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: { main: <mark>'#1976d2'</mark> },
+  },
+})
+
+&lt;ThemeProvider theme={theme}&gt;
+  &lt;App /&gt;
+&lt;/ThemeProvider&gt;</pre>
+        <p>The theme is a JavaScript object. Every MUI component inside <code>ThemeProvider</code> reads its colours from it. <code>#1976d2</code> is MUI's default primary blue.</p>
+      </div>
+
+      <div class="span play-head" id="try-it">
+        <h4>Try it: change the theme</h4>
+        <p class="note">Both systems change in one place, but in different ways. On the left is Carbon's real CSS. On the right is the real MUI library, running in your browser.</p>
+      </div>
+      <div class="span play">
+        <div class="panel">
+          <div class="panel-head"><span class="dot a"></span>Carbon: swap a class</div>
+          <div class="control">
+            <div class="seg" role="radiogroup" aria-label="Carbon theme">
+              <input type="radio" name="cds-theme" id="cds-white" value="white" checked><label for="cds-white">White</label>
+              <input type="radio" name="cds-theme" id="cds-g10" value="g10"><label for="cds-g10">G10</label>
+              <input type="radio" name="cds-theme" id="cds-g90" value="g90"><label for="cds-g90">G90</label>
+              <input type="radio" name="cds-theme" id="cds-g100" value="g100"><label for="cds-g100">G100</label>
+            </div>
+          </div>
+          <div class="control">
+            <input type="color" id="cds-color" value="#0f62fe" aria-describedby="cds-status">
+            <label for="cds-color">--cds-button-primary</label>
+          </div>
+          <div class="browser">
+            <div class="bar">@carbon/styles 1.118 · button + themes</div>
+            <iframe id="cds-frame" title="Carbon buttons" loading="lazy"></iframe>
+          </div>
+          <div class="status" id="cds-status"><span class="pill live">CSS only</span><span>The browser swaps one class. No JavaScript styling.</span></div>
+<pre id="cds-code">&lt;div class="cds--white"&gt;</pre>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><span class="dot b"></span>Material UI: a new theme object</div>
+          <div class="control">
+            <div class="seg" role="radiogroup" aria-label="MUI palette mode">
+              <input type="radio" name="mui-mode" id="mui-light" value="light" checked><label for="mui-light">Light</label>
+              <input type="radio" name="mui-mode" id="mui-dark" value="dark"><label for="mui-dark">Dark</label>
+            </div>
+          </div>
+          <div class="control">
+            <input type="color" id="mui-color" value="#1976d2" aria-describedby="mui-status">
+            <label for="mui-color">palette.primary.main</label>
+          </div>
+          <div class="browser">
+            <div class="bar">@mui/material 5.16 · React 18 · Emotion</div>
+            <iframe id="mui-frame" title="Material UI buttons" loading="lazy"></iframe>
+          </div>
+          <div class="status" id="mui-status"><span class="pill stale">Loading</span><span>Fetching React and MUI from a CDN…</span></div>
+<pre id="mui-code">&lt;button class="… css-?"&gt;</pre>
+          <p class="note">The demo uses MUI 5, the last version with a build that runs straight in the browser. MUI 9 still uses Emotion to style components by default.</p>
+        </div>
+      </div>
+      <p class="takeaway"><b>In your project:</b> if you plan a dark mode, use tokens from day one. Swapping a theme is easy when every colour already has a name, and very hard when colours are typed into fifty files.</p>
+    </article>
+  </section>
+
+  <!-- ================= PART 2 ================= -->
+  <section aria-labelledby="p2-h">
+    <div class="part-head">
+      <span class="eyebrow">Part 2</span>
+      <h2 id="p2-h">The programming ideas underneath</h2>
+      <p class="section-intro">General programming ideas, made visible. These two systems show them at a scale where getting them wrong would cost thousands of developers time.</p>
+    </div>
+
+    <article class="concept" id="abstraction" aria-labelledby="c-abstraction">
+      <div class="concept-head">
+        <h3 id="c-abstraction">Abstraction</h3>
+        <p class="def">Hiding the details behind a simple surface, so you can use something without knowing how it works inside.</p>
+      </div>
+      <div class="cell a">
+        <span class="lane-mini"><span class="dot a"></span>Carbon</span>
+        <span class="sub">What you write</span>
+<pre>&lt;Button kind="primary"&gt;Submit application&lt;/Button&gt;</pre>
+        <span class="sub">What's hidden underneath</span>
+<pre><span class="c">// packages/react/src/components/Button/ButtonBase.tsx (shortened)</span>
+const prefix = usePrefix();
+const buttonClasses = classNames(className, {
+  [`${prefix}--btn`]: true,
+  [`${prefix}--btn--${kind}`]: kind,
+  [`${prefix}--btn--disabled`]: disabled,
+});</pre>
+        <span class="sub">What the browser gets</span>
+<pre>&lt;button class="<mark>cds--btn cds--btn--primary</mark>" type="button"&gt;</pre>
+        <p>The React component's main job is to pick class names. The CSS comes separately from <code>@carbon/styles</code>. The <code>cds</code> prefix comes from <code>usePrefix()</code>, so a company can change it if it clashes with other CSS.</p>
+      </div>
+      <div class="cell b">
+        <span class="lane-mini"><span class="dot b"></span>Material UI</span>
+        <span class="sub">What you write</span>
+<pre>&lt;Button variant="contained"&gt;Submit application&lt;/Button&gt;</pre>
+        <span class="sub">What's hidden underneath</span>
+<pre><span class="c">// packages/mui-material/src/Button/Button.js (shortened)</span>
+const ButtonRoot = styled(ButtonBase, {
+  name: 'MuiButton',
+  slot: 'Root',
+})(({ theme }) =&gt; ({
+  ...theme.typography.button,
+  minWidth: 64,
+  padding: '6px 16px',
+  borderRadius: theme.shape.borderRadius,
+}))</pre>
+        <span class="sub">What the browser gets</span>
+<pre>&lt;button class="MuiButtonBase-root MuiButton-root
+  MuiButton-contained MuiButton-colorPrimary <mark>css-1s9xu08</mark>"&gt;</pre>
+        <p><code>styled()</code> turns a JavaScript object into CSS while the page runs, using a library called Emotion. The hashed class <code>css-1s9xu08</code> holds the styles. The readable <code>MuiButton-root</code> names are added so you can still target the button from your own CSS.</p>
+      </div>
+      <div class="span callout">Both class lists above come from real test builds of the libraries, made in Vite with React 19 on 21 October 2026. Your hash may differ.</div>
+      <p class="takeaway"><b>In your project:</b> give your components a small, clear set of props, like <code>kind</code> or <code>variant</code>. Whoever uses the component chooses from those, and the details stay inside.</p>
+    </article>
+
+    <article class="concept" id="modularity" aria-labelledby="c-modularity">
+      <div class="concept-head">
+        <h3 id="c-modularity">Modularity</h3>
+        <p class="def">The system is made of separate modules with clear borders, and you take only the ones you need.</p>
+      </div>
+      <div class="cell a">
+        <span class="lane-mini"><span class="dot a"></span>Carbon</span>
+<pre><span class="c">// everything</span>
+@use '@carbon/react';
+
+<span class="c">// only what a page with buttons needs</span>
+@use '@carbon/react/scss/reset';
+@use '@carbon/react/scss/zone';
+@use '@carbon/react/scss/components/button';</pre>
+        <div class="size" aria-label="CSS size after npm run build">
+          <span>Everything</span><span class="num">1,227 KB</span>
+          <span></span><span class="bar" style="width:100%"></span>
+          <span>Only buttons</span><span class="num">130 KB</span>
+          <span></span><span class="bar" style="width:10.6%"></span>
+        </div>
+        <p>The same page, built twice with Vite. The CSS file is almost ten times smaller when you only take the modules you use.</p>
+      </div>
+      <div class="cell b">
+        <span class="lane-mini"><span class="dot b"></span>Material UI</span>
+<pre><span class="c">// both work</span>
+import { Button } from '@mui/material'
+import Button from '@mui/material/Button'</pre>
+        <p>You import components one by one. There is no CSS file to trim, because Emotion only creates CSS for components that actually appear on the page. In our test build, <code>npm run build</code> produced no CSS file at all, only one 342 KB JavaScript file (React included).</p>
+      </div>
+      <p class="takeaway"><b>In your project:</b> modularity has a size you can measure. Run <code>npm run build</code> and look at what lands in <code>dist/</code>. That's what your users download.</p>
+    </article>
+
+    <article class="concept" id="dependencies" aria-labelledby="c-dependencies">
+      <div class="concept-head">
+        <h3 id="c-dependencies">Dependencies</h3>
+        <p class="def">Everything a module needs in order to work. At this scale, dependencies are mostly well managed. But they still break, and some of them do things you didn't ask for.</p>
+      </div>
+      <div class="cell a">
+        <span class="lane-mini"><span class="dot a"></span>Carbon</span>
+        <span class="sub">A tool you install yourself</span>
+        <p>Carbon's styles are Sass, so <code>sass</code> is a <em>peer dependency</em>: you have to install it in your own project. On 21 October 2026, Sass 1.106.0 came out. Our test build of Carbon failed with it:</p>
+<pre>$ npm run build
+<span class="err">✗ Build failed in 6.14s</span>
+[plugin vite:css] src/index.scss
+RolldownError: [sass] undefined
+
+$ npm install -D <mark>sass@1.105.2</mark>
+$ npm run build
+✓ built</pre>
+        <p>Nothing in Carbon changed. A new version of a dependency did, and the old version still worked.</p>
+        <span class="sub">A dependency that collects data</span>
+        <p><code>@carbon/react</code> and <code>@carbon/styles</code> depend on <code>@ibm/telemetry-js</code>. It collects anonymous usage data, but only on CI servers like GitHub Actions, never on your own computer. You can turn it off by setting <code>IBM_TELEMETRY_DISABLED=true</code>.</p>
+      </div>
+      <div class="cell b">
+        <span class="lane-mini"><span class="dot b"></span>Material UI</span>
+        <span class="sub">A styling engine you install yourself</span>
+<pre>npm install @mui/material <mark>@emotion/react @emotion/styled</mark></pre>
+        <p>MUI's styles depend on Emotion, and Emotion is a peer dependency too. MUI accepts React 17 to 19.</p>
+        <span class="sub">A dependency on JavaScript itself</span>
+        <p>Because Emotion creates CSS while the page runs, the styles need JavaScript running in the browser. React Server Components, which render on the server without browser JavaScript, can't do that. This is one reason the MUI team started Pigment CSS, which creates the CSS at build time instead. It's still experimental, at version 0.0.31.</p>
+      </div>
+      <div class="span callout warn"><strong>When a library is retired.</strong> Shopify's Polaris was one of the best-known React design systems. Today npm shows this when you install it: <em>“Polaris React is deprecated and no longer maintained. For building Shopify admin experiences, use Polaris web components.”</em> Google's own Material Web library says it is <em>“in maintenance mode pending new maintainers”</em>. Every app built on a library depends on the people maintaining it.</div>
+      <p class="takeaway"><b>In your project:</b> before you install a library, check three things on npm: when it was last published, which versions of React it accepts, and what it depends on. And commit your <code>package-lock.json</code>, so everyone in the group gets the same versions.</p>
+    </article>
+
+    <article class="concept" id="decoupling" aria-labelledby="c-decoupling">
+      <div class="concept-head">
+        <h3 id="c-decoupling">Decoupling</h3>
+        <p class="def">Keeping parts independent of each other, so you can change or replace one without breaking the others.</p>
+      </div>
+      <div class="cell a">
+        <span class="lane-mini"><span class="dot a"></span>Carbon</span>
+<pre><span class="c">// React, with @carbon/react</span>
+&lt;Button kind="primary"&gt;Submit application&lt;/Button&gt;
+
+<span class="c">&lt;!-- Web Components, with @carbon/web-components --&gt;</span>
+&lt;cds-button kind="primary"&gt;Submit application&lt;/cds-button&gt;</pre>
+        <p>Both libraries depend on the same <code>@carbon/styles</code>. The styles don't know which framework is using them, so the button looks the same in React, in Web Components, or in plain HTML with the class names.</p>
+      </div>
+      <div class="cell b">
+        <span class="lane-mini"><span class="dot b"></span>Material UI</span>
+        <p>Three kinds of decoupling:</p>
+        <ul class="files">
+          <li><span>Design ↔ code</span><span>Google writes the Material Design guidelines. MUI, Angular Material, Flutter and Google's own Material Web all build from them.</span></li>
+          <li><span>Component ↔ styling engine</span><span>MUI's components call MUI's own <code>styled()</code>, not Emotion directly. The repo has packages for using styled-components or Pigment CSS instead.</span></li>
+          <li><span>Behaviour ↔ looks</span><span>The MUI team also builds Base UI, components with behaviour and accessibility but no styles at all.</span></li>
+        </ul>
+      </div>
+      <p class="takeaway"><b>In your project:</b> put a thin layer of your own between your code and the libraries you use. If every component imports your <code>Button</code>, and only your <code>Button</code> imports the library, you can switch libraries by changing one file.</p>
+    </article>
+  </section>
+
+  <!-- ================= PART 3 ================= -->
+  <section aria-labelledby="p3-h">
+    <div class="part-head">
+      <span class="eyebrow">Part 3</span>
+      <h2 id="p3-h">Why people argue about it</h2>
+      <p class="section-intro">With the Icelandic page, you have now seen three ways to style components. The big libraries are slowly moving toward the same answer.</p>
+    </div>
+
+    <article class="concept" id="debate" aria-labelledby="c-debate">
+      <div class="concept-head">
+        <h3 id="c-debate">Runtime or build time</h3>
+        <p class="def">Plain CSS with variables (Hanna, Carbon), CSS generated at build time (Ísland.is), or CSS generated by JavaScript while the page runs (MUI). Each is a position in the long argument about CSS-in-JS.</p>
+      </div>
+      <div class="cell a">
+        <span class="lane-mini"><span class="dot a"></span>Carbon · Sass, then CSS variables</span>
+        <p>Sass runs at build time and produces plain CSS. The tokens stay as CSS variables, so themes still switch in the browser.</p>
+        <ul class="pc for">
+          <li>Themes switch without JavaScript. You did it in the demo above.</li>
+          <li>Readable class names in DevTools.</li>
+          <li>Works with any framework.</li>
+        </ul>
+        <ul class="pc against">
+          <li>Class names are global. The <code>cds--</code> prefix is there to avoid clashes.</li>
+          <li>You need Sass in your build, with a version that works.</li>
+        </ul>
+      </div>
+      <div class="cell b">
+        <span class="lane-mini"><span class="dot b"></span>Material UI · Emotion, at runtime</span>
+        <p>JavaScript creates the CSS in the browser. Styles can react to props and the theme directly, for example through the <code>sx</code> prop.</p>
+        <ul class="pc for">
+          <li>Styles can depend on anything JavaScript knows.</li>
+          <li>Only CSS for components on the page is created.</li>
+          <li>Hashed class names never clash.</li>
+        </ul>
+        <ul class="pc against">
+          <li>The browser does extra work every time styles change. Watch the rule count in the demo.</li>
+          <li>Doesn't work with React Server Components.</li>
+        </ul>
+      </div>
+      <div class="span">
+        <p style="max-width:70ch">MUI has added a <code>cssVariables</code> option. With it turned on, our test build put the theme in CSS variables, and the button read its colour like this:</p>
+      </div>
+<pre class="span">--mui-palette-primary-main: #1976d2;
+--variant-containedBg: <mark>var(--mui-palette-primary-main)</mark>;</pre>
+      <p class="takeaway"><b>In your project:</b> that's the same idea Hanna and Carbon use. Whatever tool you choose, putting your tokens in CSS variables is a safe bet.</p>
+    </article>
+
+    <article class="concept" id="specific" aria-labelledby="c-specific">
+      <div class="concept-head">
+        <h3 id="c-specific">Specific to your product</h3>
+        <p class="def">A design system holds what's only true for one product. A general library has to work for everyone, so it leaves that part to you.</p>
+      </div>
+      <div class="cell a">
+        <span class="lane-mini"><span class="dot a"></span>Carbon · made for IBM</span>
+        <ul class="files">
+          <li><span>IBM Plex</span><span>IBM's own typeface, a dependency of <code>@carbon/styles</code></span></li>
+          <li><span>Productive / expressive</span><span>two styles: compact for work apps, larger for marketing pages. The Button has an <code>isExpressive</code> prop.</span></li>
+          <li><span>AI label</span><span>a component and <code>--cds-ai-aura-*</code> tokens for marking AI-generated content in IBM's AI products</span></li>
+        </ul>
+      </div>
+      <div class="cell b">
+        <span class="lane-mini"><span class="dot b"></span>Material UI · made for everyone</span>
+        <p>MUI's defaults follow Google's Material Design. If you don't change the theme, your app looks like a Google app, and like every other MUI app. That's why MUI's docs have a whole section on theming. Making it yours is your job.</p>
+      </div>
+      <div class="span callout">The same goes for AI tools. Ask for a button and you get a generic one, often MUI-flavoured. One popular library, shadcn/ui, takes the opposite approach to MUI: you don't install it as a dependency, you copy its components into your project and change them to fit your product.</div>
+      <p class="takeaway"><b>In your project:</b> list what's specific to your product before you choose a library. If the list is long, a library you customise heavily, or your own components, may be less work than fighting a generic one.</p>
+    </article>
+  </section>
+
+  <!-- Tutorial -->
+  <section id="exercises" aria-labelledby="tut-h">
+    <span class="eyebrow">Try it yourself</span>
+    <h2 id="tut-h">Exercises</h2>
+    <p class="section-intro">Both libraries install with a normal Vite and React 19 project. Every step below was tested on 21 October 2026. Exercise 3 is a discussion to have in your group afterwards.</p>
+
+    <div class="tabs" role="tablist" aria-label="Exercises">
+      <button class="tab" role="tab" id="tab-1" aria-controls="ex-1" aria-selected="true" type="button">1 · Carbon</button>
+      <button class="tab" role="tab" id="tab-2" aria-controls="ex-2" aria-selected="false" type="button" tabindex="-1">2 · Material UI</button>
+      <button class="tab" role="tab" id="tab-3" aria-controls="ex-3" aria-selected="false" type="button" tabindex="-1">3 · Compare all four</button>
+    </div>
+
+    <!-- Exercise 1 -->
+    <div class="ex" role="tabpanel" id="ex-1" aria-labelledby="tab-1">
+      <div class="ex-meta"><span><b>Time:</b> 20–30 min</span><span><b>You need:</b> Node 22 or newer, npm</span><span><b>Goal:</b> see themes, tokens and modules at work</span></div>
+      <ol class="steps">
+        <li><div class="step-body">
+          <h3>Create a Vite project and install Carbon</h3>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>npm create vite@latest carbon-try -- --template react-ts --no-interactive
+cd carbon-try
+npm install
+npm install @carbon/react
+npm install -D sass@1.105.2</pre></div>
+          <div class="callout warn">We pin Sass to 1.105.2 because 1.106.0 fails to build Carbon's styles (see <a href="#dependencies">Dependencies</a>). If a newer Sass works for you, great. Try it without the version first if you're curious.</div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Load Carbon's styles</h3>
+          <p>Create <code>src/index.scss</code>. Then delete <code>src/App.css</code> and <code>src/index.css</code>, and in <code>src/main.tsx</code> replace <code>import './index.css'</code> with <code>import './index.scss'</code>.</p>
+          <div class="code-wrap"><div class="file">src/index.scss</div><button class="copy" type="button">Copy</button>
+<pre>@use '@carbon/react';</pre></div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Use the components</h3>
+          <p>Replace all of <code>App.tsx</code>. The second row is wrapped in a Gray 100 theme.</p>
+          <div class="code-wrap"><div class="file">src/App.tsx</div><button class="copy" type="button">Copy</button>
+<pre>import { Button, Theme } from '@carbon/react'
+
+export default function App() {
+  return (
+    &lt;main style={{ padding: 32, display: 'grid', gap: 24 }}&gt;
+      &lt;div style={{ display: 'flex', gap: 16 }}&gt;
+        &lt;Button&gt;Submit application&lt;/Button&gt;
+        &lt;Button kind="secondary"&gt;Cancel&lt;/Button&gt;
+        &lt;Button kind="danger"&gt;Delete&lt;/Button&gt;
+      &lt;/div&gt;
+      &lt;Theme theme="g100"&gt;
+        &lt;div style={{ padding: 24, display: 'flex', gap: 16 }}&gt;
+          &lt;Button&gt;Submit application&lt;/Button&gt;
+          &lt;Button kind="tertiary"&gt;Cancel&lt;/Button&gt;
+        &lt;/div&gt;
+      &lt;/Theme&gt;
+    &lt;/main&gt;
+  )
+}</pre></div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Run it and inspect</h3>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>npm run dev</pre></div>
+          <p class="check"><b>You should see:</b> three buttons on white, and a dark strip with two more. In DevTools, the buttons have <code>class="cds--btn cds--btn--primary"</code>, and the dark strip is a <code>&lt;div class="cds--g100 cds--layer-one"&gt;</code>. Click it and look at all the <code>--cds-</code> variables it sets.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Override a token</h3>
+          <p>Add this to the end of <code>src/index.scss</code>:</p>
+          <div class="code-wrap"><div class="file">src/index.scss</div><button class="copy" type="button">Copy</button>
+<pre>:root {
+  --cds-button-primary: #7c3aed;
+}</pre></div>
+          <p class="check"><b>You should see:</b> the top primary button turns purple, but the one in the dark strip stays blue. The <code>cds--g100</code> div sets its own <code>--cds-button-primary</code>, and the closest definition wins. To change both, add the same line inside a <code>.cds--g100 { }</code> rule as well.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Measure modularity</h3>
+          <p>Run <code>npm run build</code> and note the size of the CSS file in <code>dist/assets</code>. Then replace the first line of <code>index.scss</code> with these three, and build again:</p>
+          <div class="code-wrap"><div class="file">src/index.scss</div><button class="copy" type="button">Copy</button>
+<pre>@use '@carbon/react/scss/reset';
+@use '@carbon/react/scss/zone';
+@use '@carbon/react/scss/components/button';</pre></div>
+          <p class="check"><b>You should see</b> the CSS shrink from about 1.2 MB to about 130 KB, with the page looking the same.</p>
+        </div></li>
+      </ol>
+    </div>
+
+    <!-- Exercise 2 -->
+    <div class="ex" role="tabpanel" id="ex-2" aria-labelledby="tab-2" hidden>
+      <div class="ex-meta"><span><b>Time:</b> 20–30 min</span><span><b>You need:</b> Node 22 or newer, npm</span><span><b>Goal:</b> see runtime CSS-in-JS from the inside</span></div>
+      <ol class="steps">
+        <li><div class="step-body">
+          <h3>Create a Vite project and install MUI</h3>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>npm create vite@latest mui-try -- --template react-ts --no-interactive
+cd mui-try
+npm install
+npm install @mui/material @emotion/react @emotion/styled</pre></div>
+          <p>Delete <code>src/App.css</code> and <code>src/index.css</code>, and remove the <code>import './index.css'</code> line from <code>src/main.tsx</code>.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Create a theme and use the components</h3>
+          <div class="code-wrap"><div class="file">src/App.tsx</div><button class="copy" type="button">Copy</button>
+<pre>import { Button, Stack } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+
+const theme = createTheme({
+  palette: {
+    primary: { main: '#1976d2' },
+  },
+})
+
+export default function App() {
+  return (
+    &lt;ThemeProvider theme={theme}&gt;
+      &lt;Stack direction="row" spacing={2} sx={{ p: 4 }}&gt;
+        &lt;Button variant="contained"&gt;Submit application&lt;/Button&gt;
+        &lt;Button variant="outlined"&gt;Cancel&lt;/Button&gt;
+        &lt;Button variant="contained" color="error"&gt;Delete&lt;/Button&gt;
+      &lt;/Stack&gt;
+    &lt;/ThemeProvider&gt;
+  )
+}</pre></div>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Run it and inspect</h3>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>npm run dev</pre></div>
+          <p class="check"><b>You should see</b> a blue, an outlined and a red button. In DevTools, a button has readable classes like <code>MuiButton-root MuiButton-contained</code> and one generated class like <code>css-4lmre4-MuiButtonBase-root-MuiButton-root</code>. Look in <code>&lt;head&gt;</code> for <code>&lt;style data-emotion="css"&gt;</code>. That's where Emotion writes the CSS.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Change the theme</h3>
+          <p>Set <code>main: '#7c3aed'</code> and save. The page updates, and if you inspect the button again, the generated class has a new name. Emotion made a new CSS rule for the new colour.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Look for the CSS file</h3>
+          <div class="code-wrap nofile"><button class="copy" type="button">Copy</button>
+<pre>npm run build
+ls dist/assets</pre></div>
+          <p class="check"><b>You should see</b> only a <code>.js</code> file and no <code>.css</code> file. All of MUI's CSS is created in the browser when the page runs.</p>
+        </div></li>
+        <li><div class="step-body">
+          <h3>Turn on CSS variables</h3>
+          <p>Add <code>cssVariables: true,</code> as the first line inside <code>createTheme({ … })</code>, run <code>npm run dev</code> again and inspect the <code>&lt;html&gt;</code> element.</p>
+          <p class="check"><b>You should see</b> variables like <code>--mui-palette-primary-main: #1976d2</code>. The button now reads its colour from <code>var(--mui-palette-primary-main)</code>, the same pattern as Carbon and Hanna.</p>
+        </div></li>
+      </ol>
+    </div>
+
+    <!-- Exercise 3 -->
+    <div class="ex" role="tabpanel" id="ex-3" aria-labelledby="tab-3" hidden>
+      <div class="ex-meta"><span><b>Time:</b> 20 min</span><span><b>You need:</b> your group, this page and the <a href="https://claude.ai/artifact/RtgWNjPbuZ2s5EMfsuiGgu" target="_blank" rel="noopener">Hanna and Ísland.is page</a></span><span><b>Goal:</b> choose, and be able to explain why</span></div>
+      <p>You've now seen four systems: Hanna, Ísland.is, Carbon and Material UI. Discuss these in your group and write down your answers.</p>
+      <ol class="questions">
+        <li>Which two systems are most alike in how they deliver CSS? Which two are most alike in how they're used from React?</li>
+        <li>Ísland.is can't be installed outside its own repo, and Polaris React was retired. What do these two stories tell you about depending on someone else's components?</li>
+        <li>Your next group project needs a dark mode. Which system makes that easiest, and why?</li>
+        <li>An AI assistant writes your components. Which of the four would make its output look most like <em>your</em> product, and what would you have to tell it first?</li>
+        <li>Would you use one of these libraries for your project, or build your own small set of components? List three reasons for your choice.</li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <p>Carbon is published by IBM under the Apache 2.0 licence (<a href="https://github.com/carbon-design-system/carbon" target="_blank" rel="noopener">github.com/carbon-design-system/carbon</a>). The CSS in the left-hand demo is copied from <code>@carbon/styles</code> 1.118.0: the four theme classes and the button rules. IBM Plex Sans is loaded from Google Fonts.</p>
+    <p>Material UI is published by MUI under the MIT licence (<a href="https://github.com/mui/material-ui" target="_blank" rel="noopener">github.com/mui/material-ui</a>). The right-hand demo loads React 18.3.1 from cdnjs and <code>@mui/material</code> 5.16.7 from unpkg. Material Design is Google's design system (<a href="https://m3.material.io" target="_blank" rel="noopener">m3.material.io</a>).</p>
+    <p>Code excerpts are shortened. Class names, file sizes and the Sass error come from test builds with Vite 8, React 19.3, @carbon/react 1.119 and @mui/material 9.5 on 21 October 2026. Download figures are from the npm registry for the week to 20 October 2026. Versions and URLs may change.</p>
+  </footer>
+</div>
+
+<script type="text/plain" id="cds-css">:root{--cds-layout-size-height-xs:1.5rem;--cds-layout-size-height-sm:2rem;--cds-layout-size-height-md:2.5rem;--cds-layout-size-height-lg:3rem;--cds-layout-size-height-xl:4rem;--cds-layout-size-height-2xl:5rem;--cds-layout-size-height-min:0px;--cds-layout-size-height-max:999999999px;--cds-layout-size-icon-gap-xs:0.25rem;--cds-layout-size-icon-gap-sm:0.5rem;--cds-layout-size-icon-gap-md:0.5rem;--cds-layout-size-icon-gap-lg:0.75rem;--cds-layout-size-icon-gap-xl:0.75rem;--cds-layout-size-icon-gap-2xl:0.75rem;--cds-layout-size-icon-gap-min:0px;--cds-layout-size-icon-gap-max:999999999px;--cds-layout-density-padding-inline-condensed:0.5rem;--cds-layout-density-padding-inline-normal:1rem;--cds-layout-density-padding-inline-min:0px;--cds-layout-density-padding-inline-max:999999999px;}.cds--white{background-color:var(--cds-background);color:var(--cds-text-primary);--cds-ai-aura-end:rgba(255,255,255,0);--cds-ai-aura-hover-background:#edf5ff;--cds-ai-aura-hover-end:rgba(255,255,255,0);--cds-ai-aura-hover-start:rgba(69,137,255,0.32);--cds-ai-aura-start:rgba(69,137,255,0.1);--cds-ai-aura-start-sm:rgba(69,137,255,0.16);--cds-ai-border-end:#78a9ff;--cds-ai-border-start:rgba(166,200,255,0.64);--cds-ai-border-strong:#4589ff;--cds-ai-drop-shadow:rgba(15,98,254,0.1);--cds-ai-inner-shadow:rgba(69,137,255,0.1);--cds-ai-overlay:rgba(0,17,65,0.5);--cds-ai-popover-background:#ffffff;--cds-ai-popover-caret-bottom:#78a9ff;--cds-ai-popover-caret-bottom-background:#eaf1ff;--cds-ai-popover-caret-bottom-background-actions:#e9effa;--cds-ai-popover-caret-center:#a0c3ff;--cds-ai-popover-shadow-outer-01:rgba(0,67,206,0.06);--cds-ai-popover-shadow-outer-02:rgba(0,0,0,0.04);--cds-ai-skeleton-background:#d0e2ff;--cds-ai-skeleton-element-background:#4589ff;--cds-background:#ffffff;--cds-background-active:rgba(141,141,141,0.5);--cds-background-brand:#0f62fe;--cds-background-hover:rgba(141,141,141,0.12);--cds-background-inverse:#393939;--cds-background-inverse-hover:#474747;--cds-background-selected:rgba(141,141,141,0.2);--cds-background-selected-hover:rgba(141,141,141,0.32);--cds-border-disabled:#c6c6c6;--cds-border-interactive:#0f62fe;--cds-border-inverse:#161616;--cds-border-strong-01:#8d8d8d;--cds-border-strong-02:#8d8d8d;--cds-border-strong-03:#8d8d8d;--cds-border-subtle-00:#e0e0e0;--cds-border-subtle-01:#c6c6c6;--cds-border-subtle-02:#e0e0e0;--cds-border-subtle-03:#c6c6c6;--cds-border-subtle-selected-01:#c6c6c6;--cds-border-subtle-selected-02:#c6c6c6;--cds-border-subtle-selected-03:#c6c6c6;--cds-border-tile-01:#c6c6c6;--cds-border-tile-02:#a8a8a8;--cds-border-tile-03:#c6c6c6;--cds-chat-avatar-agent:#393939;--cds-chat-avatar-bot:#6f6f6f;--cds-chat-avatar-user:#0f62fe;--cds-chat-bubble-agent:#ffffff;--cds-chat-bubble-agent-text:#161616;--cds-chat-bubble-border:#e0e0e0;--cds-chat-bubble-user:#e0e0e0;--cds-chat-bubble-user-text:#161616;--cds-chat-button:#0f62fe;--cds-chat-button-active:rgba(141,141,141,0.5);--cds-chat-button-hover:rgba(141,141,141,0.12);--cds-chat-button-selected:rgba(141,141,141,0.2);--cds-chat-button-text-hover:#0043ce;--cds-chat-button-text-selected:#525252;--cds-chat-header-background:#ffffff;--cds-chat-header-text:#161616;--cds-chat-prompt-background:#ffffff;--cds-chat-prompt-border-end:rgba(244,244,244,0);--cds-chat-prompt-border-start:#f4f4f4;--cds-chat-prompt-text:#161616;--cds-chat-shell-background:#ffffff;--cds-color-scheme:light;color-scheme:var(--cds-color-scheme,light);--cds-field-01:#f4f4f4;--cds-field-02:#ffffff;--cds-field-03:#f4f4f4;--cds-field-hover-01:#e8e8e8;--cds-field-hover-02:#e8e8e8;--cds-field-hover-03:#e8e8e8;--cds-focus:#0f62fe;--cds-focus-inset:#ffffff;--cds-focus-inverse:#ffffff;--cds-highlight:#d0e2ff;--cds-icon-disabled:rgba(22,22,22,0.25);--cds-icon-interactive:#0f62fe;--cds-icon-inverse:#ffffff;--cds-icon-on-color:#ffffff;--cds-icon-on-color-disabled:#8d8d8d;--cds-icon-primary:#161616;--cds-icon-secondary:#525252;--cds-interactive:#0f62fe;--cds-layer-01:#f4f4f4;--cds-layer-02:#ffffff;--cds-layer-03:#f4f4f4;--cds-layer-accent-01:#e0e0e0;--cds-layer-accent-02:#e0e0e0;--cds-layer-accent-03:#e0e0e0;--cds-layer-accent-active-01:#a8a8a8;--cds-layer-accent-active-02:#a8a8a8;--cds-layer-accent-active-03:#a8a8a8;--cds-layer-accent-hover-01:#d1d1d1;--cds-layer-accent-hover-02:#d1d1d1;--cds-layer-accent-hover-03:#d1d1d1;--cds-layer-active-01:#c6c6c6;--cds-layer-active-02:#c6c6c6;--cds-layer-active-03:#c6c6c6;--cds-layer-background-01:#ffffff;--cds-layer-background-02:#f4f4f4;--cds-layer-background-03:#ffffff;--cds-layer-hover-01:#e8e8e8;--cds-layer-hover-02:#e8e8e8;--cds-layer-hover-03:#e8e8e8;--cds-layer-selected-01:#e0e0e0;--cds-layer-selected-02:#e0e0e0;--cds-layer-selected-03:#e0e0e0;--cds-layer-selected-disabled:#8d8d8d;--cds-layer-selected-hover-01:#d1d1d1;--cds-layer-selected-hover-02:#d1d1d1;--cds-layer-selected-hover-03:#d1d1d1;--cds-layer-selected-inverse:#161616;--cds-link-inverse:#78a9ff;--cds-link-inverse-active:#f4f4f4;--cds-link-inverse-hover:#a6c8ff;--cds-link-inverse-visited:#be95ff;--cds-link-primary:#0f62fe;--cds-link-primary-hover:#0043ce;--cds-link-secondary:#0043ce;--cds-link-visited:#8a3ffc;--cds-overlay:rgba(0,0,0,0.6);--cds-shadow:rgba(0,0,0,0.3);--cds-skeleton-background:#e8e8e8;--cds-skeleton-element:#c6c6c6;--cds-support-caution-major:#ff832b;--cds-support-caution-minor:#f1c21b;--cds-support-caution-undefined:#8a3ffc;--cds-support-error:#da1e28;--cds-support-error-inverse:#fa4d56;--cds-support-info:#0043ce;--cds-support-info-inverse:#4589ff;--cds-support-success:#24a148;--cds-support-success-inverse:#42be65;--cds-support-warning:#f1c21b;--cds-support-warning-inverse:#f1c21b;--cds-syntax-angle-bracket:#697077;--cds-syntax-annotation:#007d79;--cds-syntax-arithmetic-operator:#343a3f;--cds-syntax-atom:#161616;--cds-syntax-attribute:#00539a;--cds-syntax-attribute-name:#00539a;--cds-syntax-attribute-value:#161616;--cds-syntax-bitwise-operator:#343a3f;--cds-syntax-block-comment:#198038;--cds-syntax-bool:#161616;--cds-syntax-brace:#343a3f;--cds-syntax-bracket:#343a3f;--cds-syntax-character:#161616;--cds-syntax-class-name:#007d79;--cds-syntax-color:#161616;--cds-syntax-comment:#198038;--cds-syntax-compare-operator:#343a3f;--cds-syntax-constant:#0f62fe;--cds-syntax-content:#161616;--cds-syntax-content-separator:#343a3f;--cds-syntax-control-keyword:#6929c4;--cds-syntax-control-operator:#6929c4;--cds-syntax-definition:#00539a;--cds-syntax-definition-keyword:#00539a;--cds-syntax-definition-operator:#00539a;--cds-syntax-deleted:#ffd7d9;--cds-syntax-deref-operator:#343a3f;--cds-syntax-doc-comment:#198038;--cds-syntax-doc-string:#161616;--cds-syntax-document-meta:#198038;--cds-syntax-emphasis:#161616;--cds-syntax-escape:#343a3f;--cds-syntax-float:#198038;--cds-syntax-function:#8e6a00;--cds-syntax-heading:#00539a;--cds-syntax-heading-1:#00539a;--cds-syntax-heading-2:#00539a;--cds-syntax-heading-3:#00539a;--cds-syntax-heading-4:#00539a;--cds-syntax-heading-5:#00539a;--cds-syntax-heading-6:#00539a;--cds-syntax-inserted:#a7f0ba;--cds-syntax-integer:#198038;--cds-syntax-invalid:#da1e28;--cds-syntax-keyword:#0f62fe;--cds-syntax-label-name:#0f62fe;--cds-syntax-line-comment:#198038;--cds-syntax-link:#0f62fe;--cds-syntax-list:#161616;--cds-syntax-literal:#161616;--cds-syntax-local:#0f62fe;--cds-syntax-logic-operator:#343a3f;--cds-syntax-macro-name:#161616;--cds-syntax-meta:#198038;--cds-syntax-modifier:#0f62fe;--cds-syntax-module-keyword:#6929c4;--cds-syntax-monospace:#161616;--cds-syntax-name:#0f62fe;--cds-syntax-namespace:#007d79;--cds-syntax-null:#161616;--cds-syntax-number:#198038;--cds-syntax-operator:#343a3f;--cds-syntax-operator-keyword:#0f62fe;--cds-syntax-paren:#343a3f;--cds-syntax-processing-instruction:#161616;--cds-syntax-property-name:#00539a;--cds-syntax-punctuation:#343a3f;--cds-syntax-quote:#198038;--cds-syntax-regexp:#6929c4;--cds-syntax-self:#007d79;--cds-syntax-separator:#343a3f;--cds-syntax-special:#0f62fe;--cds-syntax-special-string:#8a3ffc;--cds-syntax-square-bracket:#343a3f;--cds-syntax-standard:#0f62fe;--cds-syntax-strikethrough:#161616;--cds-syntax-string:#161616;--cds-syntax-strong:#161616;--cds-syntax-tag:#007d79;--cds-syntax-tag-name:#007d79;--cds-syntax-type:#007d79;--cds-syntax-type-name:#007d79;--cds-syntax-type-operator:#007d79;--cds-syntax-unit:#198038;--cds-syntax-update-operator:#343a3f;--cds-syntax-url:#343a3f;--cds-syntax-variable:#0f62fe;--cds-syntax-variable-name:#0f62fe;--cds-text-disabled:rgba(22,22,22,0.25);--cds-text-error:#da1e28;--cds-text-helper:#6f6f6f;--cds-text-inverse:#ffffff;--cds-text-on-color:#ffffff;--cds-text-on-color-disabled:#8d8d8d;--cds-text-placeholder:rgba(22,22,22,0.4);--cds-text-primary:#161616;--cds-text-secondary:#525252;--cds-toggle-off:#8d8d8d;--cds-layer:var(--cds-layer-01,#f4f4f4);--cds-layer-active:var(--cds-layer-active-01,#c6c6c6);--cds-layer-background:var(--cds-layer-background-01,#ffffff);--cds-layer-hover:var(--cds-layer-hover-01,#e8e8e8);--cds-layer-selected:var(--cds-layer-selected-01,#e0e0e0);--cds-layer-selected-hover:var(--cds-layer-selected-hover-01,#d1d1d1);--cds-layer-accent:var(--cds-layer-accent-01,#e0e0e0);--cds-layer-accent-hover:var(--cds-layer-accent-hover-01,#d1d1d1);--cds-layer-accent-active:var(--cds-layer-accent-active-01,#a8a8a8);--cds-field:var(--cds-field-01,#f4f4f4);--cds-field-hover:var(--cds-field-hover-01,#e8e8e8);--cds-border-subtle:var(--cds-border-subtle-00,#e0e0e0);--cds-border-subtle-selected:var(--cds-border-subtle-selected-01,#c6c6c6);--cds-border-strong:var(--cds-border-strong-01,#8d8d8d);--cds-border-tile:var(--cds-border-tile-01,#c6c6c6);--cds-button-separator:#e0e0e0;--cds-button-primary:#0f62fe;--cds-button-secondary:#393939;--cds-button-tertiary:#0f62fe;--cds-button-danger-primary:#da1e28;--cds-button-danger-secondary:#da1e28;--cds-button-danger-active:#750e13;--cds-button-primary-active:#002d9c;--cds-button-secondary-active:#6f6f6f;--cds-button-tertiary-active:#002d9c;--cds-button-danger-hover:#b81921;--cds-button-primary-hover:#0050e6;--cds-button-secondary-hover:#474747;--cds-button-tertiary-hover:#0050e6;--cds-button-disabled:#c6c6c6;--cds-notification-background-error:#fff1f1;--cds-notification-background-success:#defbe6;--cds-notification-background-info:#edf5ff;--cds-notification-background-warning:#fcf4d6;--cds-notification-action-hover:#ffffff;--cds-notification-action-tertiary-inverse:#ffffff;--cds-notification-action-tertiary-inverse-active:#c6c6c6;--cds-notification-action-tertiary-inverse-hover:#f4f4f4;--cds-notification-action-tertiary-inverse-text:#161616;--cds-notification-action-tertiary-inverse-text-on-color-disabled:rgba(255,255,255,0.25);--cds-tag-background-red:#ffd7d9;--cds-tag-color-red:#a2191f;--cds-tag-hover-red:#ffc2c5;--cds-tag-background-magenta:#ffd6e8;--cds-tag-color-magenta:#9f1853;--cds-tag-hover-magenta:#ffbdda;--cds-tag-background-purple:#e8daff;--cds-tag-color-purple:#6929c4;--cds-tag-hover-purple:#dcc7ff;--cds-tag-background-blue:#d0e2ff;--cds-tag-color-blue:#0043ce;--cds-tag-hover-blue:#b8d3ff;--cds-tag-background-cyan:#bae6ff;--cds-tag-color-cyan:#00539a;--cds-tag-hover-cyan:#99daff;--cds-tag-background-teal:#9ef0f0;--cds-tag-color-teal:#005d5d;--cds-tag-hover-teal:#57e5e5;--cds-tag-background-green:#a7f0ba;--cds-tag-color-green:#0e6027;--cds-tag-hover-green:#74e792;--cds-tag-background-gray:#e0e0e0;--cds-tag-color-gray:#161616;--cds-tag-hover-gray:#d1d1d1;--cds-tag-border-red:#ff8389;--cds-tag-border-blue:#78a9ff;--cds-tag-border-cyan:#33b1ff;--cds-tag-border-teal:#08bdba;--cds-tag-border-green:#42be65;--cds-tag-border-magenta:#ff7eb6;--cds-tag-border-purple:#be95ff;--cds-tag-border-gray:#a8a8a8;--cds-tag-border-cool-gray:#a2a9b0;--cds-tag-border-warm-gray:#ada8a8;--cds-tag-background-cool-gray:#dde1e6;--cds-tag-color-cool-gray:#121619;--cds-tag-hover-cool-gray:#cdd3da;--cds-tag-background-warm-gray:#e5e0df;--cds-tag-color-warm-gray:#171414;--cds-tag-hover-warm-gray:#d8d0cf;--cds-status-red:#da1e28;--cds-status-orange:#ff832b;--cds-status-orange-outline:#ba4e00;--cds-status-yellow:#f1c21b;--cds-status-yellow-outline:#8e6a00;--cds-status-green:#24a148;--cds-status-blue:#0043ce;--cds-status-purple:#8a3ffc;--cds-status-gray:#6f6f6f;--cds-content-switcher-background:#e0e0e0;--cds-content-switcher-background-hover:#d1d1d1;--cds-content-switcher-selected:#ffffff;}.cds--g10{background-color:var(--cds-background);color:var(--cds-text-primary);--cds-ai-aura-end:rgba(255,255,255,0);--cds-ai-aura-hover-background:#edf5ff;--cds-ai-aura-hover-end:rgba(255,255,255,0);--cds-ai-aura-hover-start:rgba(69,137,255,0.32);--cds-ai-aura-start:rgba(69,137,255,0.1);--cds-ai-aura-start-sm:rgba(69,137,255,0.16);--cds-ai-border-end:#78a9ff;--cds-ai-border-start:rgba(166,200,255,0.64);--cds-ai-border-strong:#4589ff;--cds-ai-drop-shadow:rgba(15,98,254,0.1);--cds-ai-inner-shadow:rgba(69,137,255,0.1);--cds-ai-overlay:rgba(0,17,65,0.5);--cds-ai-popover-background:#ffffff;--cds-ai-popover-caret-bottom:#78a9ff;--cds-ai-popover-caret-bottom-background:#eaf1ff;--cds-ai-popover-caret-bottom-background-actions:#e9effa;--cds-ai-popover-caret-center:#a0c3ff;--cds-ai-popover-shadow-outer-01:rgba(0,67,206,0.06);--cds-ai-popover-shadow-outer-02:rgba(0,0,0,0.04);--cds-ai-skeleton-background:#d0e2ff;--cds-ai-skeleton-element-background:#4589ff;--cds-background:#f4f4f4;--cds-background-active:rgba(141,141,141,0.5);--cds-background-brand:#0f62fe;--cds-background-hover:rgba(141,141,141,0.12);--cds-background-inverse:#393939;--cds-background-inverse-hover:#474747;--cds-background-selected:rgba(141,141,141,0.2);--cds-background-selected-hover:rgba(141,141,141,0.32);--cds-border-disabled:#c6c6c6;--cds-border-interactive:#0f62fe;--cds-border-inverse:#161616;--cds-border-strong-01:#8d8d8d;--cds-border-strong-02:#8d8d8d;--cds-border-strong-03:#8d8d8d;--cds-border-subtle-00:#c6c6c6;--cds-border-subtle-01:#e0e0e0;--cds-border-subtle-02:#c6c6c6;--cds-border-subtle-03:#e0e0e0;--cds-border-subtle-selected-01:#c6c6c6;--cds-border-subtle-selected-02:#c6c6c6;--cds-border-subtle-selected-03:#c6c6c6;--cds-border-tile-01:#a8a8a8;--cds-border-tile-02:#c6c6c6;--cds-border-tile-03:#a8a8a8;--cds-chat-avatar-agent:#393939;--cds-chat-avatar-bot:#6f6f6f;--cds-chat-avatar-user:#0f62fe;--cds-chat-bubble-agent:#ffffff;--cds-chat-bubble-agent-text:#161616;--cds-chat-bubble-border:#e0e0e0;--cds-chat-bubble-user:#e0e0e0;--cds-chat-bubble-user-text:#161616;--cds-chat-button:#0f62fe;--cds-chat-button-active:rgba(141,141,141,0.5);--cds-chat-button-hover:rgba(141,141,141,0.12);--cds-chat-button-selected:rgba(141,141,141,0.2);--cds-chat-button-text-hover:#0043ce;--cds-chat-button-text-selected:#525252;--cds-chat-header-background:#ffffff;--cds-chat-header-text:#161616;--cds-chat-prompt-background:#ffffff;--cds-chat-prompt-border-end:rgba(244,244,244,0);--cds-chat-prompt-border-start:#f4f4f4;--cds-chat-prompt-text:#161616;--cds-chat-shell-background:#ffffff;--cds-color-scheme:light;color-scheme:var(--cds-color-scheme,light);--cds-field-01:#ffffff;--cds-field-02:#f4f4f4;--cds-field-03:#ffffff;--cds-field-hover-01:#e8e8e8;--cds-field-hover-02:#e8e8e8;--cds-field-hover-03:#e8e8e8;--cds-focus:#0f62fe;--cds-focus-inset:#ffffff;--cds-focus-inverse:#ffffff;--cds-highlight:#d0e2ff;--cds-icon-disabled:rgba(22,22,22,0.25);--cds-icon-interactive:#0f62fe;--cds-icon-inverse:#ffffff;--cds-icon-on-color:#ffffff;--cds-icon-on-color-disabled:#8d8d8d;--cds-icon-primary:#161616;--cds-icon-secondary:#525252;--cds-interactive:#0f62fe;--cds-layer-01:#ffffff;--cds-layer-02:#f4f4f4;--cds-layer-03:#ffffff;--cds-layer-accent-01:#e0e0e0;--cds-layer-accent-02:#e0e0e0;--cds-layer-accent-03:#e0e0e0;--cds-layer-accent-active-01:#a8a8a8;--cds-layer-accent-active-02:#a8a8a8;--cds-layer-accent-active-03:#a8a8a8;--cds-layer-accent-hover-01:#d1d1d1;--cds-layer-accent-hover-02:#d1d1d1;--cds-layer-accent-hover-03:#d1d1d1;--cds-layer-active-01:#c6c6c6;--cds-layer-active-02:#c6c6c6;--cds-layer-active-03:#c6c6c6;--cds-layer-background-01:#f4f4f4;--cds-layer-background-02:#ffffff;--cds-layer-background-03:#f4f4f4;--cds-layer-hover-01:#e8e8e8;--cds-layer-hover-02:#e8e8e8;--cds-layer-hover-03:#e8e8e8;--cds-layer-selected-01:#e0e0e0;--cds-layer-selected-02:#e0e0e0;--cds-layer-selected-03:#e0e0e0;--cds-layer-selected-disabled:#8d8d8d;--cds-layer-selected-hover-01:#d1d1d1;--cds-layer-selected-hover-02:#d1d1d1;--cds-layer-selected-hover-03:#d1d1d1;--cds-layer-selected-inverse:#161616;--cds-link-inverse:#78a9ff;--cds-link-inverse-active:#f4f4f4;--cds-link-inverse-hover:#a6c8ff;--cds-link-inverse-visited:#be95ff;--cds-link-primary:#0f62fe;--cds-link-primary-hover:#0043ce;--cds-link-secondary:#0043ce;--cds-link-visited:#8a3ffc;--cds-overlay:rgba(0,0,0,0.6);--cds-shadow:rgba(0,0,0,0.3);--cds-skeleton-background:#e8e8e8;--cds-skeleton-element:#c6c6c6;--cds-support-caution-major:#ff832b;--cds-support-caution-minor:#f1c21b;--cds-support-caution-undefined:#8a3ffc;--cds-support-error:#da1e28;--cds-support-error-inverse:#fa4d56;--cds-support-info:#0043ce;--cds-support-info-inverse:#4589ff;--cds-support-success:#24a148;--cds-support-success-inverse:#42be65;--cds-support-warning:#f1c21b;--cds-support-warning-inverse:#f1c21b;--cds-syntax-angle-bracket:#697077;--cds-syntax-annotation:#007d79;--cds-syntax-arithmetic-operator:#343a3f;--cds-syntax-atom:#161616;--cds-syntax-attribute:#00539a;--cds-syntax-attribute-name:#00539a;--cds-syntax-attribute-value:#161616;--cds-syntax-bitwise-operator:#343a3f;--cds-syntax-block-comment:#198038;--cds-syntax-bool:#161616;--cds-syntax-brace:#343a3f;--cds-syntax-bracket:#343a3f;--cds-syntax-character:#161616;--cds-syntax-class-name:#007d79;--cds-syntax-color:#161616;--cds-syntax-comment:#198038;--cds-syntax-compare-operator:#343a3f;--cds-syntax-constant:#0f62fe;--cds-syntax-content:#161616;--cds-syntax-content-separator:#343a3f;--cds-syntax-control-keyword:#6929c4;--cds-syntax-control-operator:#6929c4;--cds-syntax-definition:#00539a;--cds-syntax-definition-keyword:#00539a;--cds-syntax-definition-operator:#00539a;--cds-syntax-deleted:#ffd7d9;--cds-syntax-deref-operator:#343a3f;--cds-syntax-doc-comment:#198038;--cds-syntax-doc-string:#161616;--cds-syntax-document-meta:#198038;--cds-syntax-emphasis:#161616;--cds-syntax-escape:#343a3f;--cds-syntax-float:#198038;--cds-syntax-function:#8e6a00;--cds-syntax-heading:#00539a;--cds-syntax-heading-1:#00539a;--cds-syntax-heading-2:#00539a;--cds-syntax-heading-3:#00539a;--cds-syntax-heading-4:#00539a;--cds-syntax-heading-5:#00539a;--cds-syntax-heading-6:#00539a;--cds-syntax-inserted:#a7f0ba;--cds-syntax-integer:#198038;--cds-syntax-invalid:#da1e28;--cds-syntax-keyword:#0f62fe;--cds-syntax-label-name:#0f62fe;--cds-syntax-line-comment:#198038;--cds-syntax-link:#0f62fe;--cds-syntax-list:#161616;--cds-syntax-literal:#161616;--cds-syntax-local:#0f62fe;--cds-syntax-logic-operator:#343a3f;--cds-syntax-macro-name:#161616;--cds-syntax-meta:#198038;--cds-syntax-modifier:#0f62fe;--cds-syntax-module-keyword:#6929c4;--cds-syntax-monospace:#161616;--cds-syntax-name:#0f62fe;--cds-syntax-namespace:#007d79;--cds-syntax-null:#161616;--cds-syntax-number:#198038;--cds-syntax-operator:#343a3f;--cds-syntax-operator-keyword:#0f62fe;--cds-syntax-paren:#343a3f;--cds-syntax-processing-instruction:#161616;--cds-syntax-property-name:#00539a;--cds-syntax-punctuation:#343a3f;--cds-syntax-quote:#198038;--cds-syntax-regexp:#6929c4;--cds-syntax-self:#007d79;--cds-syntax-separator:#343a3f;--cds-syntax-special:#0f62fe;--cds-syntax-special-string:#8a3ffc;--cds-syntax-square-bracket:#343a3f;--cds-syntax-standard:#0f62fe;--cds-syntax-strikethrough:#161616;--cds-syntax-string:#161616;--cds-syntax-strong:#161616;--cds-syntax-tag:#007d79;--cds-syntax-tag-name:#007d79;--cds-syntax-type:#007d79;--cds-syntax-type-name:#007d79;--cds-syntax-type-operator:#007d79;--cds-syntax-unit:#198038;--cds-syntax-update-operator:#343a3f;--cds-syntax-url:#343a3f;--cds-syntax-variable:#0f62fe;--cds-syntax-variable-name:#0f62fe;--cds-text-disabled:rgba(22,22,22,0.25);--cds-text-error:#da1e28;--cds-text-helper:#6f6f6f;--cds-text-inverse:#ffffff;--cds-text-on-color:#ffffff;--cds-text-on-color-disabled:#8d8d8d;--cds-text-placeholder:rgba(22,22,22,0.4);--cds-text-primary:#161616;--cds-text-secondary:#525252;--cds-toggle-off:#8d8d8d;--cds-layer:var(--cds-layer-01,#f4f4f4);--cds-layer-active:var(--cds-layer-active-01,#c6c6c6);--cds-layer-background:var(--cds-layer-background-01,#ffffff);--cds-layer-hover:var(--cds-layer-hover-01,#e8e8e8);--cds-layer-selected:var(--cds-layer-selected-01,#e0e0e0);--cds-layer-selected-hover:var(--cds-layer-selected-hover-01,#d1d1d1);--cds-layer-accent:var(--cds-layer-accent-01,#e0e0e0);--cds-layer-accent-hover:var(--cds-layer-accent-hover-01,#d1d1d1);--cds-layer-accent-active:var(--cds-layer-accent-active-01,#a8a8a8);--cds-field:var(--cds-field-01,#f4f4f4);--cds-field-hover:var(--cds-field-hover-01,#e8e8e8);--cds-border-subtle:var(--cds-border-subtle-00,#e0e0e0);--cds-border-subtle-selected:var(--cds-border-subtle-selected-01,#c6c6c6);--cds-border-strong:var(--cds-border-strong-01,#8d8d8d);--cds-border-tile:var(--cds-border-tile-01,#c6c6c6);--cds-button-separator:#e0e0e0;--cds-button-primary:#0f62fe;--cds-button-secondary:#393939;--cds-button-tertiary:#0f62fe;--cds-button-danger-primary:#da1e28;--cds-button-danger-secondary:#da1e28;--cds-button-danger-active:#750e13;--cds-button-primary-active:#002d9c;--cds-button-secondary-active:#6f6f6f;--cds-button-tertiary-active:#002d9c;--cds-button-danger-hover:#b81921;--cds-button-primary-hover:#0050e6;--cds-button-secondary-hover:#474747;--cds-button-tertiary-hover:#0050e6;--cds-button-disabled:#c6c6c6;--cds-notification-background-error:#fff1f1;--cds-notification-background-success:#defbe6;--cds-notification-background-info:#edf5ff;--cds-notification-background-warning:#fcf4d6;--cds-notification-action-hover:#ffffff;--cds-notification-action-tertiary-inverse:#ffffff;--cds-notification-action-tertiary-inverse-active:#c6c6c6;--cds-notification-action-tertiary-inverse-hover:#f4f4f4;--cds-notification-action-tertiary-inverse-text:#161616;--cds-notification-action-tertiary-inverse-text-on-color-disabled:rgba(255,255,255,0.25);--cds-tag-background-red:#ffd7d9;--cds-tag-color-red:#a2191f;--cds-tag-hover-red:#ffc2c5;--cds-tag-background-magenta:#ffd6e8;--cds-tag-color-magenta:#9f1853;--cds-tag-hover-magenta:#ffbdda;--cds-tag-background-purple:#e8daff;--cds-tag-color-purple:#6929c4;--cds-tag-hover-purple:#dcc7ff;--cds-tag-background-blue:#d0e2ff;--cds-tag-color-blue:#0043ce;--cds-tag-hover-blue:#b8d3ff;--cds-tag-background-cyan:#bae6ff;--cds-tag-color-cyan:#00539a;--cds-tag-hover-cyan:#99daff;--cds-tag-background-teal:#9ef0f0;--cds-tag-color-teal:#005d5d;--cds-tag-hover-teal:#57e5e5;--cds-tag-background-green:#a7f0ba;--cds-tag-color-green:#0e6027;--cds-tag-hover-green:#74e792;--cds-tag-background-gray:#e0e0e0;--cds-tag-color-gray:#161616;--cds-tag-hover-gray:#d1d1d1;--cds-tag-border-red:#ff8389;--cds-tag-border-blue:#78a9ff;--cds-tag-border-cyan:#33b1ff;--cds-tag-border-teal:#08bdba;--cds-tag-border-green:#42be65;--cds-tag-border-magenta:#ff7eb6;--cds-tag-border-purple:#be95ff;--cds-tag-border-gray:#a8a8a8;--cds-tag-border-cool-gray:#a2a9b0;--cds-tag-border-warm-gray:#ada8a8;--cds-tag-background-cool-gray:#dde1e6;--cds-tag-color-cool-gray:#121619;--cds-tag-hover-cool-gray:#cdd3da;--cds-tag-background-warm-gray:#e5e0df;--cds-tag-color-warm-gray:#171414;--cds-tag-hover-warm-gray:#d8d0cf;--cds-status-red:#da1e28;--cds-status-orange:#ff832b;--cds-status-orange-outline:#ba4e00;--cds-status-yellow:#f1c21b;--cds-status-yellow-outline:#8e6a00;--cds-status-green:#24a148;--cds-status-blue:#0043ce;--cds-status-purple:#8a3ffc;--cds-status-gray:#6f6f6f;--cds-content-switcher-background:#e0e0e0;--cds-content-switcher-background-hover:#d1d1d1;--cds-content-switcher-selected:#ffffff;}.cds--g90{background-color:var(--cds-background);color:var(--cds-text-primary);--cds-ai-aura-end:rgba(0,0,0,0);--cds-ai-aura-hover-background:#474747;--cds-ai-aura-hover-end:rgba(0,0,0,0);--cds-ai-aura-hover-start:rgba(69,137,255,0.4);--cds-ai-aura-start:rgba(69,137,255,0.1);--cds-ai-aura-start-sm:rgba(69,137,255,0.16);--cds-ai-border-end:#4589ff;--cds-ai-border-start:rgba(166,200,255,0.36);--cds-ai-border-strong:#78a9ff;--cds-ai-drop-shadow:rgba(0,0,0,0.28);--cds-ai-inner-shadow:rgba(69,137,255,0.16);--cds-ai-overlay:rgba(0,0,0,0.5);--cds-ai-popover-background:#161616;--cds-ai-popover-caret-bottom:#4589ff;--cds-ai-popover-caret-bottom-background:#202d45;--cds-ai-popover-caret-bottom-background-actions:#1e283a;--cds-ai-popover-caret-center:#4870b5;--cds-ai-popover-shadow-outer-01:rgba(0,0,0,0.12);--cds-ai-popover-shadow-outer-02:rgba(0,0,0,0.08);--cds-ai-skeleton-background:rgba(120,169,255,0.5);--cds-ai-skeleton-element-background:rgba(120,169,255,0.3);--cds-background:#262626;--cds-background-active:rgba(141,141,141,0.4);--cds-background-brand:#0f62fe;--cds-background-hover:rgba(141,141,141,0.16);--cds-background-inverse:#f4f4f4;--cds-background-inverse-hover:#e8e8e8;--cds-background-selected:rgba(141,141,141,0.24);--cds-background-selected-hover:rgba(141,141,141,0.32);--cds-border-disabled:rgba(141,141,141,0.5);--cds-border-interactive:#4589ff;--cds-border-inverse:#f4f4f4;--cds-border-strong-01:#8d8d8d;--cds-border-strong-02:#a8a8a8;--cds-border-strong-03:#c6c6c6;--cds-border-subtle-00:#525252;--cds-border-subtle-01:#6f6f6f;--cds-border-subtle-02:#8d8d8d;--cds-border-subtle-03:#8d8d8d;--cds-border-subtle-selected-01:#8d8d8d;--cds-border-subtle-selected-02:#a8a8a8;--cds-border-subtle-selected-03:#a8a8a8;--cds-border-tile-01:#6f6f6f;--cds-border-tile-02:#8d8d8d;--cds-border-tile-03:#a8a8a8;--cds-chat-avatar-agent:#c6c6c6;--cds-chat-avatar-bot:#8d8d8d;--cds-chat-avatar-user:#4589ff;--cds-chat-bubble-agent:#262626;--cds-chat-bubble-agent-text:#f4f4f4;--cds-chat-bubble-border:#525252;--cds-chat-bubble-user:#393939;--cds-chat-bubble-user-text:#f4f4f4;--cds-chat-button:#78a9ff;--cds-chat-button-active:rgba(141,141,141,0.4);--cds-chat-button-hover:rgba(141,141,141,0.16);--cds-chat-button-selected:rgba(141,141,141,0.24);--cds-chat-button-text-hover:#a6c8ff;--cds-chat-button-text-selected:#c6c6c6;--cds-chat-header-background:#262626;--cds-chat-header-text:#f4f4f4;--cds-chat-prompt-background:#161616;--cds-chat-prompt-border-end:rgba(38,38,38,0);--cds-chat-prompt-border-start:#262626;--cds-chat-prompt-text:#f4f4f4;--cds-chat-shell-background:#262626;--cds-color-scheme:dark;color-scheme:var(--cds-color-scheme,dark);--cds-field-01:#393939;--cds-field-02:#525252;--cds-field-03:#6f6f6f;--cds-field-hover-01:#474747;--cds-field-hover-02:#636363;--cds-field-hover-03:#5e5e5e;--cds-focus:#ffffff;--cds-focus-inset:#161616;--cds-focus-inverse:#0f62fe;--cds-highlight:#002d9c;--cds-icon-disabled:rgba(244,244,244,0.25);--cds-icon-interactive:#ffffff;--cds-icon-inverse:#161616;--cds-icon-on-color:#ffffff;--cds-icon-on-color-disabled:rgba(255,255,255,0.25);--cds-icon-primary:#f4f4f4;--cds-icon-secondary:#c6c6c6;--cds-interactive:#4589ff;--cds-layer-01:#393939;--cds-layer-02:#525252;--cds-layer-03:#6f6f6f;--cds-layer-accent-01:#525252;--cds-layer-accent-02:#6f6f6f;--cds-layer-accent-03:#8d8d8d;--cds-layer-accent-active-01:#8d8d8d;--cds-layer-accent-active-02:#393939;--cds-layer-accent-active-03:#525252;--cds-layer-accent-hover-01:#636363;--cds-layer-accent-hover-02:#5e5e5e;--cds-layer-accent-hover-03:#7a7a7a;--cds-layer-active-01:#6f6f6f;--cds-layer-active-02:#8d8d8d;--cds-layer-active-03:#393939;--cds-layer-background-01:#262626;--cds-layer-background-02:#393939;--cds-layer-background-03:#525252;--cds-layer-hover-01:#474747;--cds-layer-hover-02:#636363;--cds-layer-hover-03:#5e5e5e;--cds-layer-selected-01:#525252;--cds-layer-selected-02:#6f6f6f;--cds-layer-selected-03:#525252;--cds-layer-selected-disabled:#a8a8a8;--cds-layer-selected-hover-01:#636363;--cds-layer-selected-hover-02:#5e5e5e;--cds-layer-selected-hover-03:#636363;--cds-layer-selected-inverse:#f4f4f4;--cds-link-inverse:#0f62fe;--cds-link-inverse-active:#161616;--cds-link-inverse-hover:#0043ce;--cds-link-inverse-visited:#8a3ffc;--cds-link-primary:#78a9ff;--cds-link-primary-hover:#a6c8ff;--cds-link-secondary:#a6c8ff;--cds-link-visited:#be95ff;--cds-overlay:rgba(0,0,0,0.6);--cds-shadow:rgba(0,0,0,0.8);--cds-skeleton-background:#333333;--cds-skeleton-element:#525252;--cds-support-caution-major:#ff832b;--cds-support-caution-minor:#f1c21b;--cds-support-caution-undefined:#a56eff;--cds-support-error:#ff8389;--cds-support-error-inverse:#da1e28;--cds-support-info:#4589ff;--cds-support-info-inverse:#0043ce;--cds-support-success:#42be65;--cds-support-success-inverse:#24a148;--cds-support-warning:#f1c21b;--cds-support-warning-inverse:#f1c21b;--cds-syntax-angle-bracket:#8d8d8d;--cds-syntax-annotation:#08bdba;--cds-syntax-arithmetic-operator:#e0e0e0;--cds-syntax-atom:#f4f4f4;--cds-syntax-attribute:#33b1ff;--cds-syntax-attribute-name:#33b1ff;--cds-syntax-attribute-value:#f4f4f4;--cds-syntax-bitwise-operator:#e0e0e0;--cds-syntax-block-comment:#42be65;--cds-syntax-bool:#f4f4f4;--cds-syntax-brace:#e0e0e0;--cds-syntax-bracket:#e0e0e0;--cds-syntax-character:#f4f4f4;--cds-syntax-class-name:#3ddbd9;--cds-syntax-color:#f4f4f4;--cds-syntax-comment:#42be65;--cds-syntax-compare-operator:#e0e0e0;--cds-syntax-constant:#4589ff;--cds-syntax-content:#f4f4f4;--cds-syntax-content-separator:#e0e0e0;--cds-syntax-control-keyword:#be95ff;--cds-syntax-control-operator:#be95ff;--cds-syntax-definition:#33b1ff;--cds-syntax-definition-keyword:#33b1ff;--cds-syntax-definition-operator:#33b1ff;--cds-syntax-deleted:#a2191f;--cds-syntax-deref-operator:#e0e0e0;--cds-syntax-doc-comment:#42be65;--cds-syntax-doc-string:#f4f4f4;--cds-syntax-document-meta:#42be65;--cds-syntax-emphasis:#f4f4f4;--cds-syntax-escape:#e0e0e0;--cds-syntax-float:#6fdc8c;--cds-syntax-function:#f1c21b;--cds-syntax-heading:#33b1ff;--cds-syntax-heading-1:#33b1ff;--cds-syntax-heading-2:#33b1ff;--cds-syntax-heading-3:#33b1ff;--cds-syntax-heading-4:#33b1ff;--cds-syntax-heading-5:#33b1ff;--cds-syntax-heading-6:#33b1ff;--cds-syntax-inserted:#198038;--cds-syntax-integer:#6fdc8c;--cds-syntax-invalid:#fa4d56;--cds-syntax-keyword:#4589ff;--cds-syntax-label-name:#a6c8ff;--cds-syntax-line-comment:#42be65;--cds-syntax-link:#4589ff;--cds-syntax-list:#f4f4f4;--cds-syntax-literal:#f4f4f4;--cds-syntax-local:#a6c8ff;--cds-syntax-logic-operator:#e0e0e0;--cds-syntax-macro-name:#f4f4f4;--cds-syntax-meta:#42be65;--cds-syntax-modifier:#4589ff;--cds-syntax-module-keyword:#be95ff;--cds-syntax-monospace:#f4f4f4;--cds-syntax-name:#a6c8ff;--cds-syntax-namespace:#3ddbd9;--cds-syntax-null:#f4f4f4;--cds-syntax-number:#6fdc8c;--cds-syntax-operator:#e0e0e0;--cds-syntax-operator-keyword:#4589ff;--cds-syntax-paren:#e0e0e0;--cds-syntax-processing-instruction:#f4f4f4;--cds-syntax-property-name:#33b1ff;--cds-syntax-punctuation:#e0e0e0;--cds-syntax-quote:#42be65;--cds-syntax-regexp:#be95ff;--cds-syntax-self:#3ddbd9;--cds-syntax-separator:#e0e0e0;--cds-syntax-special:#4589ff;--cds-syntax-special-string:#be95ff;--cds-syntax-square-bracket:#e0e0e0;--cds-syntax-standard:#4589ff;--cds-syntax-strikethrough:#f4f4f4;--cds-syntax-string:#f4f4f4;--cds-syntax-strong:#f4f4f4;--cds-syntax-tag:#3ddbd9;--cds-syntax-tag-name:#3ddbd9;--cds-syntax-type:#3ddbd9;--cds-syntax-type-name:#3ddbd9;--cds-syntax-type-operator:#3ddbd9;--cds-syntax-unit:#6fdc8c;--cds-syntax-update-operator:#e0e0e0;--cds-syntax-url:#e0e0e0;--cds-syntax-variable:#a6c8ff;--cds-syntax-variable-name:#a6c8ff;--cds-text-disabled:rgba(244,244,244,0.25);--cds-text-error:#ffb3b8;--cds-text-helper:#c6c6c6;--cds-text-inverse:#161616;--cds-text-on-color:#ffffff;--cds-text-on-color-disabled:rgba(255,255,255,0.25);--cds-text-placeholder:rgba(244,244,244,0.4);--cds-text-primary:#f4f4f4;--cds-text-secondary:#c6c6c6;--cds-toggle-off:#8d8d8d;--cds-layer:var(--cds-layer-01,#f4f4f4);--cds-layer-active:var(--cds-layer-active-01,#c6c6c6);--cds-layer-background:var(--cds-layer-background-01,#ffffff);--cds-layer-hover:var(--cds-layer-hover-01,#e8e8e8);--cds-layer-selected:var(--cds-layer-selected-01,#e0e0e0);--cds-layer-selected-hover:var(--cds-layer-selected-hover-01,#d1d1d1);--cds-layer-accent:var(--cds-layer-accent-01,#e0e0e0);--cds-layer-accent-hover:var(--cds-layer-accent-hover-01,#d1d1d1);--cds-layer-accent-active:var(--cds-layer-accent-active-01,#a8a8a8);--cds-field:var(--cds-field-01,#f4f4f4);--cds-field-hover:var(--cds-field-hover-01,#e8e8e8);--cds-border-subtle:var(--cds-border-subtle-00,#e0e0e0);--cds-border-subtle-selected:var(--cds-border-subtle-selected-01,#c6c6c6);--cds-border-strong:var(--cds-border-strong-01,#8d8d8d);--cds-border-tile:var(--cds-border-tile-01,#c6c6c6);--cds-button-separator:#161616;--cds-button-primary:#0f62fe;--cds-button-secondary:#6f6f6f;--cds-button-tertiary:#ffffff;--cds-button-danger-primary:#da1e28;--cds-button-danger-secondary:#ff8389;--cds-button-danger-active:#750e13;--cds-button-primary-active:#002d9c;--cds-button-secondary-active:#393939;--cds-button-tertiary-active:#c6c6c6;--cds-button-danger-hover:#b81921;--cds-button-primary-hover:#0050e6;--cds-button-secondary-hover:#5e5e5e;--cds-button-tertiary-hover:#f4f4f4;--cds-button-disabled:rgba(141,141,141,0.3);--cds-notification-background-error:#393939;--cds-notification-background-success:#393939;--cds-notification-background-info:#393939;--cds-notification-background-warning:#393939;--cds-notification-action-tertiary-inverse:#0f62fe;--cds-notification-action-tertiary-inverse-active:#002d9c;--cds-notification-action-tertiary-inverse-hover:#0050e6;--cds-notification-action-tertiary-inverse-text:#ffffff;--cds-notification-action-tertiary-inverse-text-on-color-disabled:#8d8d8d;--cds-tag-background-red:#a2191f;--cds-tag-color-red:#ffd7d9;--cds-tag-hover-red:#c21e25;--cds-tag-background-magenta:#9f1853;--cds-tag-color-magenta:#ffd6e8;--cds-tag-hover-magenta:#bf1d63;--cds-tag-background-purple:#6929c4;--cds-tag-color-purple:#e8daff;--cds-tag-hover-purple:#7c3dd6;--cds-tag-background-blue:#0043ce;--cds-tag-color-blue:#d0e2ff;--cds-tag-hover-blue:#0053ff;--cds-tag-background-cyan:#00539a;--cds-tag-color-cyan:#bae6ff;--cds-tag-hover-cyan:#0066bd;--cds-tag-background-teal:#005d5d;--cds-tag-color-teal:#9ef0f0;--cds-tag-hover-teal:#007070;--cds-tag-background-green:#0e6027;--cds-tag-color-green:#a7f0ba;--cds-tag-hover-green:#11742f;--cds-tag-background-gray:#525252;--cds-tag-color-gray:#f4f4f4;--cds-tag-hover-gray:#636363;--cds-tag-border-red:#fa4d56;--cds-tag-border-blue:#4589ff;--cds-tag-border-cyan:#1192e8;--cds-tag-border-teal:#009d9a;--cds-tag-border-green:#24a148;--cds-tag-border-magenta:#ee5396;--cds-tag-border-purple:#a56eff;--cds-tag-border-gray:#8d8d8d;--cds-tag-border-cool-gray:#878d96;--cds-tag-border-warm-gray:#8f8b8b;--cds-tag-background-cool-gray:#4d5358;--cds-tag-color-cool-gray:#f2f4f8;--cds-tag-hover-cool-gray:#5d646a;--cds-tag-background-warm-gray:#565151;--cds-tag-color-warm-gray:#f7f3f2;--cds-tag-hover-warm-gray:#696363;--cds-status-red:#fa4d56;--cds-status-orange:#ff832b;--cds-status-orange-outline:#ff832b;--cds-status-yellow:#f1c21b;--cds-status-yellow-outline:#f1c21b;--cds-status-green:#42be65;--cds-status-blue:#4589ff;--cds-status-purple:#a56eff;--cds-status-gray:#8d8d8d;--cds-content-switcher-background:rgba(0,0,0,0);--cds-content-switcher-background-hover:rgba(141,141,141,0.12);--cds-content-switcher-selected:rgba(141,141,141,0.24);}.cds--g100{background-color:var(--cds-background);color:var(--cds-text-primary);--cds-ai-aura-end:rgba(0,0,0,0);--cds-ai-aura-hover-background:#333333;--cds-ai-aura-hover-end:rgba(0,0,0,0);--cds-ai-aura-hover-start:rgba(69,137,255,0.4);--cds-ai-aura-start:rgba(69,137,255,0.1);--cds-ai-aura-start-sm:rgba(69,137,255,0.16);--cds-ai-border-end:#4589ff;--cds-ai-border-start:rgba(166,200,255,0.36);--cds-ai-border-strong:#78a9ff;--cds-ai-drop-shadow:rgba(0,0,0,0.28);--cds-ai-inner-shadow:rgba(69,137,255,0.16);--cds-ai-overlay:rgba(0,0,0,0.5);--cds-ai-popover-background:#161616;--cds-ai-popover-caret-bottom:#4589ff;--cds-ai-popover-caret-bottom-background:#202d45;--cds-ai-popover-caret-bottom-background-actions:#1e283a;--cds-ai-popover-caret-center:#4870b5;--cds-ai-popover-shadow-outer-01:rgba(0,0,0,0.12);--cds-ai-popover-shadow-outer-02:rgba(0,0,0,0.08);--cds-ai-skeleton-background:rgba(120,169,255,0.5);--cds-ai-skeleton-element-background:rgba(120,169,255,0.3);--cds-background:#161616;--cds-background-active:rgba(141,141,141,0.4);--cds-background-brand:#0f62fe;--cds-background-hover:rgba(141,141,141,0.16);--cds-background-inverse:#f4f4f4;--cds-background-inverse-hover:#e8e8e8;--cds-background-selected:rgba(141,141,141,0.24);--cds-background-selected-hover:rgba(141,141,141,0.32);--cds-border-disabled:rgba(141,141,141,0.5);--cds-border-interactive:#4589ff;--cds-border-inverse:#f4f4f4;--cds-border-strong-01:#6f6f6f;--cds-border-strong-02:#8d8d8d;--cds-border-strong-03:#a8a8a8;--cds-border-subtle-00:#393939;--cds-border-subtle-01:#525252;--cds-border-subtle-02:#6f6f6f;--cds-border-subtle-03:#6f6f6f;--cds-border-subtle-selected-01:#6f6f6f;--cds-border-subtle-selected-02:#8d8d8d;--cds-border-subtle-selected-03:#8d8d8d;--cds-border-tile-01:#525252;--cds-border-tile-02:#6f6f6f;--cds-border-tile-03:#8d8d8d;--cds-chat-avatar-agent:#c6c6c6;--cds-chat-avatar-bot:#8d8d8d;--cds-chat-avatar-user:#4589ff;--cds-chat-bubble-agent:#262626;--cds-chat-bubble-agent-text:#f4f4f4;--cds-chat-bubble-border:#525252;--cds-chat-bubble-user:#393939;--cds-chat-bubble-user-text:#f4f4f4;--cds-chat-button:#78a9ff;--cds-chat-button-active:rgba(141,141,141,0.4);--cds-chat-button-hover:rgba(141,141,141,0.16);--cds-chat-button-selected:rgba(141,141,141,0.24);--cds-chat-button-text-hover:#a6c8ff;--cds-chat-button-text-selected:#c6c6c6;--cds-chat-header-background:#262626;--cds-chat-header-text:#f4f4f4;--cds-chat-prompt-background:#161616;--cds-chat-prompt-border-end:rgba(38,38,38,0);--cds-chat-prompt-border-start:#262626;--cds-chat-prompt-text:#f4f4f4;--cds-chat-shell-background:#262626;--cds-color-scheme:dark;color-scheme:var(--cds-color-scheme,dark);--cds-field-01:#262626;--cds-field-02:#393939;--cds-field-03:#525252;--cds-field-hover-01:#333333;--cds-field-hover-02:#474747;--cds-field-hover-03:#636363;--cds-focus:#ffffff;--cds-focus-inset:#161616;--cds-focus-inverse:#0f62fe;--cds-highlight:#001d6c;--cds-icon-disabled:rgba(244,244,244,0.25);--cds-icon-interactive:#ffffff;--cds-icon-inverse:#161616;--cds-icon-on-color:#ffffff;--cds-icon-on-color-disabled:rgba(255,255,255,0.25);--cds-icon-primary:#f4f4f4;--cds-icon-secondary:#c6c6c6;--cds-interactive:#4589ff;--cds-layer-01:#262626;--cds-layer-02:#393939;--cds-layer-03:#525252;--cds-layer-accent-01:#393939;--cds-layer-accent-02:#525252;--cds-layer-accent-03:#6f6f6f;--cds-layer-accent-active-01:#6f6f6f;--cds-layer-accent-active-02:#8d8d8d;--cds-layer-accent-active-03:#393939;--cds-layer-accent-hover-01:#474747;--cds-layer-accent-hover-02:#636363;--cds-layer-accent-hover-03:#5e5e5e;--cds-layer-active-01:#525252;--cds-layer-active-02:#6f6f6f;--cds-layer-active-03:#8d8d8d;--cds-layer-background-01:#161616;--cds-layer-background-02:#262626;--cds-layer-background-03:#393939;--cds-layer-hover-01:#333333;--cds-layer-hover-02:#474747;--cds-layer-hover-03:#636363;--cds-layer-selected-01:#393939;--cds-layer-selected-02:#525252;--cds-layer-selected-03:#6f6f6f;--cds-layer-selected-disabled:#a8a8a8;--cds-layer-selected-hover-01:#474747;--cds-layer-selected-hover-02:#636363;--cds-layer-selected-hover-03:#5e5e5e;--cds-layer-selected-inverse:#f4f4f4;--cds-link-inverse:#0f62fe;--cds-link-inverse-active:#161616;--cds-link-inverse-hover:#0043ce;--cds-link-inverse-visited:#8a3ffc;--cds-link-primary:#78a9ff;--cds-link-primary-hover:#a6c8ff;--cds-link-secondary:#a6c8ff;--cds-link-visited:#be95ff;--cds-overlay:rgba(0,0,0,0.6);--cds-shadow:rgba(0,0,0,0.8);--cds-skeleton-background:#292929;--cds-skeleton-element:#393939;--cds-support-caution-major:#ff832b;--cds-support-caution-minor:#f1c21b;--cds-support-caution-undefined:#a56eff;--cds-support-error:#fa4d56;--cds-support-error-inverse:#da1e28;--cds-support-info:#4589ff;--cds-support-info-inverse:#0043ce;--cds-support-success:#42be65;--cds-support-success-inverse:#24a148;--cds-support-warning:#f1c21b;--cds-support-warning-inverse:#f1c21b;--cds-syntax-angle-bracket:#8d8d8d;--cds-syntax-annotation:#08bdba;--cds-syntax-arithmetic-operator:#e0e0e0;--cds-syntax-atom:#f4f4f4;--cds-syntax-attribute:#33b1ff;--cds-syntax-attribute-name:#33b1ff;--cds-syntax-attribute-value:#f4f4f4;--cds-syntax-bitwise-operator:#e0e0e0;--cds-syntax-block-comment:#42be65;--cds-syntax-bool:#f4f4f4;--cds-syntax-brace:#e0e0e0;--cds-syntax-bracket:#e0e0e0;--cds-syntax-character:#f4f4f4;--cds-syntax-class-name:#3ddbd9;--cds-syntax-color:#f4f4f4;--cds-syntax-comment:#42be65;--cds-syntax-compare-operator:#e0e0e0;--cds-syntax-constant:#4589ff;--cds-syntax-content:#f4f4f4;--cds-syntax-content-separator:#e0e0e0;--cds-syntax-control-keyword:#be95ff;--cds-syntax-control-operator:#be95ff;--cds-syntax-definition:#33b1ff;--cds-syntax-definition-keyword:#33b1ff;--cds-syntax-definition-operator:#33b1ff;--cds-syntax-deleted:#a2191f;--cds-syntax-deref-operator:#e0e0e0;--cds-syntax-doc-comment:#42be65;--cds-syntax-doc-string:#f4f4f4;--cds-syntax-document-meta:#42be65;--cds-syntax-emphasis:#f4f4f4;--cds-syntax-escape:#e0e0e0;--cds-syntax-float:#6fdc8c;--cds-syntax-function:#f1c21b;--cds-syntax-heading:#33b1ff;--cds-syntax-heading-1:#33b1ff;--cds-syntax-heading-2:#33b1ff;--cds-syntax-heading-3:#33b1ff;--cds-syntax-heading-4:#33b1ff;--cds-syntax-heading-5:#33b1ff;--cds-syntax-heading-6:#33b1ff;--cds-syntax-inserted:#198038;--cds-syntax-integer:#6fdc8c;--cds-syntax-invalid:#fa4d56;--cds-syntax-keyword:#4589ff;--cds-syntax-label-name:#a6c8ff;--cds-syntax-line-comment:#42be65;--cds-syntax-link:#4589ff;--cds-syntax-list:#f4f4f4;--cds-syntax-literal:#f4f4f4;--cds-syntax-local:#a6c8ff;--cds-syntax-logic-operator:#e0e0e0;--cds-syntax-macro-name:#f4f4f4;--cds-syntax-meta:#42be65;--cds-syntax-modifier:#4589ff;--cds-syntax-module-keyword:#be95ff;--cds-syntax-monospace:#f4f4f4;--cds-syntax-name:#a6c8ff;--cds-syntax-namespace:#3ddbd9;--cds-syntax-null:#f4f4f4;--cds-syntax-number:#6fdc8c;--cds-syntax-operator:#e0e0e0;--cds-syntax-operator-keyword:#4589ff;--cds-syntax-paren:#e0e0e0;--cds-syntax-processing-instruction:#f4f4f4;--cds-syntax-property-name:#33b1ff;--cds-syntax-punctuation:#e0e0e0;--cds-syntax-quote:#42be65;--cds-syntax-regexp:#be95ff;--cds-syntax-self:#3ddbd9;--cds-syntax-separator:#e0e0e0;--cds-syntax-special:#4589ff;--cds-syntax-special-string:#be95ff;--cds-syntax-square-bracket:#e0e0e0;--cds-syntax-standard:#4589ff;--cds-syntax-strikethrough:#f4f4f4;--cds-syntax-string:#f4f4f4;--cds-syntax-strong:#f4f4f4;--cds-syntax-tag:#3ddbd9;--cds-syntax-tag-name:#3ddbd9;--cds-syntax-type:#3ddbd9;--cds-syntax-type-name:#3ddbd9;--cds-syntax-type-operator:#3ddbd9;--cds-syntax-unit:#6fdc8c;--cds-syntax-update-operator:#e0e0e0;--cds-syntax-url:#e0e0e0;--cds-syntax-variable:#a6c8ff;--cds-syntax-variable-name:#a6c8ff;--cds-text-disabled:rgba(244,244,244,0.25);--cds-text-error:#ff8389;--cds-text-helper:#a8a8a8;--cds-text-inverse:#161616;--cds-text-on-color:#ffffff;--cds-text-on-color-disabled:rgba(255,255,255,0.25);--cds-text-placeholder:rgba(244,244,244,0.4);--cds-text-primary:#f4f4f4;--cds-text-secondary:#c6c6c6;--cds-toggle-off:#6f6f6f;--cds-layer:var(--cds-layer-01,#f4f4f4);--cds-layer-active:var(--cds-layer-active-01,#c6c6c6);--cds-layer-background:var(--cds-layer-background-01,#ffffff);--cds-layer-hover:var(--cds-layer-hover-01,#e8e8e8);--cds-layer-selected:var(--cds-layer-selected-01,#e0e0e0);--cds-layer-selected-hover:var(--cds-layer-selected-hover-01,#d1d1d1);--cds-layer-accent:var(--cds-layer-accent-01,#e0e0e0);--cds-layer-accent-hover:var(--cds-layer-accent-hover-01,#d1d1d1);--cds-layer-accent-active:var(--cds-layer-accent-active-01,#a8a8a8);--cds-field:var(--cds-field-01,#f4f4f4);--cds-field-hover:var(--cds-field-hover-01,#e8e8e8);--cds-border-subtle:var(--cds-border-subtle-00,#e0e0e0);--cds-border-subtle-selected:var(--cds-border-subtle-selected-01,#c6c6c6);--cds-border-strong:var(--cds-border-strong-01,#8d8d8d);--cds-border-tile:var(--cds-border-tile-01,#c6c6c6);--cds-button-separator:#161616;--cds-button-primary:#0f62fe;--cds-button-secondary:#6f6f6f;--cds-button-tertiary:#ffffff;--cds-button-danger-primary:#da1e28;--cds-button-danger-secondary:#fa4d56;--cds-button-danger-active:#750e13;--cds-button-primary-active:#002d9c;--cds-button-secondary-active:#393939;--cds-button-tertiary-active:#c6c6c6;--cds-button-danger-hover:#b81921;--cds-button-primary-hover:#0050e6;--cds-button-secondary-hover:#5e5e5e;--cds-button-tertiary-hover:#f4f4f4;--cds-button-disabled:rgba(141,141,141,0.3);--cds-notification-background-error:#262626;--cds-notification-background-success:#262626;--cds-notification-background-info:#262626;--cds-notification-background-warning:#262626;--cds-notification-action-tertiary-inverse:#0f62fe;--cds-notification-action-tertiary-inverse-active:#002d9c;--cds-notification-action-tertiary-inverse-hover:#0050e6;--cds-notification-action-tertiary-inverse-text:#ffffff;--cds-notification-action-tertiary-inverse-text-on-color-disabled:#8d8d8d;--cds-tag-background-red:#a2191f;--cds-tag-color-red:#ffd7d9;--cds-tag-hover-red:#c21e25;--cds-tag-background-magenta:#9f1853;--cds-tag-color-magenta:#ffd6e8;--cds-tag-hover-magenta:#bf1d63;--cds-tag-background-purple:#6929c4;--cds-tag-color-purple:#e8daff;--cds-tag-hover-purple:#7c3dd6;--cds-tag-background-blue:#0043ce;--cds-tag-color-blue:#d0e2ff;--cds-tag-hover-blue:#0053ff;--cds-tag-background-cyan:#00539a;--cds-tag-color-cyan:#bae6ff;--cds-tag-hover-cyan:#0066bd;--cds-tag-background-teal:#005d5d;--cds-tag-color-teal:#9ef0f0;--cds-tag-hover-teal:#007070;--cds-tag-background-green:#0e6027;--cds-tag-color-green:#a7f0ba;--cds-tag-hover-green:#11742f;--cds-tag-background-gray:#525252;--cds-tag-color-gray:#f4f4f4;--cds-tag-hover-gray:#636363;--cds-tag-border-red:#fa4d56;--cds-tag-border-blue:#4589ff;--cds-tag-border-cyan:#1192e8;--cds-tag-border-teal:#009d9a;--cds-tag-border-green:#24a148;--cds-tag-border-magenta:#ee5396;--cds-tag-border-purple:#a56eff;--cds-tag-border-gray:#8d8d8d;--cds-tag-border-cool-gray:#878d96;--cds-tag-border-warm-gray:#8f8b8b;--cds-tag-background-cool-gray:#4d5358;--cds-tag-color-cool-gray:#f2f4f8;--cds-tag-hover-cool-gray:#5d646a;--cds-tag-background-warm-gray:#565151;--cds-tag-color-warm-gray:#f7f3f2;--cds-tag-hover-warm-gray:#696363;--cds-status-red:#fa4d56;--cds-status-orange:#ff832b;--cds-status-orange-outline:#ff832b;--cds-status-yellow:#f1c21b;--cds-status-yellow-outline:#f1c21b;--cds-status-green:#42be65;--cds-status-blue:#4589ff;--cds-status-purple:#a56eff;--cds-status-gray:#8d8d8d;--cds-content-switcher-background:rgba(0,0,0,0);--cds-content-switcher-background-hover:rgba(141,141,141,0.12);--cds-content-switcher-selected:rgba(141,141,141,0.24);}.cds--btn{--cds-layout-size-height-local:clamp(max(var(--cds-layout-size-height-min),var(--cds-layout-size-height-xs)),var(--cds-layout-size-height,var(--cds-layout-size-height-lg)),min(var(--cds-layout-size-height-max),var(--cds-layout-size-height-2xl)));--cds-layout-size-icon-gap-local:clamp(max(var(--cds-layout-size-icon-gap-min),var(--cds-layout-size-icon-gap-xs)),var(--cds-layout-size-icon-gap,var(--cds-layout-size-icon-gap-lg)),min(var(--cds-layout-size-icon-gap-max),var(--cds-layout-size-icon-gap-2xl)));--cds-layout-density-padding-inline-local:clamp(var(--cds-layout-density-padding-inline-min),var(--cds-layout-density-padding-inline,var(--cds-layout-density-padding-inline-normal)),var(--cds-layout-density-padding-inline-max));--temp-1lh:( var(--cds-body-compact-01-line-height,1.28572) * 1em );--temp-expressive-1lh:( var(--cds-body-compact-02-line-height,1.375) * 1em );--temp-padding-block-max:calc( (var(--cds-layout-size-height-lg) - var(--temp-1lh)) / 2 - 0.0625rem );box-sizing:border-box;padding:0;border:0;margin:0;font-family:inherit;font-size:100%;vertical-align:baseline;}.cds--btn *,.cds--btn *::before,.cds--btn *::after{box-sizing:inherit;}.cds--btn{font-size:var(--cds-body-compact-01-font-size,0.875rem);font-weight:var(--cds-body-compact-01-font-weight,400);line-height:var(--cds-body-compact-01-line-height,1.28572);letter-spacing:var(--cds-body-compact-01-letter-spacing,0.16px);border-end-end-radius:var(--cds-button-radius-ee,var(--cds-button-radius,0));border-end-start-radius:var(--cds-button-radius-es,var(--cds-button-radius,0));border-start-end-radius:var(--cds-button-radius-se,var(--cds-button-radius,0));border-start-start-radius:var(--cds-button-radius-ss,var(--cds-button-radius,0));position:relative;display:inline-flex;flex-shrink:0;justify-content:space-between;margin:0;cursor:pointer;inline-size:-moz-max-content;inline-size:max-content;max-inline-size:20rem;min-block-size:var(--cds-layout-size-height-local);outline:none;padding-block:min((var(--cds-layout-size-height-local) - var(--temp-1lh)) / 2 - 0.0625rem,var(--temp-padding-block-max));padding-inline:calc(var(--cds-layout-density-padding-inline-local) - 0.0625rem) calc(var(--cds-layout-density-padding-inline-local) * 3 + 1rem - 0.0625rem);text-align:start;text-decoration:none;transition:background 70ms cubic-bezier(0,0,0.38,0.9),box-shadow 70ms cubic-bezier(0,0,0.38,0.9),border-color 70ms cubic-bezier(0,0,0.38,0.9),outline 70ms cubic-bezier(0,0,0.38,0.9);vertical-align:top;}.cds--btn:disabled,.cds--btn:hover:disabled,.cds--btn:focus:disabled,.cds--btn.cds--btn--disabled,.cds--btn.cds--btn--disabled:hover,.cds--btn.cds--btn--disabled:focus{border-color:var(--cds-button-disabled,#c6c6c6);background:var(--cds-button-disabled,#c6c6c6);box-shadow:none;color:var(--cds-text-on-color-disabled,#8d8d8d);cursor:not-allowed;}.cds--btn .cds--btn__icon{position:absolute;flex-shrink:0;block-size:1rem;inline-size:1rem;inset-block-start:min((var(--cds-layout-size-height-local) - 1rem) / 2 - 0.0625rem,var(--temp-padding-block-max));inset-inline-end:var(--cds-layout-density-padding-inline-local);margin-block-start:0.0625rem;}.cds--btn::-moz-focus-inner{padding:0;border:0;}.cds--btn--primary{border-width:1px;border-style:solid;border-color:transparent;background-color:var(--cds-button-primary,#0f62fe);color:var(--cds-text-on-color,#ffffff);}@media (any-hover:hover){.cds--btn--primary:hover{background-color:var(--cds-button-primary-hover,#0050e6);}}.cds--btn--primary:focus{border-color:var(--cds-button-focus-color,var(--cds-focus,#0f62fe));box-shadow:inset 0 0 0 1px var(--cds-button-focus-color,var(--cds-focus,#0f62fe)),inset 0 0 0 2px var(--cds-background,#ffffff);}.cds--btn--primary:active{background-color:var(--cds-button-primary-active,#002d9c);}.cds--btn--primary .cds--btn__icon,.cds--btn--primary .cds--btn__icon path:not([data-icon-path]):not([fill=none]){fill:currentColor;}.cds--btn--primary:hover{color:var(--cds-text-on-color,#ffffff);}.cds--btn--secondary{border-width:1px;border-style:solid;border-color:transparent;background-color:var(--cds-button-secondary,#393939);color:var(--cds-text-on-color,#ffffff);}@media (any-hover:hover){.cds--btn--secondary:hover{background-color:var(--cds-button-secondary-hover,#474747);}}.cds--btn--secondary:focus{border-color:var(--cds-button-focus-color,var(--cds-focus,#0f62fe));box-shadow:inset 0 0 0 1px var(--cds-button-focus-color,var(--cds-focus,#0f62fe)),inset 0 0 0 2px var(--cds-background,#ffffff);}.cds--btn--secondary:active{background-color:var(--cds-button-secondary-active,#6f6f6f);}.cds--btn--secondary .cds--btn__icon,.cds--btn--secondary .cds--btn__icon path:not([data-icon-path]):not([fill=none]){fill:currentColor;}.cds--btn--secondary:hover,.cds--btn--secondary:focus{color:var(--cds-text-on-color,#ffffff);}.cds--btn--tertiary{border-width:1px;border-style:solid;border-color:var(--cds-button-tertiary,#0f62fe);background-color:transparent;color:var(--cds-button-tertiary,#0f62fe);}@media (any-hover:hover){.cds--btn--tertiary:hover{background-color:var(--cds-button-tertiary-hover,#0050e6);}}.cds--btn--tertiary:focus{border-color:var(--cds-button-focus-color,var(--cds-focus,#0f62fe));box-shadow:inset 0 0 0 1px var(--cds-button-focus-color,var(--cds-focus,#0f62fe)),inset 0 0 0 2px var(--cds-background,#ffffff);}.cds--btn--tertiary:active{background-color:var(--cds-button-tertiary-active,#002d9c);}.cds--btn--tertiary .cds--btn__icon,.cds--btn--tertiary .cds--btn__icon path:not([data-icon-path]):not([fill=none]){fill:currentColor;}@media (any-hover:hover){.cds--btn--tertiary:hover{color:var(--cds-text-inverse,#ffffff);}}.cds--btn--tertiary:focus{background-color:var(--cds-button-tertiary,#0f62fe);color:var(--cds-text-inverse,#ffffff);}.cds--btn--tertiary:active{border-color:transparent;background-color:var(--cds-button-tertiary-active,#002d9c);color:var(--cds-text-inverse,#ffffff);}.cds--btn--tertiary:disabled,.cds--btn--tertiary:hover:disabled,.cds--btn--tertiary:focus:disabled,.cds--btn--tertiary.cds--btn--disabled,.cds--btn--tertiary.cds--btn--disabled:hover,.cds--btn--tertiary.cds--btn--disabled:focus{background:transparent;color:var(--cds-text-disabled,rgba(22,22,22,0.25));outline:none;}.cds--btn--ghost{border-width:1px;border-style:solid;border-color:transparent;background-color:transparent;color:var(--cds-link-primary,#0f62fe);}@media (any-hover:hover){.cds--btn--ghost:hover{background-color:var(--cds-background-hover,rgba(141,141,141,0.12));}}.cds--btn--ghost:focus{border-color:var(--cds-button-focus-color,var(--cds-focus,#0f62fe));box-shadow:inset 0 0 0 1px var(--cds-button-focus-color,var(--cds-focus,#0f62fe)),inset 0 0 0 2px var(--cds-background,#ffffff);}.cds--btn--ghost:active{background-color:var(--cds-background-active,rgba(141,141,141,0.5));}.cds--btn--ghost .cds--btn__icon,.cds--btn--ghost .cds--btn__icon path:not([data-icon-path]):not([fill=none]){fill:currentColor;}.cds--btn--ghost{padding-inline-end:calc(var(--cds-layout-density-padding-inline-local) - 0.0625rem);}.cds--btn--ghost .cds--btn__icon{position:static;align-self:center;margin-inline-start:0.5rem;}@media (hover:hover){.cds--btn--ghost:hover{color:var(--cds-link-primary-hover,#0043ce);}}.cds--btn--ghost:active{background-color:var(--cds-background-active,rgba(141,141,141,0.5));color:var(--cds-link-primary-hover,#0043ce);}.cds--btn--ghost:disabled,.cds--btn--ghost:hover:disabled,.cds--btn--ghost:focus:disabled,.cds--btn--ghost.cds--btn--disabled,.cds--btn--ghost.cds--btn--disabled:hover,.cds--btn--ghost.cds--btn--disabled:focus{border-color:transparent;background:transparent;color:var(--cds-text-disabled,rgba(22,22,22,0.25));outline:none;}.cds--btn--ghost:not([disabled]) svg{fill:var(--cds-icon-primary,#161616);}.cds--btn--icon-only{align-items:center;justify-content:center;padding:0;block-size:var(--cds-layout-size-height-local);inline-size:var(--cds-layout-size-height-local);padding-block-start:0;}.cds--btn--icon-only > :first-child{min-inline-size:1rem;}.cds--btn--icon-only .cds--btn__icon{position:static;}.cds--btn--icon-only.cds--btn--ghost:focus{box-shadow:inset 0 0 0 1px var(--cds-button-focus-color,var(--cds-focus,#0f62fe));}.cds--btn--icon-only.cds--btn--ghost .cds--btn__icon,.cds--btn--icon-only.cds--btn--danger--ghost .cds--btn__icon{margin:0;}.cds--btn--icon-only.cds--btn--danger--ghost{padding-inline-end:calc(var(--cds-layout-density-padding-inline-local) - 1rem);}.cds--btn--xs:not(.cds--btn--icon-only){padding-block-start:1.5px;}.cds--btn--xs:not(.cds--btn--icon-only) .cds--btn__icon,.cds--btn--sm:not(.cds--btn--icon-only) .cds--btn__icon,.cds--btn--md:not(.cds--btn--icon-only) .cds--btn__icon{margin-block-start:0;}.cds--btn--icon-only.cds--btn--selected{background:var(--cds-background-selected,rgba(141,141,141,0.2));}.cds--btn path[data-icon-path=inner-path]{fill:none;}.cds--btn--ghost.cds--btn--icon-only .cds--btn__icon path:not([data-icon-path]):not([fill=none]),.cds--btn--ghost.cds--btn--icon-only .cds--btn__icon{fill:var(--cds-icon-primary,#161616);}.cds--btn--ghost.cds--btn--icon-only[disabled] .cds--btn__icon path:not([data-icon-path]):not([fill=none]),.cds--btn--ghost.cds--btn--icon-only[disabled] .cds--btn__icon,.cds--btn.cds--btn--icon-only.cds--btn--ghost[disabled]:hover .cds--btn__icon{fill:var(--cds-icon-on-color-disabled,#8d8d8d);}.cds--btn--ghost.cds--btn--icon-only[disabled]{cursor:not-allowed;}.cds--btn--danger{border-width:1px;border-style:solid;border-color:transparent;background-color:var(--cds-button-danger-primary,#da1e28);color:var(--cds-text-on-color,#ffffff);}@media (any-hover:hover){.cds--btn--danger:hover{background-color:var(--cds-button-danger-hover,#b81921);}}.cds--btn--danger:focus{border-color:var(--cds-button-focus-color,var(--cds-focus,#0f62fe));box-shadow:inset 0 0 0 1px var(--cds-button-focus-color,var(--cds-focus,#0f62fe)),inset 0 0 0 2px var(--cds-background,#ffffff);}.cds--btn--danger:active{background-color:var(--cds-button-danger-active,#750e13);}.cds--btn--danger .cds--btn__icon,.cds--btn--danger .cds--btn__icon path:not([data-icon-path]):not([fill=none]){fill:currentColor;}.cds--btn--danger:hover{color:var(--cds-text-on-color,#ffffff);}.cds--btn--danger--tertiary{border-width:1px;border-style:solid;border-color:var(--cds-button-danger-secondary,#da1e28);background-color:transparent;color:var(--cds-button-danger-secondary,#da1e28);}@media (any-hover:hover){.cds--btn--danger--tertiary:hover{background-color:var(--cds-button-danger-hover,#b81921);}}.cds--btn--danger--tertiary:focus{border-color:var(--cds-button-focus-color,var(--cds-focus,#0f62fe));box-shadow:inset 0 0 0 1px var(--cds-button-focus-color,var(--cds-focus,#0f62fe)),inset 0 0 0 2px var(--cds-background,#ffffff);}.cds--btn--danger--tertiary:active{background-color:var(--cds-button-danger-active,#750e13);}.cds--btn--danger--tertiary .cds--btn__icon,.cds--btn--danger--tertiary .cds--btn__icon path:not([data-icon-path]):not([fill=none]){fill:currentColor;}@media (hover:hover){.cds--btn--danger--tertiary:hover{border-color:var(--cds-button-danger-hover,#b81921);color:var(--cds-text-on-color,#ffffff);}}.cds--btn--danger--tertiary:focus{background-color:var(--cds-button-danger-primary,#da1e28);color:var(--cds-text-on-color,#ffffff);}.cds--btn--danger--tertiary:active{border-color:var(--cds-button-danger-active,#750e13);background-color:var(--cds-button-danger-active,#750e13);color:var(--cds-text-on-color,#ffffff);}.cds--btn--danger--tertiary:disabled,.cds--btn--danger--tertiary:hover:disabled,.cds--btn--danger--tertiary:focus:disabled,.cds--btn--danger--tertiary.cds--btn--disabled,.cds--btn--danger--tertiary.cds--btn--disabled:hover,.cds--btn--danger--tertiary.cds--btn--disabled:focus{background:transparent;color:var(--cds-text-disabled,rgba(22,22,22,0.25));outline:none;}.cds--btn--danger--ghost{border-width:1px;border-style:solid;border-color:transparent;background-color:transparent;color:var(--cds-button-danger-secondary,#da1e28);}@media (any-hover:hover){.cds--btn--danger--ghost:hover{background-color:var(--cds-button-danger-hover,#b81921);}}.cds--btn--danger--ghost:focus{border-color:var(--cds-button-focus-color,var(--cds-focus,#0f62fe));box-shadow:inset 0 0 0 1px var(--cds-button-focus-color,var(--cds-focus,#0f62fe)),inset 0 0 0 2px var(--cds-background,#ffffff);}.cds--btn--danger--ghost:active{background-color:var(--cds-button-danger-active,#750e13);}.cds--btn--danger--ghost .cds--btn__icon,.cds--btn--danger--ghost .cds--btn__icon path:not([data-icon-path]):not([fill=none]){fill:currentColor;}.cds--btn--danger--ghost{padding-inline-end:calc(var(--cds-layout-density-padding-inline-local) - 0.0625rem);}.cds--btn--danger--ghost .cds--btn__icon{position:static;margin-inline-start:0.5rem;}@media (hover:hover){.cds--btn--danger--ghost:hover{color:var(--cds-text-on-color,#ffffff);}}.cds--btn--danger--ghost:active{color:var(--cds-text-on-color,#ffffff);}.cds--btn--danger--ghost:disabled,.cds--btn--danger--ghost:hover:disabled,.cds--btn--danger--ghost:focus:disabled,.cds--btn--danger--ghost.cds--btn--disabled,.cds--btn--danger--ghost.cds--btn--disabled:hover,.cds--btn--danger--ghost.cds--btn--disabled:focus{border-color:transparent;background:transparent;color:var(--cds-text-disabled,rgba(22,22,22,0.25));outline:none;}.cds--btn--expressive{font-size:var(--cds-body-compact-02-font-size,1rem);font-weight:var(--cds-body-compact-02-font-weight,400);line-height:var(--cds-body-compact-02-line-height,1.375);letter-spacing:var(--cds-body-compact-02-letter-spacing,0);padding-block:min((var(--cds-layout-size-height-local) - var(--temp-expressive-1lh)) / 2 - 0.0625rem,var(--temp-padding-block-max));}.cds--btn--icon-only.cds--btn--expressive{padding:12px 13px;}.cds--btn.cds--btn--expressive .cds--btn__icon{block-size:1.25rem;inline-size:1.25rem;}.cds--btn--sm .cds--badge-indicator{margin-block-start:0.25rem;margin-inline-end:0.25rem;}@media screen and (-ms-high-contrast:active),(forced-colors:active){.cds--btn:focus{color:Highlight;outline:1px solid Highlight;}}.cds--btn.cds--text-input--password__visibility__toggle.cds--tooltip__trigger{outline:2px solid transparent;outline-offset:-2px;position:absolute;display:flex;align-items:center;justify-content:center;padding:0;border:0;aspect-ratio:1;background:none;block-size:100%;cursor:pointer;inset-inline-end:0;min-block-size:auto;transition:outline 70ms cubic-bezier(0.2,0,0.38,0.9);}.cds--btn.cds--text-input--password__visibility__toggle.cds--tooltip__trigger svg{fill:var(--cds-icon-primary,#161616);}.cds--btn.cds--text-input--password__visibility__toggle.cds--tooltip__trigger:focus{outline:2px solid var(--cds-focus,#0f62fe);outline-offset:-2px;}@media screen and (prefers-contrast){.cds--btn.cds--text-input--password__visibility__toggle.cds--tooltip__trigger:focus{outline-style:dotted;}}.cds--btn--primary.cds--batch-summary__cancel::before{position:absolute;display:block;border:none;background-color:var(--cds-text-on-color,#ffffff);block-size:1rem;content:"";inline-size:0.0625rem;inset-block-start:0.9375rem;inset-inline-start:0;opacity:1;transition:opacity 110ms cubic-bezier(0.2,0,0.38,0.9);}@media (any-hover:hover){.cds--btn--primary.cds--batch-summary__cancel:hover::before{opacity:0;transition:opacity 250ms cubic-bezier(0.5,0,0.1,1);}}.cds--btn ~ .cds--file-container{margin-block-start:1rem;}.cds--btn .cds--inline-loading--btn{min-block-size:0;}.cds--btn .cds--inline-loading--btn .cds--inline-loading__text{font-size:var(--cds-body-short-01-font-size,0.875rem);font-weight:var(--cds-body-short-01-font-weight,400);line-height:var(--cds-body-short-01-line-height,1.28572);letter-spacing:var(--cds-body-short-01-letter-spacing,0.16px);}.cds--btn.cds--btn--icon-only.cds--header__action svg{fill:var(--cds-icon-secondary,#525252);}.cds--btn.cds--btn--icon-only.cds--header__action:active svg,.cds--btn.cds--btn--icon-only.cds--header__action--active svg{fill:var(--cds-icon-primary,#161616);}@media (any-hover:hover){.cds--btn.cds--btn--icon-only.cds--header__action:hover svg{fill:var(--cds-icon-primary,#161616);}}.cds--btn.cds--btn--icon-only.cds--header__action svg{fill:var(--cds-icon-secondary,#525252);}.cds--btn.cds--btn--icon-only.cds--header__action:active svg,.cds--btn.cds--btn--icon-only.cds--header__action--active svg{fill:var(--cds-icon-primary,#161616);}@media (any-hover:hover){.cds--btn.cds--btn--icon-only.cds--header__action:hover svg{fill:var(--cds-icon-primary,#161616);}}</script>
+<script>
+(() => {
+  // --- Design-system switcher: one attribute on <html>, one CSS rule per system ---
+  const notes = {
+    carbon: "This is the page in Carbon: the White theme, or Gray 100 if your device is set to dark mode. IBM Plex Sans and IBM Plex Mono, regular-weight headings, square corners and IBM blue. Carbon's own tokens, like #0f62fe and #f4f4f4, are copied in.",
+    mui: "This is the page in Material UI's default theme: Roboto, 4px corners, uppercase buttons with shadows, and Paper elevation on the demo panels. If your device is set to dark mode, you get MUI's default dark palette.",
+  };
+  const root = document.documentElement;
+  const buttons = [...document.querySelectorAll('.ds-btn')];
+  const note = document.getElementById('ds-note');
+  const ruleFor = (name) => {
+    for (const sheet of document.styleSheets) {
+      let rules;
+      try { rules = sheet.cssRules; } catch (e) { continue; }
+      for (const r of rules) if (r.selectorText === `:root[data-ds="${name}"]`) return r;
+    }
+    return null;
+  };
+  const setDs = (name) => {
+    if (name) root.setAttribute('data-ds', name); else root.removeAttribute('data-ds');
+    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.ds === name)));
+    note.hidden = !name;
+    if (name) {
+      const rule = ruleFor(name);
+      const decls = rule ? [...rule.style].map((p) => `  ${p}: ${rule.style.getPropertyValue(p).trim()};`) : [];
+      document.getElementById('ds-text').textContent = notes[name];
+      document.getElementById('ds-count').textContent = decls.length;
+      document.getElementById('ds-css').textContent = `:root[data-ds="${name}"] {\n${decls.join('\n')}\n}`;
+    }
+    try { localStorage.setItem('ds-skin', name); } catch (e) {}
+  };
+  buttons.forEach((b) => b.addEventListener('click', () => setDs(b.dataset.ds)));
+  try {
+    const saved = localStorage.getItem('ds-skin');
+    if (saved && buttons.some((b) => b.dataset.ds === saved)) setDs(saved);
+  } catch (e) {}
+})();
+
+(() => {
+  // --- Carbon: real CSS, theme class swapped at runtime ---
+  const cdsFrame = document.getElementById('cds-frame');
+  const cdsColor = document.getElementById('cds-color');
+  const cdsCode = document.getElementById('cds-code');
+  const cdsCss = document.getElementById('cds-css').textContent;
+  const defaultBlue = '#0f62fe';
+  let cdsTheme = 'white';
+  cdsFrame.srcdoc =
+    '<!doctype html><html lang="en"><head><meta charset="utf-8">' +
+    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&display=swap">' +
+    '<style>' + cdsCss + 'html,body{margin:0;height:100%}body{font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif}' +
+    '#zone{height:100%;padding:32px 24px;display:flex;gap:16px;flex-wrap:wrap;align-content:flex-start}</style></head>' +
+    '<body><div id="zone" class="cds--white">' +
+    '<button class="cds--btn cds--btn--primary" type="button">Submit application</button>' +
+    '<button class="cds--btn cds--btn--tertiary" type="button">Cancel</button>' +
+    '</div></body></html>';
+  const updateCds = () => {
+    const zone = cdsFrame.contentDocument && cdsFrame.contentDocument.getElementById('zone');
+    const custom = cdsColor.value.toLowerCase() !== defaultBlue;
+    if (zone) {
+      zone.className = 'cds--' + cdsTheme;
+      if (custom) zone.style.setProperty('--cds-button-primary', cdsColor.value);
+      else zone.style.removeProperty('--cds-button-primary');
+    }
+    cdsCode.textContent = custom
+      ? `<div class="cds--${cdsTheme}"\n     style="--cds-button-primary: ${cdsColor.value}">`
+      : `<div class="cds--${cdsTheme}">`;
+  };
+  cdsFrame.addEventListener('load', updateCds);
+  document.querySelectorAll('input[name="cds-theme"]').forEach((r) =>
+    r.addEventListener('change', () => { cdsTheme = r.value; updateCds(); })
+  );
+  cdsColor.addEventListener('input', updateCds);
+
+  // --- MUI: the real library, styles generated by Emotion at runtime ---
+  const muiFrame = document.getElementById('mui-frame');
+  const muiColor = document.getElementById('mui-color');
+  const muiStatus = document.getElementById('mui-status');
+  const muiCode = document.getElementById('mui-code');
+  let muiMode = 'light';
+  muiFrame.srcdoc =
+    '<!doctype html><html lang="en"><head><meta charset="utf-8">' +
+    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">' +
+    '<style>html,body{margin:0;height:100%}#root{height:100%}</style></head><body><div id="root"></div>' +
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"><\/script>' +
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"><\/script>' +
+    '<script src="https://unpkg.com/@mui/material@5.16.7/umd/material-ui.production.min.js"><\/script>' +
+    '<script>' +
+    'window.renderMui = function (primary, mode) {' +
+    '  if (!window.MaterialUI || !window.ReactDOM) return false;' +
+    '  var M = window.MaterialUI, h = React.createElement;' +
+    '  window.__root = window.__root || ReactDOM.createRoot(document.getElementById("root"));' +
+    '  var theme = M.createTheme({ palette: { mode: mode, primary: { main: primary } } });' +
+    '  window.__root.render(h(M.ThemeProvider, { theme: theme },' +
+    '    h(M.CssBaseline),' +
+    '    h(M.Stack, { direction: "row", spacing: 2, sx: { p: 4, flexWrap: "wrap" } },' +
+    '      h(M.Button, { variant: "contained" }, "Submit application"),' +
+    '      h(M.Button, { variant: "outlined" }, "Cancel"))));' +
+    '  return true;' +
+    '};' +
+    '<\/script></body></html>';
+  const countRules = (doc) => {
+    let n = 0;
+    for (const s of doc.styleSheets) {
+      const owner = s.ownerNode;
+      if (owner && owner.hasAttribute && owner.hasAttribute('data-emotion')) {
+        try { n += s.cssRules.length; } catch (e) {}
+      }
+    }
+    return n;
+  };
+  const updateMui = () => {
+    const win = muiFrame.contentWindow;
+    if (!win || typeof win.renderMui !== 'function' || !win.renderMui(muiColor.value, muiMode)) {
+      muiStatus.innerHTML = '<span class="pill stale">Not loaded</span><span>Couldn\'t load React and MUI from the CDN. Check your connection and reload.</span>';
+      return;
+    }
+    setTimeout(() => {
+      const doc = muiFrame.contentDocument;
+      const btn = doc && doc.querySelector('button');
+      if (!btn) return;
+      const hashed = [...btn.classList].find((c) => c.startsWith('css-')) || '';
+      muiCode.textContent = `<button class="MuiButton-root MuiButton-contained …\n                ${hashed}">`;
+      muiStatus.innerHTML = `<span class="pill run">Runtime</span><span>Emotion wrote <code>.${hashed}</code> in your browser. CSS rules inserted so far: <b>${countRules(doc)}</b>.</span>`;
+    }, 80);
+  };
+  muiFrame.addEventListener('load', updateMui);
+  document.querySelectorAll('input[name="mui-mode"]').forEach((r) =>
+    r.addEventListener('change', () => { muiMode = r.value; updateMui(); })
+  );
+  muiColor.addEventListener('input', updateMui);
+
+  // --- Tabs ---
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  const select = (tab) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    try { localStorage.setItem('cm-tab', tab.id); } catch (e) {}
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', (e) => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      const next = tabs[(i + d + tabs.length) % tabs.length];
+      select(next);
+      next.focus();
+    });
+  });
+  try {
+    const saved = document.getElementById(localStorage.getItem('cm-tab') || '');
+    if (saved && tabs.includes(saved)) select(saved);
+  } catch (e) {}
+
+  // --- Copy buttons ---
+  document.querySelectorAll('.copy').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const pre = btn.parentElement.querySelector('pre');
+      const done = (label) => { btn.textContent = label; setTimeout(() => (btn.textContent = 'Copy'), 1600); };
+      navigator.clipboard.writeText(pre.textContent).then(
+        () => done('Copied'),
+        () => {
+          const r = document.createRange();
+          r.selectNodeContents(pre);
+          const s = getSelection();
+          s.removeAllRanges();
+          s.addRange(r);
+          done('Selected, press Ctrl+C');
+        }
+      );
+    });
+  });
+})();
+</script>
